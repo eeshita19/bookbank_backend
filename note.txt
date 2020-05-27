@@ -1,2 +1,3 @@
-To do:
-# to secure firebase config
+to run:
+
+npm run start-dev
