@@ -1,0 +1,195 @@
+html{
+    height: 100%;
+    background-color: #F5F5F5;
+    overflow: hidden;
+}
+body{
+    font-family: sans-serif;
+}
+
+#container{
+    height: 540px;
+    width: 1100px;
+    background-color: #ffff;
+    margin: 100px auto;
+    border-radius: 25px;
+    box-shadow: 1px 1px 20px 4px #acacbd;
+    position: relative;
+}
+/*Here manipulated the blue polygon which has a id polygon*/
+#polygon{
+    position: absolute;
+    width: 569px;
+/*    z-index: 2;*/
+    right: -90px;
+    top: -214px;
+    height: 662px
+}
+/*here manipulated the green amoeba shape picture which has the id path*/
+#path{
+    position: absolute;
+/*    z-index: 2;*/
+    width: 489px;
+    height: 504px;
+    bottom: -129px;
+    left: -80px;
+    
+}
+
+/*here manipulated the intersection of polygon picture which has the id intersectionpolygon*/
+#intersectionpolygon{
+    position: absolute;
+    right: -53px;
+    top: -50px;
+    width: 240.34px;
+    height: 184.06px;
+}
+
+/*here manipulated the intersection of green picture which has the id intersectionpath*/
+#intersectionpath{
+    position: absolute;
+    top: 400px;
+    left: -7px;
+    width: 199px;
+    height: 150px
+}
+
+/*Here designed the picture which has gradient color*/
+#gradient{
+    height: 540px;
+    width: 350px;
+    margin: 100px auto;
+    background: linear-gradient(to bottom left, #FF0045, #FFCC00);
+    position: absolute;
+    bottom: -100px;
+    left: 750px;
+    border-radius: 0px 25px 25px 0px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    
+    
+}
+/*Designed the heading inside the gradient div*/
+#gradient h1{
+    font-weight: bold;
+    margin-top: 170px;
+    
+}
+
+/*Designed the paragraph inside the gradient div*/
+#gradient p{
+    margin-top: 70px;
+    font-weight: 700;
+    font-size: 18px
+    
+}
+/*Designed the signup button*/
+#signup{
+    width: 230px;
+    height: 50px;
+    border-radius: 25px;
+    margin-top:20px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-weight: 550;
+    font-size: 20px
+    
+}
+/*hover ability of that signup button*/
+#signup:hover{
+    cursor: pointer;
+    
+}
+/*designed the brandlogo*/
+#brandlogo{
+    position: absolute;
+    width: 150px;
+    left: 40px;
+    top: 40px;
+}
+/*designed the quote which says log in monktree*/
+#loginquote{
+    color: #FF4704;
+    position: absolute;
+    left: 200px;
+    top: 120px;
+    font-weight: 700;
+}
+/*this wrap div contains the both the email and the password inputs*/
+#wrap{
+    position: absolute;
+    left: 140px;
+    top: 250px;
+}
+/*designed the email input*/
+#email{
+    width: 400px;
+    height: 30px;
+    margin-bottom: 15px;
+    background-color: #F5F5F5;
+    padding-left: 30px;
+    border: 1px;
+    color: grey;
+}
+
+/*designed the password input*/
+#password{
+    width: 400px;
+    height: 30px;
+    margin-bottom: 15px;
+    background-color: #F5F5F5;
+    padding-left: 30px;
+    border: 1px;
+}
+/*this wrap2 contains forgot password paragraph the reset span and the button with value sign in*/
+#wrap2{
+    position: absolute;
+    left: 240px;
+    top: 350px;
+}
+/*designed the forget password paragraph*/
+#forget{
+    color: gray;
+    
+}
+/*designed reset link*/
+#reset a{
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+}
+/*designed sign in input button*/
+#signin{
+    width: 230px;
+    height: 50px;
+    border-radius: 25px;
+    margin-top:20px;
+    border: 2px solid white;
+    background:linear-gradient(to left,#FF0045, #FFCC00);
+    color: white;
+    font-weight: 550;
+    font-size: 20px;
+    margin-left: -13px
+    
+}
+/*gave sign in button a hover ability*/
+#signin:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

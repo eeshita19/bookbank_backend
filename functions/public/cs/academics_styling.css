@@ -1,0 +1,435 @@
+html{
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+body{
+    font-family: sans-serif;
+}
+#header{
+    height: 50px;
+    width: 1700px;
+    background-color: white;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    box-shadow: 1px 1px 12px 1px grey;
+}
+#buttons{
+    position: absolute;
+    left: 1235.1px;
+    top: -40px;
+}
+
+#caste{
+    margin-right: 13px;
+    font-weight: bold;
+}
+#buttons ul li{
+    display: inline;
+    border-right: 1px solid grey;
+}
+#button1{
+    width: 45px;
+    height: 44px;
+    position: relative;
+    background-color: white;
+    border: 1px;
+    padding-left: 0px;
+    left: -9px;
+    top: 23px;
+    margin-right: 2px;
+    
+}
+#button1:hover{
+    cursor: pointer;
+}
+#button2{
+    width: 45px;
+    height: 40px;
+    position: relative;
+    top: 19px;
+    left: -4px;
+    background-color: white;
+    border: 1px;
+    margin: none;
+    padding-left: 0px;
+    
+}
+#button2:hover{
+    cursor: pointer;
+}
+#button3{
+    width: 45px;
+    height: 43px;
+    position: relative;
+    top: 17px;
+    background-color: white;
+    border: 1px;
+    margin: none;
+    padding-left: 0px;
+    
+}
+#button3:hover{
+    cursor: pointer;
+}
+#gear{
+    width: 55px;
+    height: 55px;
+}
+#bell{
+    width: 50px;
+    height: 45px;
+    margin-right: 
+}
+#logout{
+    width: 45px;
+    height:45px;
+
+}
+#bellnot{
+    position: absolute;
+    left: 225px;
+    top: 44px;
+    z-index: 2;
+    
+}
+#namenot{
+    position: absolute;
+    top: 45px;
+    left: 115px;
+    z-index: 2;
+    
+}
+#list2{
+    margin-left: 5px
+}
+#list3{
+    margin-right: 5px
+}
+
+#left{
+    position: relative;
+    width: 300px;
+    height: 1000px;
+    background-color: #324370;
+    z-index: 2;
+    top: -60px;
+    left: -8px;
+    
+}
+#brandname{
+    width: 160px;
+    height: 36px;
+    position: absolute;
+    left: 60px;
+    top: 80px
+    
+}
+#listdiv{
+    position: absolute;
+    top: 150px;
+    left: -54px
+}
+#listdiv ul{
+    list-style: none;
+}
+#listdiv ul li{
+    margin-bottom: 15px;
+    width: 305px;
+    height: 25px;
+    padding: 5px;
+   
+}
+#listdiv ul li:last-child{
+   position: relative;
+    top: -10px
+}
+#listdiv ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 15px;
+    display: block;
+     
+}
+#listdiv ul li:hover{
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
+}
+#dashboard{
+    position: relative;
+    top: 3px;
+    right: 8px;
+    margin-left: 90px;
+}
+#bag{
+    position: relative;
+    right: 9px;
+        margin-left: 90px;
+
+}
+#gift{
+    position: relative;
+    right: 9px;
+        margin-left: 90px;
+
+}
+#notes{
+    position: relative;
+    left: -2px;
+    margin-left: 80px;
+    top: 4px
+
+}
+#line{
+    position: absolute;
+    top: 500px;
+    width: 298px;
+}
+#codeplug{
+    text-align: center;
+    margin-top: 10px;
+    position: absolute;
+    right: 3px
+}
+#notestutorial{
+    position: relative;
+    top: -15px
+}
+#listdiv2{
+    position: absolute;
+    top: 550px;
+    left: -70px
+    
+}
+#listdiv2 ul{
+    list-style: none;
+}
+#listdiv2 ul li{
+    margin-bottom: 15px;
+    width: 319px;
+    height: 25px;
+    padding: 5px;
+    text-align: center;
+    
+   
+}
+
+#listdiv2 ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 15px;
+    display: block;
+     
+}
+#listdiv2 ul li:hover{
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
+}
+#container{
+    position: relative;
+    width: 1235px;
+    height: 690px;
+    left: 294px;
+    bottom: 1000px;
+}
+
+#notactive{
+    width: 75px;
+    height: 23px;
+    position: absolute;
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
+    left: 1050px;
+    top: 30px;
+    padding-left: 8px;
+    padding-top: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px  grey;
+}
+.row2{
+  padding: 0px;
+  margin-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.column2 {
+  float: left;
+  padding: 0px;
+  position: relative;
+  left: 30px;
+}
+
+.left2 {
+  width: 33.33%;
+}
+
+.mid2{
+  width: 33.33%;
+}
+
+.right2 {
+  width: 33.33%%;
+}
+
+/* Clear floats after the columns */
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.button5 {
+  background-color: #FFFFFF;
+  border: none;
+  color: #7A7A7A;
+  height: 40px;
+  width: 307px;
+  box-shadow: 1px 1px 20px 4px #acacbd;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-left: -10px;
+  cursor: pointer; 
+}
+.button5:focus {
+  background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A);
+  box-shadow: 1px 1px 20px 4px #acacbd;
+  color: white;
+}
+.container1{ 
+    height: 400px;
+    border-radius: 4px;
+    width: 830px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 20px 4px #acacbd;
+    position: relative;
+    padding: 50px 70px;
+    /*margin-left: 20px;*/
+    margin-top: 60px;
+    text-align: left;
+    left: 20px
+
+}
+.container2{ 
+    height: 450px;
+    width: 954px;
+    background-color: none;
+    /*box-shadow: 1px 1px 20px 4px #acacbd;*/
+    position: relative;
+    padding: 50px 70px;
+    /*margin-left: 20px;*/
+    margin-top: 60px;
+    text-align: left;
+
+}
+.textbox1{
+  background-color: #F9F9F9; 
+  height:35px; 
+  width: 500px;
+  border: none;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+
+.textbox2{
+  background-color: #F9F9F9; 
+  height:35px; 
+  width: 200px;
+  margin-bottom: 15px;
+  border: none;
+  margin-left: 20px;
+}
+
+.save{
+  font-family: Segoe UI, sans-serif; 
+  margin-left: 720px;
+  margin-top: 20px; 
+  background-color: #1A95FF;  
+  font-weight: 600; 
+  height: 30; 
+  width: 73; 
+  cursor: pointer; 
+  color: white;
+  border: none;
+}
+#containsform{
+    position: absolute;
+    top: 55px;
+    left: 30px
+}
+#shift{
+    position: relative;
+    bottom: 0px
+}
+#morning{
+    position: relative;
+    width: 100px;
+    background-color: #989898;
+    color: white;
+    font-size: 18px
+    
+}
+#morning:hover{
+    cursor: pointer;
+}
+#evening{
+    position: relative;
+    width: 100px;
+    right: 24.2px;
+    color: #989898;
+    font-size: 18px;
+    
+    
+}
+#evening:hover{
+    cursor: pointer;
+}
+#enroll{
+    padding-left: 10px
+}
+#donthave{
+    position: relative;
+    top: 2px;
+    height: 36px;
+    right: 23.9px;
+    color:#989898;
+    font-size: 18px;
+    border: 1px solid
+
+}
+#donthave:hover{
+    cursor: pointer;
+}
+#home{
+     position: relative;
+    width: 100px;
+    color: #989898;
+    font-size: 18px
+    
+}
+#pg{
+     position: relative;
+    width: 100px;
+    color: #989898;
+    font-size: 18px;
+    right: 24.3px
+}
+#hostel{
+     position: relative;
+    width: 100px;
+    color: #989898;
+    font-size: 18px;
+    right: 48.8px
+}

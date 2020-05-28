@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="/cs/academics_styling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="buttons">
+            <ul id="iconlist">
+                <li id="name">Tarun <span id="caste">DIXIT</span><span id="namenot"><img
+                            src="/cs/Images/Ellipse%2045.png"></span></li>
+                <li id="list2"><button id="button1"><img src="/cs/Images/icons8-gear-100.png" id="gear"></button></li>
+                <li id="list3"><button id="button2"><img src="/cs/Images/icons8-notification-100.png"
+                            id="bell"></button><span id="bellnot"><img src="/cs/Images/Ellipse%2045.png"></span></li>
+                <li id="list4"><button id="button3"><img src="/cs/Images/icons8-logout-rounded-down-100.png"
+                            id="logout"></button></li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+    <div id="left">
+        <img id="brandname" src="/cs/Images/monktree%20white.png">
+        <div id="listdiv">
+            <ul>
+                <li><a href="dashboard.html"><img src="/cs/Images/Group%2032.png" id="dashboard">Dashboard</a></li>
+                <li><a href="yourbag.html"><img src="/cs/Images/Group%2074.png" id="bag">Your Bag</a></li>
+                <li><a href="#"><img src="/cs/Images/Group%2062.png" id="gift">Free gifts</a></li>
+                <li id="notestutorial"><a href="#"><img src="/cs/Images/Group%2063.png" id="notes">Notes&Tutorials</a></li>
+                <li id="codeplug"><a href="#">Codeplug IDE</a></li>
+            </ul>
+
+        </div>
+        <hr id="line">
+        <div id="listdiv2">
+            <ul>
+                <li><a href="#">Discussion</a></li>
+                <li id="contact"><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Report</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="notactive">Not Active</div>
+        <div id="containsform">
+            <div class="row2">
+                <div class="column2 left2">
+                    <a href="personaldetails.html"><button class="button5">Personal Details</button></a>
+                </div>
+                <div class="column2 mid2">
+                    <a href="academics.html"><button class="button5" style="margin-left: 0px;">Academic
+                            Details</button></a>
+                </div>
+                <div class="column2 right2">
+                    <a href="submission.html"><button class="button5" style="margin-left: 8px;">Submission</button></a>
+                </div>
+                <div class="container1">
+                    <form method="post" action="">
+                        <label>University/institition</label>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp
+                        <input type="text" placeholder="Search or Select" class="textbox1"><br>
+                        <label>Course/Descipline</label>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <input type="text" placeholder="Search or Select" class="textbox1"><br>
+                        <label>Course duration</label>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <input type="date" name="" class="textbox2" style="margin-right: 20px; margin-left: px;"> To
+                        <input type="date" name="" class="textbox2"><br>
+                        <label id="shift">Classroom shift</label>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <input type="button" name="" class="textbox2" id="morning" value="Morning">&nbsp<input
+                            type="button" name="" class="textbox2" id="evening" value="Evening">&nbsp<input
+                            type="button" name="" class="textbox2" id="home" value="Home">&nbsp<input type="button"
+                            name="" class="textbox2" id="pg" value="PG">&nbsp<input type="button" name=""
+                            class="textbox2" id="hostel" value="Hostel">
+
+
+
+                        <br>
+                        <label>UID/Enrollment number</label>&nbsp
+                        <input type="text" name="" id="enroll" placeholder="Enter" class="textbox2">
+                        <input type="button" name="" id="donthave" class="textbox2" value="I Don't have">
+                        <br>
+                        <br>
+                        <a href="Submission.html">
+                            <input type="button" name="" value="Save" class="save">
+                        </a>
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <script>
+        $(function () {
+            $("#evening").click(function () {
+                $("#evening").css("background-color", "#989898");
+                $("#evening").css("color", "white");
+                $("#morning").css("background-color", "#F9F9F9")
+                $("#morning").css("color", "#989898")
+
+
+            })
+            $("#morning").click(function () {
+                $("#morning").css("background-color", "#989898");
+                $("#morning").css("color", "white");
+                $("#evening").css("background-color", "#F9F9F9")
+                $("#evening").css("color", "#989898")
+
+
+            });
+            $("#donthave").click(function () {
+                $("#donthave").css("background-color", "#989898")
+                $("#donthave").css("color", "white")
+            });
+            $("#home").click(function () {
+                $("#home").css("background-color", "#989898");
+                $("#home").css("color", "white");
+                $("#pg").css("background-color", "#F9F9F9")
+                $("#pg").css("color", "#989898")
+                $("#hostel").css("background-color", "#F9F9F9")
+                $("#hostel").css("color", "#989898")
+
+            });
+            $("#pg").click(function () {
+                $("#pg").css("background-color", "#989898");
+                $("#pg").css("color", "white");
+                $("#home").css("background-color", "#F9F9F9")
+                $("#home").css("color", "#989898")
+                $("#hostel").css("background-color", "#F9F9F9")
+                $("#hostel").css("color", "#989898")
+
+            });
+            $("#hostel").click(function () {
+                $("#hostel").css("background-color", "#989898");
+                $("#hostel").css("color", "white");
+                $("#pg").css("background-color", "#F9F9F9")
+                $("#pg").css("color", "#989898")
+                $("#home").css("background-color", "#F9F9F9")
+                $("#home").css("color", "#989898")
+
+            });
+        });
+
+
+    </script>
+
+
+
+
+</body>
+
+
+</html>

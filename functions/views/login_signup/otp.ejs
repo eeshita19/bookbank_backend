@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Enter OTP</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="/cs/enterotp_styling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<img src="/cs/Images/Polygon%201.png" id="polygon">
+<img src="/cs/Images/Path%201.png" id="path">
+
+<body>
+    <div id="container">
+        <img src="/cs/Images/Intersection%201.png" id="intersectionpolygon">
+        <h1 id="enterotp">Enter OTP Please</h1>
+        <p id="detailstoverify">We've sent OTP to <span id="enteredno">+9198*****676</span> </p>
+        <div id="otpnumbers">
+            <input type="tel" id="otp1" class="otp" maxlength="1" onkeyup="movecursor(this,'otp2')">
+            <input type="tel" id="otp2" class="otp" maxlength="1" onkeyup="movecursor(this,'otp3')">
+            <input type="tel" id="otp3" class="otp" maxlength="1" onkeyup="movecursor(this,'otp4')">
+            <input type="tel" id="otp4" class="otp" maxlength="1" onkeyup="movecursor(this,'otp5')">
+            <input type="tel" id="otp5" class="otp" maxlength="1" onkeyup="movecursor(this,'otp6')">
+            <input type="tel" id="otp6" class="otp" maxlength="1">
+            <p>Did'nt receive OTP?<span id="resendotp"><a href="#" id="resentotplink">Resend OTP</a></span></p>
+
+        </div>
+
+
+
+        <div id="gradient">
+            <img src="/cs/Images/monktree%20white.png" id="brandlogo">
+            <img src="/cs/Images/Intersection%202.png" id="intersectionpath">
+            <img src="/cs/Images/Intersection%203.png" id="intersectionpath2">
+            <h1>Just one more<br />step</h1>
+            <p>Your data is safe with us <br /> see our privacy policy</p>
+            <a href="dashboard.html">
+                <input type="button" value="SKIP FOR NOW" id="skip" name="skip">
+            </a>
+        </div>
+    </div>
+    <script src="/js/enterotp.js"></script>
+
+</body>
+
+</html>

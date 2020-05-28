@@ -1,0 +1,347 @@
+html{
+    height: 100%;
+    background-color: #F5F5F5;
+    overflow: hidden;
+}
+body{
+    font-family: sans-serif;
+}
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container{
+    height: 540px;
+    width: 1100px;
+    background-color: #ffff;
+    margin: 100px auto;
+    border-radius: 25px;
+    box-shadow: 1px 1px 20px 4px #acacbd;
+    position: relative;
+}
+/*Here manipulated the blue polygon which has a id polygon*/
+#polygon{
+    position: absolute;
+    width: 563px;
+/*    z-index: 2;*/
+    right: -90px;
+    top: -205px;
+    height: 655px
+    
+
+    
+}
+/*here manipulated the green amoeba shape picture which has the id path*/
+#path{
+    position: absolute;
+/*    z-index: 2;*/
+    width: 489px;
+    height: 504px;
+    bottom: -129px;
+    left: -80px;
+    
+}
+/*here manipulated the intersection of polygon picture which has the id intersectionpolygon*/
+#intersectionpolygon{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 200px;
+    height: 140px;
+}
+/*here manipulated the intersection of green picture which has the id intersectionpath*/
+#intersectionpath{
+    position: absolute;
+    top: 400px;
+    left: -7px;
+    width: 199px;
+    height: 150px
+}
+/*here manipulated the intersection of green picture which has the id intersectionpath*/
+#intersectionpath2{
+     position: absolute;
+    top: 390px;
+    left: -6px;
+    width: 209px;
+    height: 156px
+}
+
+/*Here designed the picture which has gradient color*/
+#gradient{
+    height: 540px;
+    width: 350px;
+    margin: 100px auto;
+    background: linear-gradient(to bottom left, #FF006F, #FFCC00);
+    position: absolute;
+    bottom: -100px;
+    left: 0px;
+    border-radius: 25px 0px 0px 25px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    
+    
+}
+/*Designed the heading inside the gradient div*/
+#gradient h1{
+    font-weight: bolder;
+    margin-top: 170px;
+    
+}
+/*Designed the paragraph inside the gradient div*/
+#gradient p{
+    margin-top: 70px;
+    font-weight: 500;
+    font-size: 18px
+    
+}
+/*Designed the skip button*/
+#skip{
+    width: 230px;
+    height: 50px;
+    border-radius: 25px;
+    margin-top:20px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-weight: 550;
+    font-size: 20px
+    
+}
+#skip:hover{
+    cursor: pointer;
+    
+}
+/*designed the brandlogo*/
+#brandlogo{
+    position: absolute;
+    width: 150px;
+    left: 40px;
+    top: 40px;
+}
+/*designed the heading verfication process*/
+#verificationprocess{
+    color: #FF4704;
+    position: absolute;
+    left: 560px;
+    top: 70px;
+    font-weight: 700;
+}
+#list1{
+    position: absolute;
+    list-style: none;
+    display: inline;
+}
+
+/*designed the paragraph which says enter the mobile number to verify details*/
+#detailstoverify{
+    position: absolute;
+    z-index: 1;
+    left: 570px;
+    top: 160px;
+    color: grey;
+    
+}
+/*designed the list item */
+#icon{
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    border-right: 1px solid grey;
+    list-style: none;
+
+   
+    
+}
+/*designed the second list item*/
+#country{
+   position: absolute;
+   left: 70px;
+   top: 2px;
+   width: 120px;
+   font-size: 16px;
+   color: grey;
+    
+    
+}
+
+/*designed the div which containes another list and a input for phone numbers*/
+#codeandnumber{
+    width: 200px;
+    height: 45px;
+    background-color: #F5F5F5;
+    border-radius: 18px;
+    position: relative;
+    left: 605px;
+    top: 250px
+    
+}
+/*designed the individual list item*/
+#code{
+    border-right: 1px solid grey;
+     position: absolute;
+    left: 0px;
+    top: 2px;
+    margin: 10px;
+    
+}
+/*designed the input which is for phone number*/
+#inputphoneno{
+     position: absolute;
+    left: 50px;
+    top: 6px;
+     width: 130px;
+    border-radius: 10px;
+    height: 30px;
+    background-color: #F5F5F5;
+    border: 1px ;
+    font-size: 16px;
+    color: grey;
+    padding-left: 5px;
+    
+}
+#inputphoneno:hover{
+    cursor: pointer;
+    
+}
+#country:hover{
+    cursor:pointer;
+}
+/*designed the span which containes the number code*/
+#numcode{
+    margin-right: 7px;
+}
+
+
+
+/*designed the ul*/
+#list2{
+    list-style: none;
+    display: inline;
+}
+
+
+/*desgined wrap2 which containes get otp button */
+#wrap2{
+    position: absolute;
+    left: 654px;
+    top: 350px;
+}
+/*designed the get otp button*/
+#getotp{
+    width: 230px;
+    height: 50px;
+    border-radius: 25px;
+    margin-top:40px;
+    border: 2px solid white;
+    background:linear-gradient(to left,#FF0045, #FFCC00);
+    color: white;
+    font-weight: 550;
+    font-size: 20px;
+    margin-left: -65px
+    
+}
+#getotp:hover{
+    cursor: pointer;
+}
+/*the code from now will be focused on designing the box which will come when we click*/
+/*designed the div which containes two images of arrows and a list1*/
+.selected{
+    position: relative;
+    left: 575px;
+    top: 220px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    color: gray;
+    width: 260px;
+    height: 44px;
+
+}
+/*designed a div which containes a div called options-container and a div options which has all the options in different divs*/
+.selectbox{
+    position: absolute;
+    left: 580px;
+    top: 290px;
+    display: flex;
+    width: 400px;
+}
+.selectbox .options-container{
+    background-color: #f5f5f5;
+    color: darkolivegreen;
+    max-height: 0;
+    width: 200px;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    left: 270px;
+    top: -90px;
+    text-align: center;
+    
+}
+.selectbox .options, .selected{
+    padding: 10px;
+    cursor: pointer;
+}
+.selectbox .options:hover{
+    background-color: #a6aeb3;
+}
+.selectbox label{
+    cursor: pointer;
+}
+.selectbox .options .radio{
+    display: none;
+}
+.selectbox .options-container.active{
+    max-height: 80px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+#downarrow{
+    position: absolute;
+    left: 234.3px;
+    top: 21px;
+    width: 14px
+}
+
+#uparrow{
+    position: absolute;
+    left: 234px;
+    top: 10px;
+    width: 14px;
+}
+
+#span1{
+    margin-right: 10px
+}
+
+#span1 img{
+    position: relative;
+    top: 2px;
+}
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
