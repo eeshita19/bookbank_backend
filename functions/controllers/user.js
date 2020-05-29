@@ -12,7 +12,6 @@ module.exports = {
         try {
             let {
                 dob,
-                email,
                 enddate,
                 enumber,
                 fatherfirstname,
@@ -23,13 +22,15 @@ module.exports = {
                 lastname,
                 location,
                 middlename,
-                phone,
                 resident1,
                 resident2,
                 shift,
                 startdate,
                 university
             } = req.body
+
+            let email = firebase.auth().currentUser.email
+            let phone = firebase.auth().currentUser.phone
 
             let data = {
                 dob,
@@ -100,7 +101,6 @@ module.exports = {
 
             let {
                 dob,
-                email,
                 enddate,
                 enumber,
                 fatherfirstname,
@@ -111,13 +111,15 @@ module.exports = {
                 lastname,
                 location,
                 middlename,
-                phone,
                 resident1,
                 resident2,
                 shift,
                 startdate,
                 university
             } = req.body
+
+            let email = firebase.auth().currentUser.email
+            let phone = firebase.auth().currentUser.phone
 
             let data = {
                 dob,
@@ -171,5 +173,4 @@ module.exports = {
             res.status(500).send(error)
         }
     }
-
 }
