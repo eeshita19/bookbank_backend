@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Dashboard</title>
 <meta name="viewport" content="width=device-width, user-scalable=yes">
-<link rel="stylesheet" type="text/css" href="/css/dashboard_styling.css">
+<link rel="stylesheet" type="text/css" href="cs/activated_styling.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
@@ -46,8 +46,40 @@
 </div>
  
     <div id="container">
+    <div id="notificationdiv">
+    <p id="mainpara">Notifications<span id="notespan">4</span></p>
+    <hr id="line1">
+    <ul id="list1">
+    <li><img id="mail" src="/images/icons8-important-mail-100.png"></li>  
+    <hr id="line2">
+    <li><span id="bold">New Message </span>from <a href="#">Monktree billing</a></li>    </ul>
+    <hr id="line3">
+     <ul id="list2">
+    <li><img id="mail1" src="/images/icons8-important-mail-100.png"></li>  
+    <hr id="line4">
+    <li><span id="bold">New Message </span>from <a href="#">Monktree billing</a></li>    </ul>
+    <hr id="line5">
+     <ul id="list3">
+    <li><img id="mail2" src="/images/icons8-important-mail-100.png"></li>  
+    <hr id="line6">
+    <li><span id="bold">New Message </span>from <a href="#">Monktree billing</a></li>    </ul>
+    <hr id="line7">
+<!--
+     <ul id="list4">
+    <li><img id="mail3" src="/images/icons8-important-mail-100.png"></li>  
+    <hr id="line8">
+    <li><span id="bold">New Message </span>from <a href="#">Monktree billing</a></li>    </ul>
+    <hr id="line9">
+     <ul id="list5">
+    <li><img id="mail4" src="/images/icons8-important-mail-100.png"></li>  
+    <hr id="line10">
+    <li><span id="bold">New Message </span>from <a href="#">Monktree billing</a></li>    </ul>
+    <hr id="line11">
+-->
+        
+    </div>
     <h2><span id="username">Hi Tarun,</span>How are you today?</h2>
-    <div id="notactive">Not Active</div>
+    <div id="notactive" disabled>Active</div>
     	<div id="content">
         <div class="row1">
 			<div class="column1 left1">
@@ -87,9 +119,9 @@
 			</div>
 			<br>
 			<div class="div41">
-                <p id="completeprofile">Complete your profile and start the subscription of Bookbank by today itself!</p>
+                <p id="completeprofile">You subscription has been activated. Please pack your bag</p>
                 
-				<a href="personaldetails.html" id="begin">Begin</a>
+				<a href="yourbag.html" id="begin">Visit Bag</a>
               
 			</div>
 			<br>
@@ -130,7 +162,12 @@
        </div> 
     
 <script>
-    
+$(function(){
+$("#notificationdiv").hide();
+$("#button2").on('click', function(){
+$("#notificationdiv").toggle(200);
+})
+}) 
     
 
 </script>
@@ -141,7 +178,16 @@
 </body>
 
 
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
 
 </html>
       

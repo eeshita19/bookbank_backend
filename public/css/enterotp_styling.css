@@ -1,19 +1,18 @@
-html {
+html{
     height: 100%;
     background-color: #F5F5F5;
     overflow: hidden;
 }
-
-body {
+body{
     font-family: sans-serif;
 }
 
-* {
-    margin: 0;
-    box-sizing: border-box;
+*{
+  margin: 0;
+  box-sizing: border-box;
 }
 
-#container {
+#container{
     height: 540px;
     width: 1100px;
     background-color: #ffff;
@@ -24,45 +23,41 @@ body {
 }
 
 /*Here manipulated the blue polygon which has a id polygon*/
-#polygon {
+#polygon{
     position: absolute;
     width: 563px;
     right: -90px;
     top: -205px;
-    height: 655px
+    height: 655px 
 }
-
 /*here manipulated the green amoeba shape picture which has the id path*/
-#path {
+#path{
     position: absolute;
     width: 489px;
     height: 504px;
     bottom: -129px;
     left: -80px;
-
+    
 }
-
 /*here manipulated the intersection of polygon picture which has the id intersectionpolygon*/
-#intersectionpolygon {
+#intersectionpolygon{
     position: absolute;
     right: 0px;
     top: 10px;
     width: 200px;
     height: 140px;
 }
-
 /*here manipulated the intersection of green picture which has the id intersectionpath*/
-#intersectionpath {
+#intersectionpath{
     position: absolute;
     top: 400px;
     left: -7px;
     width: 199px;
     height: 150px
 }
-
 /*here manipulated the intersection of green picture which has the id intersectionpath*/
-#intersectionpath2 {
-    position: absolute;
+#intersectionpath2{
+     position: absolute;
     top: 390px;
     left: -6px;
     width: 209px;
@@ -70,7 +65,7 @@ body {
 }
 
 /*Here designed the picture which has gradient color*/
-#gradient {
+#gradient{
     height: 540px;
     width: 350px;
     margin: 100px auto;
@@ -82,85 +77,76 @@ body {
     color: white;
     text-align: center;
     overflow: hidden;
-
-
+    
+    
 }
-
 /*Designed the heading inside the gradient div*/
-#gradient h1 {
+#gradient h1{
     font-weight: bold;
     margin-top: 170px;
-
+    
 }
-
 /*Designed the paragraph inside the gradient div*/
-#gradient p {
+#gradient p{
     margin-top: 70px;
     font-weight: 700;
     font-size: 18px
+    
 }
-
 /*Designed the skip button*/
-#skip {
+#skip{
     width: 230px;
     height: 50px;
     border-radius: 25px;
-    margin-top: 20px;
+    margin-top:20px;
     border: 1px solid white;
     background-color: transparent;
     color: white;
     font-weight: 550;
-    font-size: 20px
+    font-size: 20px 
 }
-
-#skip:hover {
+#skip:hover{
     cursor: pointer;
-
+    
 }
-
 /*designed the brandlogo*/
-#brandlogo {
+#brandlogo{
     position: absolute;
     width: 150px;
     left: 40px;
     top: 40px;
 }
-
 /*designed the heading which says enter otp*/
-#enterotp {
+#enterotp{
     color: #FF4704;
     position: absolute;
     left: 580px;
     top: 70px;
-    font-weight: 700;
-
+    font-weight:700;
+    
 }
-
 /*designed the span which containes the number*/
-#enteredno {
+#enteredno{
     font-weight: bold;
     font-size: 20px
 }
-
 /*designed the paragraph which says we have sent an otp*/
-#detailstoverify {
+#detailstoverify{
     position: absolute;
     z-index: 1;
     left: 587px;
     top: 160px;
     color: grey;
-
+    
 }
-
 /*desgined a div which contains 4 inputs for each otp box*/
-#otpnumbers {
+#otpnumbers{
     position: relative;
     left: 575px;
     top: 300px;
 }
-
 /*designed all the boxes for otp numbers*/
-.otp {
+.otp{
     width: 40px;
     height: 2.4pc;
     margin-right: 8px;
@@ -171,27 +157,23 @@ body {
     text-align: center;
     font-weight: 700;
     font-size: 20px;
-
+    
 }
-
-#otpnumbers p {
+#otpnumbers p{
     color: gray;
     position: absolute;
     top: 90px;
     left: 15px;
 }
-
-#resendotp {
+#resendotp{
     font-weight: bold;
     color: #FF4704;
 
 }
-
-.otp:active {
+.otp:active{
     border: 1px solid blue;
 }
-
-#resentotplink {
+#resentotplink{
     text-decoration: none;
     color: #FF4704;
 

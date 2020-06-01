@@ -1,13 +1,11 @@
-html {
+html{
     background-color: #f5f5f5;
     overflow: hidden;
 }
-
-body {
+body{
     font-family: sans-serif;
 }
-
-#header {
+#header{
     height: 50px;
     width: 1700px;
     background-color: white;
@@ -16,24 +14,21 @@ body {
     left: -10px;
     box-shadow: 1px 1px 12px 1px grey;
 }
-
-#buttons {
+#buttons{
     position: absolute;
     left: 1235.1px;
     top: -40px;
 }
 
-#caste {
+#caste{
     margin-right: 13px;
     font-weight: bold;
 }
-
-#buttons ul li {
+#buttons ul li{
     display: inline;
     border-right: 1px solid grey;
 }
-
-#button1 {
+#button1{
     width: 45px;
     height: 44px;
     position: relative;
@@ -43,14 +38,12 @@ body {
     left: -9px;
     top: 23px;
     margin-right: 2px;
-
+    
 }
-
-#button1:hover {
+#button1:hover{
     cursor: pointer;
 }
-
-#button2 {
+#button2{
     width: 45px;
     height: 40px;
     position: relative;
@@ -60,14 +53,12 @@ body {
     border: 1px;
     margin: none;
     padding-left: 0px;
-
+    
 }
-
-#button2:hover {
+#button2:hover{
     cursor: pointer;
 }
-
-#button3 {
+#button3{
     width: 45px;
     height: 43px;
     position: relative;
@@ -76,55 +67,47 @@ body {
     border: 1px;
     margin: none;
     padding-left: 0px;
-
+    
 }
-
-#button3:hover {
+#button3:hover{
     cursor: pointer;
 }
-
-#gear {
+#gear{
     width: 55px;
     height: 55px;
 }
-
-#bell {
+#bell{
     width: 50px;
     height: 45px;
-    margin-right:
+    
 }
-
-#logout {
+#logout{
     width: 45px;
-    height: 45px;
+    height:45px;
 
 }
-
-#bellnot {
+#bellnot{
     position: absolute;
     left: 225px;
     top: 44px;
     z-index: 2;
-
+    
 }
-
-#namenot {
+#namenot{
     position: absolute;
     top: 45px;
     left: 115px;
     z-index: 2;
-
+    
 }
-
-#list2 {
+#list2{
     margin-left: 5px
 }
-
-#list3 {
+#list3{
     margin-right: 5px
 }
 
-#left {
+#left{
     position: relative;
     width: 300px;
     height: 1000px;
@@ -132,135 +115,119 @@ body {
     z-index: 2;
     top: -60px;
     left: -8px;
-
+    
 }
-
-#brandname {
+#brandname{
     width: 160px;
     height: 36px;
     position: absolute;
     left: 60px;
     top: 80px
+    
 }
-
-#listdiv {
+#listdiv{
     position: absolute;
     top: 150px;
     left: -54px
 }
-
-#listdiv ul {
+#listdiv ul{
     list-style: none;
 }
-
-#listdiv ul li {
+#listdiv ul li{
     margin-bottom: 15px;
     width: 305px;
     height: 25px;
     padding: 5px;
-
+   
 }
-
-#listdiv ul li:last-child {
-    position: relative;
+#listdiv ul li:last-child{
+   position: relative;
     top: -10px
 }
-
-#listdiv ul li a {
+#listdiv ul li a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-family: sans-serif;
     font-size: 15px;
     display: block;
-
+     
 }
-
-#listdiv ul li:hover {
-    background: linear-gradient(to left, #FF0A71, #FFB906);
+#listdiv ul li:hover{
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
 }
-
-#dashboard {
+#dashboard{
     position: relative;
     top: 3px;
     right: 8px;
     margin-left: 90px;
 }
-
-#bag {
+#bag{
     position: relative;
     right: 9px;
-    margin-left: 90px;
+        margin-left: 90px;
 
 }
-
-#gift {
+#gift{
     position: relative;
     right: 9px;
-    margin-left: 90px;
+        margin-left: 90px;
 
 }
-
-#notes {
+#notes{
     position: relative;
     left: -2px;
     margin-left: 80px;
     top: 4px
-}
 
-#line {
+}
+#line{
     position: absolute;
     top: 500px;
     width: 298px;
 }
-
-#codeplug {
+#codeplug{
     text-align: center;
     margin-top: 10px;
     position: absolute;
     right: 3px
 }
-
-#notestutorial {
+#notestutorial{
     position: relative;
     top: -15px
 }
-
-#listdiv2 {
+#listdiv2{
     position: absolute;
     top: 550px;
     left: -70px
+    
 }
-
-#listdiv2 ul {
+#listdiv2 ul{
     list-style: none;
 }
-
-#listdiv2 ul li {
+#listdiv2 ul li{
     margin-bottom: 15px;
     width: 319px;
     height: 25px;
     padding: 5px;
     text-align: center;
-
-
+    
+   
 }
 
-#listdiv2 ul li a {
+#listdiv2 ul li a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-family: sans-serif;
     font-size: 15px;
     display: block;
-
+     
 }
-
-#listdiv2 ul li:hover {
-    background: linear-gradient(to left, #FF0A71, #FFB906);
+#listdiv2 ul li:hover{
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
 }
-
-#container {
+#container{
     position: relative;
     width: 1235px;
     height: 690px;
@@ -268,11 +235,11 @@ body {
     bottom: 1000px;
 }
 
-#notactive {
+#notactive{
     width: 75px;
     height: 23px;
     position: absolute;
-    background: linear-gradient(to left, #FF0A71, #FFB906);
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
     left: 1050px;
     top: 30px;
     padding-left: 8px;
@@ -280,70 +247,84 @@ body {
     color: white;
     font-size: 13px;
     font-weight: bold;
-    box-shadow: 0px 4px 6px grey;
+    box-shadow: 0px 4px 6px  grey;
 }
-
-.row2 {
-    padding: 0px;
-    margin-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
+.row2{
+  padding: 0px;
+  margin-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
 .column2 {
-    float: left;
-    padding: 0px;
-    position: relative;
-    left: 30px;
+  float: left;
+  padding: 0px;
+  position: relative;
+  left: 30px;
 }
 
 .left2 {
-    width: 33.33%;
+  width: 33.33%;
 }
 
-.mid2 {
-    width: 33.33%;
+.mid2{
+  width: 33.33%;
 }
 
 .right2 {
-    width: 33.33%%;
+  width: 33.33%;
 }
 
 /* Clear floats after the columns */
 .row2:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.button51 {
+  background-color: #FFFFFF;
+  border: none;
+  color: #7A7A7A;
+  height: 40px;
+  width: 307px;
+  box-shadow: 1px 1px 20px 4px #acacbd;
+  text-align: left;
+  text-decoration: none;
+  outline: none;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-left: -10px;
+  
 }
 
 
 .button5 {
-    background-color: #FFFFFF;
-    border: none;
-    color: #7A7A7A;
-    height: 40px;
-    width: 307px;
-    box-shadow: 1px 1px 20px 4px #acacbd;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    font-size: 20px;
-    margin-top: 0px;
-    margin-left: -10px;
-    cursor: pointer;
+  background-color: #FFFFFF;
+  border: none;
+  color: #7A7A7A;
+  height: 40px;
+  width: 307px;
+  box-shadow: 1px 1px 20px 4px #acacbd;
+  text-align: left;
+  text-decoration: none;
+  outline: none;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-left: -10px;
+  cursor: pointer; 
 }
-
 .button5:focus {
-    background-image: linear-gradient(-90deg, #FF0D6F, #FFB20A);
-    box-shadow: 1px 1px 20px 4px #acacbd;
-    color: white;
+  background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A);
+  box-shadow: 1px 1px 20px 4px #acacbd;
+  color: white;
 }
-
-.container1 {
+.container1{ 
     height: 400px;
     border-radius: 4px;
     width: 830px;
@@ -355,9 +336,9 @@ body {
     margin-top: 60px;
     text-align: left;
     left: 20px
-}
 
-.container2 {
+}
+.container2{ 
     height: 450px;
     width: 954px;
     background-color: none;
@@ -369,113 +350,349 @@ body {
     text-align: left;
 
 }
-
-.textbox1 {
-    background-color: #F9F9F9;
-    height: 35px;
-    width: 500px;
-    border: none;
-    margin-bottom: 15px;
-    margin-left: 20px;
+.textbox1{
+  background-color: #F9F9F9; 
+  height:35px; 
+  width: 500px;
+  border: none;
+  margin-bottom: 15px;
+  margin-left: 20px;
 }
 
 
-.textbox2 {
-    background-color: #F9F9F9;
-    height: 35px;
-    width: 200px;
-    margin-bottom: 15px;
-    border: none;
-    margin-left: 20px;
+.textbox2{
+  background-color: #F9F9F9; 
+  height:35px; 
+  width: 200px;
+  margin-bottom: 15px;
+  border: none;
+  margin-left: 20px;
 }
 
-.save {
-    font-family: Segoe UI, sans-serif;
-    margin-left: 720px;
-    margin-top: 20px;
-    background-color: #1A95FF;
-    font-weight: 600;
-    height: 30;
-    width: 73;
-    cursor: pointer;
-    color: white;
-    border: none;
+.save{
+  font-family: Segoe UI, sans-serif; 
+  margin-left: 720px;
+  margin-top: 20px; 
+  background-color: #1A95FF;  
+  font-weight: 600; 
+  height: 30; 
+  width: 73; 
+  cursor: pointer; 
+  color: white;
+  border: none;
 }
-
-#containsform {
+#containsform{
     position: absolute;
     top: 55px;
     left: 30px
 }
-
-#shift {
+#shift{
     position: relative;
     bottom: 0px
 }
-
-#morning {
+#morning{
     position: relative;
     width: 100px;
     background-color: #989898;
     color: white;
     font-size: 18px
+    
 }
-
-#morning:hover {
+#morning:hover{
     cursor: pointer;
 }
-
-#evening {
+#evening{
     position: relative;
     width: 100px;
     right: 24.2px;
     color: #989898;
     font-size: 18px;
-
-
+    
+    
 }
-
-#evening:hover {
+#evening:hover{
     cursor: pointer;
 }
-
-#enroll {
+#enroll{
     padding-left: 10px
 }
-
-#donthave {
+#donthave{
     position: relative;
     top: 2px;
     height: 36px;
     right: 23.9px;
-    color: #989898;
+    color:#989898;
     font-size: 18px;
     border: 1px solid
-}
 
-#donthave:hover {
+}
+#donthave:hover{
     cursor: pointer;
 }
-
-#home {
-    position: relative;
+#home{
+     position: relative;
     width: 100px;
     color: #989898;
     font-size: 18px
+    
 }
-
-#pg {
-    position: relative;
+#pg{
+     position: relative;
     width: 100px;
     color: #989898;
     font-size: 18px;
     right: 24.3px
 }
-
-#hostel {
-    position: relative;
+#hostel{
+     position: relative;
     width: 100px;
     color: #989898;
     font-size: 18px;
-    right: 48.8px
+    right: 48.8px;
+}
+
+::placeholder {
+  color: #4F4F4F;
+  font-family: sans-serif;
+  font-size: 18;
+  font-weight: 400px;
+  
+}
+
+.row21{
+  padding: 0px;
+  margin-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column21 {
+  float: left;
+  padding: 0px;
+  position: relative;
+  left: 30px;
+}
+
+.left21 {
+  width: 70%;
+
+}
+
+.right21{
+  width: 30%;
+}
+
+.draft{
+  padding: 2px 4px;
+  text-align: center; 
+  font-size: 18px; 
+  width: 50px; 
+  margin-top: 0px; 
+  margin-left: -10px; 
+  background-color: white; 
+  opacity: 49%;
+  color: grey;
+  border-radius: 3px;
+}
+
+.saved{
+  padding: 3px 5px;
+  text-align: center; 
+  font-size: 16px; 
+  width: 50px; 
+  margin-top: 0px; 
+  margin-left: -10px; 
+  background: linear-gradient(to left ,#FF0A71,#FFB906);
+  opacity: none;
+  color: white;
+  border-radius: 3px; 
+}
+
+.selected{
+    position: relative;
+    left: 194px;
+    top: -25px;
+    background: #F9F9F9;
+    color: gray;
+    width: 484px;
+    height: 15px;
+    white-space: nowrap;
+
+}
+
+.selectbox{
+    position: absolute;
+    left: -55px;
+    top: 450px;
+    display: flex;
+    width: 400px;
+}
+.selectbox .options-container{
+    background-color: #f5f5f5;
+    color: darkolivegreen;
+    max-height: 0;
+    width: 506px;
+    opacity: 0;
+    transition: all 0.4s;
+    overflow: hidden;
+    position: absolute;
+    left: 319px;
+    top: -490px;
+    text-align: center;
+    
+}
+
+.selectbox .options, .selected{
+    padding: 10px;
+    cursor: pointer;
+}
+.selectbox .options:hover{
+    background-color: #a6aeb3;
+}
+.selectbox label{
+    cursor: pointer;
+}
+.selectbox .options .radio{
+    display: none;
+}
+.selectbox .options-container.active{
+    max-height: 80px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+#lis1{
+    position: absolute;
+    list-style: none;
+    display: inline;
+}
+#downarrow{
+    position: absolute;
+    left: 480px;
+    top: 16px;
+    width: 13px
+}
+
+#uparrow{
+    position: absolute;
+    left: 480px;
+    top: 6px;
+    width: 13px;
+}
+
+#span1{
+    margin-right: 10px
+}
+
+#span1 img{
+    position: relative;
+    top: 2px;
+}
+#country{
+   position: absolute;
+   left: 0px;
+   top: -17px;
+   width: 120px;
+   font-size: 16px;
+   color: grey;
+    
+    
+}
+#country:hover{
+    cursor:pointer;
+}
+
+.selected1{
+    position: relative;
+    left: 194px;
+    top: -27px;
+    background: #f5f5f5;
+    color: gray;
+    width: 484px;
+    height: 15px;
+    white-space: nowrap;
+
+
+}
+
+.selectbox1{
+    position: absolute;
+    left: -55px;
+    top: 450px;
+    display: flex;
+    width: 400px;
+}
+.selectbox1 .options-container1{
+    background-color: #f5f5f5;
+    color: darkolivegreen;
+    max-height: 0;
+    width: 506px;
+    opacity: 0;
+    transition: all 0.4s;
+    overflow: hidden;
+    position: absolute;
+    left: 319px;
+    top: -310px;
+    text-align: center;
+    
+}
+.selectbox1 .options1, .selected1{
+    padding: 10px;
+    cursor: pointer;
+}
+.selectbox1 .options1:hover{
+    background-color: #a6aeb3;
+}
+.selectbox1 label{
+    cursor: pointer;
+}
+.selectbox1 .options1 .radio1{
+    display: none;
+}
+.selectbox1 .options-container1.active{
+    max-height: 80px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+#lis2{
+    position: absolute;
+    list-style: none;
+    display: inline;
+}
+#downarrow1{
+    position: absolute;
+    left: 481px;
+    top: 16px;
+    width: 13px
+}
+
+#uparrow1{
+    position: absolute;
+    left: 480px;
+    top: 6px;
+    width: 13.6px;
+}
+
+#span1{
+    margin-right: 10px
+}
+
+#span1 img{
+    position: relative;
+    top: 2px;
+}
+#country1{
+   position: absolute;
+   left: -3px;
+   top: -17px;
+   width: 120px;
+   font-size: 16px;
+   color: grey;
+    
+    
+}
+#country1:hover{
+    cursor:pointer;
 }

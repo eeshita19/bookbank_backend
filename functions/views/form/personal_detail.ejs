@@ -1,185 +1,300 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <title>Dashboard</title>
-    <meta name="viewport" content="width=device-width, user-scalable=yes">
-    <link rel="stylesheet" type="text/css" href="/css/personaldetails_styling.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <style>
-        #status:hover {
-            cursor: pointer;
-        }
+<meta charset="utf-8">
+<title>Dashboard</title>
+<meta name="viewport" content="width=device-width, user-scalable=yes">
+<link rel="stylesheet" type="text/css" href="/css/personaldetails_styling.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+    #status:hover{
+        cursor: pointer;
+    } 
+    #change:hover{
+        cursor: pointer;
+    }
+     #statusmobile:hover{
+        cursor: pointer;
+    } 
+    #changemobile:hover{
+        cursor: pointer;
+    }    
+</style>
 
-        #change:hover {
-            cursor: pointer;
-        }
-
-        #statusmobile:hover {
-            cursor: pointer;
-        }
-
-        #changemobile:hover {
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
     <div id="header">
-        <div id="buttons">
-            <ul id="iconlist">
-                <li id="name">Tarun <span id="caste">DIXIT</span><span id="namenot"><img
-                            src="/images/Ellipse%2045.png"></span></li>
-                <li id="list2"><button id="button1"><img src="/images/icons8-gear-100.png" id="gear"></button></li>
-                <li id="list3"><button id="button2"><img src="/images/icons8-notification-100.png"
-                            id="bell"></button><span id="bellnot"><img src="/images/Ellipse%2045.png"></span></li>
-                <li id="list4"><button id="button3"><img src="/images/icons8-logout-rounded-down-100.png"
-                            id="logout"></button></li>
-
-            </ul>
-
-        </div>
-
+    <div id="buttons">
+     <ul id="iconlist">
+     <li id="name">Tarun <span id="caste">DIXIT</span><span id="namenot"><img src="/images/Ellipse%2045.png"></span></li>
+     <li id="list2"><button id="button1"><img src="/images/icons8-gear-100.png" id="gear"></button></li> 
+     <li id="list3"><button id="button2"><img src="/images/icons8-notification-100.png" id="bell"></button><span id="bellnot"><img src="/images/Ellipse%2045.png"></span></li> 
+     <li id="list4"><button id="button3"><img src="/images/icons8-logout-rounded-down-100.png" id="logout"></button></li> 
+        
+     </ul>
+        
+    </div>
+        
 
     </div>
     <div id="left">
-        <img id="brandname" src="/images/monktree%20white.png">
-        <div id="listdiv">
-            <ul>
-                <li><a href="dashboard.html"><img src="/images/Group%2032.png" id="dashboard">Dashboard</a></li>
-                <li><a href="yourbag.html"><img src="/images/Group%2074.png" id="bag">Your Bag</a></li>
-                <li><a href="#"><img src="/images/Group%2062.png" id="gift">Free gifts</a></li>
-                <li id="notestutorial"><a href="#"><img src="/images/Group%2063.png" id="notes">Notes&Tutorials</a>
-                </li>
-                <li id="codeplug"><a href="#">Codeplug IDE</a></li>
-            </ul>
-
-        </div>
-        <hr id="line">
-        <div id="listdiv2">
-            <ul>
-                <li><a href="#">Discussion</a></li>
-                <li id="contact"><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </div>
-    </div>
+    <img id="brandname" src="/images/monktree%20white.png">
+     <div id="listdiv">
+     <ul>
+     <li style="background: linear-gradient(to left ,#FF0A71,#FFB906);"><a href="dashboard.html"><img src="/images/Group%2032.png" id="dashboard">Dashboard</a></li>
+     <li><a href="yourbag.html"><img src="/images/Group%2074.png" id="bag">Your Bag</a></li>
+     <li><a href="#"><img src="/images/Group%2062.png" id="gift">Free gifts</a></li>
+     <li id="notestutorial"><a href="#"><img src="/images/Group%2063.png" id="notes">Notes&Tutorials</a></li>
+     <li id="codeplug"><a href="#">Codeplug IDE</a></li>   
+     </ul>   
+        
+     </div>
+   <hr id="line">
+     <div id="listdiv2">
+     <ul>
+     <li><a href="#">Discussion</a></li>
+     <li id="contact"><a href="#">Contact</a></li>
+     <li><a href="#">About</a></li>
+    </ul>   
+ </div>
+</div>
     <div id="container">
-        <div id="notactive">Not Active</div>
-        <div id="containsform">
-            <div class="row2">
-                <div class="column2 left2">
-                    <a href="personaldetails.html"><button class="button5">Personal Details</button></a>
-                </div>
-                <div class="column2 mid2">
-                    <a href="academics.html"><button class="button5" style="margin-left: 0px;">Academic
-                            Details</button></a>
-                </div>
-                <div class="column2 right2">
-                    <a href="submission.html"><button class="button5" style="margin-left: 8px;">Submission</button></a>
-                </div>
-                <div class="container1">
-                    <form method="post" action="/Academics.html">
-                        <label id="">Student's name</label>
-                        <input type="" name="" class="textbox1" placeholder=" First name" style="margin-left: 30px;"
-                            required>&nbsp&nbsp
-                        <input type="" name="" class="textbox1" placeholder=" Middle name">&nbsp&nbsp
-                        <input type="" name="" class="textbox1" placeholder=" Last name" required>
-                        <br><br>
+    <div id="notactive">Not Active</div>
+    <div id="containsform">
+     <div class="row2">
+			<div class="column2 left2">
+                    <button class="button5" style="background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A); color: white;">
+                    <div class="column21 left21">Personal Details</div>
+                    <div class="column21 right21"><div class="draft">Draft</div>
+                    </div>
+                    </button>
+			</div>
+			<div class="column2 mid2">
+				<button class="button51" style="margin-left: 0px;">
+                    <div class="column21 left21">Academic Details</div>
+                    <div class="column21 right21"><div class="draft"></div>
+                    </div></button>
+			</div>
+			<div class="column2 right2">
+				<button class="button51" style="margin-left: 8px;">
+                    <div class="column21 left21">Submission</div>
+                    <div class="column21 right21"><div class="draft"></div>
+                    </div>
+                </button>
+			</div>
+			<div class="container1">
+			<form method="post" action="/Academics.html">
+				<label id="">Student's name</label>
+				<input type="" name="" class="textbox1" placeholder="  First Name" style="margin-left: 31px;" required>&nbsp&nbsp
+				<input type="" name="" class="textbox1" placeholder="  Middle Name">&nbsp&nbsp
+				<input type="" name="" class="textbox1" placeholder="  Last Name" required>
+				<br><br>
 
-                        <label id="">Father's name</label>
-                        <input type="" name="" class="textbox1" placeholder=" First name" style="margin-left: 40px;"
-                            required>&nbsp&nbsp
-                        <input type="" name="" class="textbox1" placeholder=" Last name" required>
-                        <br><br>
+				<label id="">Father's name</label>
+				<input type="" name="" class="textbox1" placeholder="  First Name" style="margin-left: 40px;" required>&nbsp&nbsp
+				<input type="" name="" class="textbox1" placeholder="  Last Name" required>
+				<br><br>
 
-                        <label id="">Date of Birth</label>
-                        <input type="date" name="" class="textbox1" placeholder=" DD/MM/YYYY"
-                            style="margin-left: 51px;">&nbsp&nbsp
+				<label id="">Date of Birth</label>
+				<input type="date"  name="" class="textbox1" value="  DD/MM/YYYY" style="margin-left: 52px;">&nbsp&nbsp
+				
+				<br><br>
 
-                        <br><br>
+				<label id="">Email</label>
+				<input id="email" type="email" name="" class="textbox1" disabled style="margin-left: 101px; padding-left: 5px;" value="reply@student.in">&nbsp&nbsp
+				<div id="status" style="width: 80px;height: 15px;background-color:#6ff55b;position: absolute;left: 450px; bottom: 249px;border-radius: 0px;color: white;padding: 10px;font-weight: bold">VERIFIED</div>
+                <input type="button" value="Change" id="change" style="width: 80px;height: 36px;background-color:#f5f5f5;position: absolute;left: 555px; bottom: 249px;border-radius: 0px;color: grey;padding: 10px;font-weight: bold;border: 1px;font-size: 15px">
+                
+				<br><br>
 
-                        <label id="">Email</label>
-                        <input id="email" type="email" name="" class="textbox1" disabled
-                            style="margin-left: 103px; padding-left: 5px;" value="reply@student.in">&nbsp&nbsp
-                        <div id="status"
-                            style="width: 80px;height: 15px;background-color:#6ff55b;position: absolute;left: 450px; bottom: 249px;border-radius: 0px;color: white;padding: 10px;font-weight: bold">
-                            VERIFIED</div>
-                        <input type="button" value="Change" id="change"
-                            style="width: 80px;height: 36px;background-color:#f5f5f5;position: absolute;left: 555px; bottom: 249px;border-radius: 0px;color: grey;padding: 10px;font-weight: bold;border: 1px;font-size: 15px">
+				<label id="">Mobile</label>
+				<input id="mobile" value="9886338488" type="phone" name=""class="textbox1" disabled style="margin-left: 94px;padding: 0px">&nbsp&nbsp
+				<div id="statusmobile" style="width: 80px;height: 15px;background-color:#6ff55b;position: absolute;left: 450px; bottom: 192px;border-radius: 0px;color: white;padding: 10px;font-weight: bold">VERIFIED</div>
+                <input type="button" value="Change" id="changemobile" style="width: 80px;height: 36px;background-color:#f5f5f5;position: absolute;left: 555px; bottom: 192px;border-radius: 0px;color: grey;padding: 10px;font-weight: bold;border: 1px;font-size: 15px">
+				<br><br>
+				<label id="">Resident</label>
+				               <div class="selected">
+<img src="/images/Polygon%203.png" id="downarrow">
+<img src="/images/Polygon%204.png" id="uparrow">
+<ul id="lis">   
+<li id="country">State</li>    
+    
+    
 
-                        <br><br>
+</ul>  
+</div>
+				<div class="selectbox">
+<div class="options-container">
+<div class="options">
+<label for="india">Delhi</label>
+<input type="radio" class="radio" id="india" name="country"> 
 
-                        <label id="">Mobile</label>
-                        <input id="mobile" value="9886338488" type="phone" name="" class="textbox1" disabled
-                            style="margin-left: 94px;padding: 6px">&nbsp&nbsp
-                        <div id="statusmobile"
-                            style="width: 80px;height: 15px;background-color:#6ff55b;position: absolute;left: 450px; bottom: 192px;border-radius: 0px;color: white;padding: 10px;font-weight: bold">
-                            VERIFIED</div>
-                        <input type="button" value="Change" id="changemobile"
-                            style="width: 80px;height: 36px;background-color:#f5f5f5;position: absolute;left: 555px; bottom: 192px;border-radius: 0px;color: grey;padding: 10px;font-weight: bold;border: 1px;font-size: 15px">
-                        <br><br>
-                        <label id="">Resident</label>
-                        <input type="" name="" class="textbox1" style="margin-left: 77px;">&nbsp&nbsp
-                        <input type="" name="" class="textbox1"><br><br>
-                        <a href="Academics.html">
-                            <input type="button" name="" value="Save" class="save">
-                        </a>
-                    </form>
+</div>
+<div class="options">
+<label for="Bangladesh">Uttar Pradesh</label>
+<input type="radio" class="radio" id="Bangladesh" name="country">
 
-                </div>
-            </div>
 
+</div>
+<div class="options">
+<label for="Bhutan">Telangana</label>
+<input type="radio" class="radio" id="Bhutan" name="Bhutan">  
+ </div>   
+<div class="options">
+<label for="UK">Punjab</label>
+<input type="radio" class="radio" id="UK" name="UK">  
+ </div>   
+<div class="options">
+<label for="England">Haryana</label>
+<input type="radio" class="radio" id="England" name="England">  
+</div>  
+
+</div>    
+    
+</div>
+          <div class="selected1">
+<img src="/images/Polygon%203.png" id="downarrow1">
+<img src="/images/Polygon%204.png" id="uparrow1">
+<ul id="lis2">   
+<li id="country1">City</li>    
+    
+    
+
+</ul>  
+</div>
+				<div class="selectbox1">
+<div class="options-container1">
+<div class="options1">
+<label for="india">New Delhi</label>
+<input type="radio" class="radio1" id="india" name="country"> 
+
+</div>
+<div class="options1">
+<label for="Bangladesh">Gorakhpur</label>
+<input type="radio" class="radio1" id="Bangladesh" name="country">
+
+
+</div>
+<div class="options1">
+<label for="Bhutan">Hyderabad</label>
+<input type="radio" class="radio1" id="Bhutan" name="Bhutan">  
+ </div>   
+<div class="options1">
+<label for="UK">Saharanpur</label>
+<input type="radio" class="radio1" id="UK" name="UK">  
+ </div>   
+<div class="options1">
+<label for="England">Ghaziabad</label>
+<input type="radio" class="radio1" id="England" name="England">  
+</div>  
+
+</div>    
+    
+</div> 
+                
+                
+                
+				<a href="Academics.html">
+					<input type="button" name="" value="Save" class="save">
+				</a>
+			</form>
+
+		</div>
         </div>
+			
+		</div>   
+        
+        
+        
+        
+        
+       
+</div> 
+ <script>
+$(function(){
+$("#change").click(function(){
+$("#status").css("background-color","#f1413b");
+$("#status").text("VERIFY");
+$("#email").removeAttr("disabled");
+$("#status").click(function(){
+$("#change").attr("disabled",true);
+$("#status").css("background-color", "#eea553");
+$("#status").text("VERIFING...");
+$("#email").attr("disabled",true);
 
 
 
+})
+})
+$("#changemobile").click(function(){
+$("#statusmobile").css("background-color","#f1413b");
+$("#statusmobile").text("VERIFY");
+$("#mobile").removeAttr("disabled");
+$("#statusmobile").click(function(){
+$("#changemobile").attr("disabled",true);
+$("#statusmobile").css("background-color", "#eea553");
+$("#statusmobile").text("VERIFING...");
+$("#mobile").attr("disabled",true);
 
 
 
-    </div>
-    <script>
-        $(function () {
-            $("#change").click(function () {
-                $("#status").css("background-color", "#f1413b");
-                $("#status").text("VERIFY");
-                $("#email").removeAttr("disabled");
-                $("#status").click(function () {
-                    $("#change").attr("disabled", true);
-                    $("#status").css("background-color", "#eea553");
-                    $("#status").text("VERIFING...");
-                    $("#email").attr("disabled", true);
+})
+})
 
+});
+    
+var selected = document.querySelector(".selected");
+var listitem = document.querySelector("#country");
+var optionscontainer = document.querySelector(".options-container");
+var optionslist = document.querySelectorAll(".options");
 
+selected.addEventListener("click", function(){
+optionscontainer.classList.toggle("active");    
+});
 
-                })
-            })
-            $("#changemobile").click(function () {
-                $("#statusmobile").css("background-color", "#f1413b");
-                $("#statusmobile").text("VERIFY");
-                $("#mobile").removeAttr("disabled");
-                $("#statusmobile").click(function () {
-                    $("#changemobile").attr("disabled", true);
-                    $("#statusmobile").css("background-color", "#eea553");
-                    $("#statusmobile").text("VERIFING...");
-                    $("#mobile").attr("disabled", true);
+optionslist.forEach(function(option){
+  option.addEventListener("click",function(){
+      listitem.innerHTML = option.querySelector("label").innerHTML;
+      optionscontainer.classList.remove("active");
+  });  
+});
+var selected1 = document.querySelector(".selected1");
+var listitem1 = document.querySelector("#country1");
+var optionscontainer1 = document.querySelector(".options-container1");
+var optionslist1 = document.querySelectorAll(".options1");
 
+selected1.addEventListener("click", function(){
+optionscontainer1.classList.toggle("active");    
+});
 
-
-                })
-            })
-
-        });
-    </script>
-
-
+optionslist1.forEach(function(option){
+  option.addEventListener("click",function(){
+      listitem1.innerHTML = option.querySelector("label").innerHTML;
+      optionscontainer1.classList.remove("active");
+  });  
+});
+    
+    
+</script>   
+   
+    
 
 
 
 </body>
 
 
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
 
 </html>
+      
