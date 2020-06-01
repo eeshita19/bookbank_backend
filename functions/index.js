@@ -3,7 +3,6 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 
-
 const app = express()
 const main = express()
 
@@ -13,12 +12,34 @@ main.use(bodyParser.json())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
-    res.render('main')
+main.set('view engine', 'ejs')
+
+main.get('/dashboard', (req, res) => {
+    res.render('dashboard')
 })
 
-app.get('/form', (req, res) => {
+// temp form
+main.get('/form', (req, res) => {
     res.render('form')
+})
+
+// real form
+// main.get('/form', (req, res) => {
+//     res.render('form/academic_details')
+// })
+
+// temp login
+main.get('/login', (req, res) => {
+    res.render('login')
+})
+
+// real login
+// main.get('/login', (req, res) => {
+//     res.render('login_signup/signin')
+// })
+
+main.get('/signup', (req, res) => {
+    res.render('login_signup/signup')
 })
 
 require('./routes')(app)
