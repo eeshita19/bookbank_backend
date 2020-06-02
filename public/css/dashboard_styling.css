@@ -5,228 +5,12 @@ html{
 body{
     font-family: sans-serif;
 }
-#header{
-    height: 50px;
-    width: 1700px;
-    background-color: white;
-    position: relative;
-    top: -10px;
-    left: -10px;
-    box-shadow: 1px 1px 12px 1px grey;
-}
-#buttons{
-    position: absolute;
-    left: 1235.1px;
-    top: -40px;
-}
 
-#caste{
-    margin-right: 13px;
-    font-weight: bold;
-}
-#buttons ul li{
-    display: inline;
-    border-right: 1px solid grey;
-}
-#button1{
-    width: 45px;
-    height: 44px;
-    position: relative;
-    background-color: white;
-    border: 1px;
-    padding-left: 0px;
-    left: -9px;
-    top: 23px;
-    margin-right: 2px;
-    
-}
-#button1:hover{
-    cursor: pointer;
-}
-#button2{
-    width: 45px;
-    height: 40px;
-    position: relative;
-    top: 19px;
-    left: -4px;
-    background-color: white;
-    border: 1px;
-    margin: none;
-    padding-left: 0px;
-    
-}
-#button2:hover{
-    cursor: pointer;
-}
-#button3{
-    width: 45px;
-    height: 43px;
-    position: relative;
-    top: 17px;
-    background-color: white;
-    border: 1px;
-    margin: none;
-    padding-left: 0px;
-    
-}
-#button3:hover{
-    cursor: pointer;
-}
-#gear{
-    width: 55px;
-    height: 55px;
-}
-#bell{
-    width: 50px;
-    height: 45px;
-    
-}
-#logout{
-    width: 45px;
-    height:45px;
-
-}
-#bellnot{
-    position: absolute;
-    left: 225px;
-    top: 44px;
-    z-index: 2;
-    
-}
-#namenot{
-    position: absolute;
-    top: 45px;
-    left: 115px;
-    z-index: 2;
-    
-}
-#list2{
-    margin-left: 5px
-}
-#list3{
-    margin-right: 5px
-}
-
-#left{
-    position: relative;
-    width: 300px;
-    height: 1000px;
-    background-color: #324370;
-    z-index: 2;
-    top: -60px;
-    left: -8px;
-    
-}
-#brandname{
-    width: 160px;
-    height: 36px;
-    position: absolute;
-    left: 60px;
-    top: 80px
-    
-}
-#listdiv{
-    position: absolute;
-    top: 150px;
-    left: -54px
-}
-#listdiv ul{
-    list-style: none;
-}
-#listdiv ul li{
-    margin-bottom: 15px;
-    width: 305px;
-    height: 25px;
-    padding: 5px;
-   
-}
-#listdiv ul li:last-child{
-   position: relative;
-    top: -10px
-}
-#listdiv ul li a{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 15px;
-    display: block;
-     
-}
-#listdiv ul li:hover{
-    background: linear-gradient(to left ,#FF0A71,#FFB906);
-}
-#dashboard{
-    position: relative;
-    top: 3px;
-    right: 8px;
-    margin-left: 90px;
-}
-#bag{
-    position: relative;
-    right: 9px;
-        margin-left: 90px;
-
-}
-#gift{
-    position: relative;
-    right: 9px;
-        margin-left: 90px;
-
-}
-#notes{
-    position: relative;
-    left: -2px;
-    margin-left: 80px;
-    top: 4px
-
-}
-#line{
-    position: absolute;
-    top: 500px;
-    width: 298px;
-}
-#codeplug{
-    text-align: center;
-    margin-top: 10px;
-    position: absolute;
-    right: 3px
-}
 #notestutorial{
     position: relative;
     top: -15px
 }
-#listdiv2{
-    position: absolute;
-    top: 550px;
-    left: -70px
-    
-}
-#listdiv2 ul{
-    list-style: none;
-}
-#listdiv2 ul li{
-    margin-bottom: 15px;
-    width: 319px;
-    height: 25px;
-    padding: 5px;
-    text-align: center;
-    
-   
-}
 
-#listdiv2 ul li a{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 15px;
-    display: block;
-     
-}
-#listdiv2 ul li:hover{
-    background: linear-gradient(to left ,#FF0A71,#FFB906);
-}
 #container{
     position: relative;
     width: 1235px;
@@ -261,7 +45,6 @@ body{
     box-shadow: 0px 4px 6px  grey;
 }
 
-
 .button3 {
   background-color: #FFFFFF;
   border: none;
@@ -271,7 +54,7 @@ body{
   width: 200px;
   padding: 2px 8px;
   box-shadow: 1px 1px 20px 4px #acacbd;
-  text-decoration: none;
+   text-decoration: none;
   outline: none;
   font-size: 20px;
   margin-top: 0px;
@@ -280,15 +63,30 @@ body{
 
 
 .button4 {
-  background-color: #2793F1;
+  background-color: #ffffff;
   border: none;
   color: white;
   height: 150px;
   border-radius: 4px;
-  width: 400px;
+  width: 470px;
   padding: 2px 8px;
   box-shadow: 1px 1px 20px 4px #acacbd;
   text-decoration: none;
+  outline: none;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.button41 {
+  background-color: #ffffff;
+  border: none;
+  color: white;
+  height: 150px;
+  border-radius: 4px;
+  width: 340px;
+  padding: 2px 8px;
+  box-shadow: 1px 1px 20px 4px #acacbd;
+   text-decoration: none;
   outline: none;
   font-size: 20px;
   margin-top: 0px;
@@ -298,8 +96,8 @@ body{
   background-color: #ffffff;
   border: none;
   color: grey;
-  height: 150px;
-  width: 960px;
+  height: 35px;
+  width: 850px;
   padding: 5px 14px;
   box-shadow: 1px 1px 20px 4px #acacbd;
   text-align: left;
@@ -311,8 +109,7 @@ body{
   margin-left: auto;
   margin-right: auto;
   position: relative;
-    right: 75px;
-    border-radius: 5px
+    right: 130px;
 }
 
 .save{
@@ -343,9 +140,17 @@ body{
 
 .mid1{
   width: 25%;
+  margin-left: -65px;
 }
 .right1 {
   width: 50%;
+}
+
+.mid21{
+  width: 30%;
+}
+.right21 {
+  width: 45%;
 }
 
 
@@ -396,27 +201,29 @@ body{
 #lock2{
     position: absolute;
     top: -90px;
-    right: 610px
+    right: 670px
 }
+
+
 #lock3{
     position: absolute;
     top: -90px;
-    right: 260px
+    right: 280px
 }
 
 #lock4{
     position: absolute;
-    top:250px;
-    left: 0px
+    top:140px;
+    left: -7px
 }
 #lock5{
     position: absolute;
-    top: 250px;
+    top: 140px;
     left: 307px
 }
 #lock6{
     position: absolute;
-    top: 250px;
+    top: 140px;
     right: 260px;
 }
 #lbutton{
@@ -465,7 +272,7 @@ left: -10px;
     position: absolute;
     width: 40px;
     height: 34px;
-    left: 530px;
+    left: 465px;
     background-color: white;
     border: 1px;
 }
@@ -534,7 +341,7 @@ left: -10px;
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 540px;
+    left: 610px;
     background-color: transparent;
     border: 1px; 
 }
@@ -577,35 +384,13 @@ left: -10px;
 
 
 #begin{
-    width: 150px;
-    height: 26px;
-    background:linear-gradient(to left ,#FF0A71,#FFB906);
+    width: 75px;
+    height: 25px;
+    background-color: #1A95FF;
     text-decoration: none;
     color: white;
     padding-left: 30px;
     padding-top: 5px;
     position: absolute;
-    left: 800px;
-    top: 50px;
-    border-radius: 9px;
-    text-align: center;
-    padding: 9px;
-    font-weight: bold;
-    font-size: 20px
-}
-#congratulations{
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 40px;
-    margin-top: 40px;
-}
-#completeprofile{
-   margin-left: 40px; 
-}
-#no{
-    position: absolute;
-    text-decoration: none;
-    color: grey;
-    top: 100px;
-    left: 827px
+    left: 890px
 }
