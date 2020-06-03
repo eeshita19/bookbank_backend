@@ -82,6 +82,7 @@ body{
     margin-top: 70px;
     font-weight: 700;
     font-size: 18px
+    
 }
 /*Designed the signup button*/
 #signup{
@@ -93,7 +94,8 @@ body{
     background-color: transparent;
     color: white;
     font-weight: 550;
-    font-size: 20px 
+    font-size: 20px
+    
 }
 /*hover ability of that signup button*/
 #signup:hover{

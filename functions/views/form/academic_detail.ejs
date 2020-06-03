@@ -2,49 +2,15 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Dashboard</title>
-    <meta name="viewport" content="width=device-width, user-scalable=yes">
-    <link rel="stylesheet" type="text/css" href="/css/academics_styling.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<meta name="viewport" content="width=device-width, user-scalable=yes">
+<link rel="stylesheet" type="text/css" href="/css/academics_styling.css">
 
-<body>
-    <div id="header">
-        <div id="buttons">
-            <ul id="iconlist">
-                <li id="name">Tarun <span id="caste">DIXIT</span><span id="namenot"><img
-                            src="/images/Ellipse%2045.png"></span></li>
-                <li id="list2"><button id="button1"><img src="/images/icons8-gear-100.png" id="gear"></button></li>
-                <li id="list3"><button id="button2"><img src="/images/icons8-notification-100.png"
-                            id="bell"></button><span id="bellnot"><img src="/images/Ellipse%2045.png"></span></li>
-                <li id="list4"><button id="button3"><img src="/images/icons8-logout-rounded-down-100.png"
-                            id="logout"></button></li>
-            </ul>
-        </div>
-    </div>
-    <div id="left">
-        <img id="brandname" src="/images/monktree%20white.png">
-        <div id="listdiv">
-            <ul>
-                <li style="background: linear-gradient(to left ,#FF0A71,#FFB906);"><a href="dashboard.html"><img
-                            src="/images/Group%2032.png" id="dashboard">Dashboard</a></li>
-                <li><a href="yourbag.html"><img src="/images/Group%2074.png" id="bag">Your Bag</a></li>
-                <li><a href="#"><img src="/images/Group%2062.png" id="gift">Free gifts</a></li>
-                <li id="notestutorial"><a href="#"><img src="/images/Group%2063.png" id="notes">Notes&Tutorials</a></li>
-                <li id="codeplug"><a href="#">Codeplug IDE</a></li>
-            </ul>
-        </div>
-        <hr id="line">
-        <div id="listdiv2">
-            <ul>
-                <li><a href="#">Discussion</a></li>
-                <li id="contact"><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Report</a></li>
-            </ul>
-        </div>
-    </div>
+
+<%- include ("../partials/header") %>
+
+ 
     <div id="container">
         <div id="notactive">Not Active</div>
         <div id="containsform">
@@ -270,19 +236,12 @@
 
 
 
-
-</body>
-
+<%- include ("../partials/footer") %>
 
 
 
-
-
-
-
-
-
-
-
-
-</html>
+    
+    
+    
+    
+    
