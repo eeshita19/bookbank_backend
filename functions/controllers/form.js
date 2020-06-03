@@ -1,13 +1,13 @@
-const firebase = require("firebase");
+const firebase = require("firebase-admin");
 const functions = require('firebase-functions')
 
-require("firebase/firestore");
+// require("firebase/firestore");
 
 firebase.initializeApp(functions.config.firebase)
 
 const db = firebase.firestore()
 // const auth = firebase.auth()
-const storageRef = firebase.storage().ref()
+// const storageRef = firebase.storage().ref()
 
 module.exports = {
     async saveAcademicDetails(req, res) {
