@@ -23,6 +23,22 @@ main.get('/form', (req, res) => {
     res.render('form')
 })
 
+main.get('/form/1', (req, res) => {
+    res.render('form/academic_detail')
+})
+
+main.get('/form/2', (req, res) => {
+    res.render('form/file_upload')
+})
+
+main.get('/form/3', (req, res) => {
+    res.render('form/personal_detail')
+})
+
+main.get('/response', (req, res) => {
+    res.render('submitresponse')
+})
+
 // real form
 // main.get('/form', (req, res) => {
 //     res.render('form/academic_details')

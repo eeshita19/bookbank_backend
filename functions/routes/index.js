@@ -1,10 +1,8 @@
-const usersCtrl = require('../controllers').users
+const formsCtrl = require('../controllers').forms
 
 module.exports = (app) => {
 
-    app.post('/form/add', usersCtrl.saveFormData)
-    app.get('/form/display', usersCtrl.getFormData)
-    app.put('/form/update', usersCtrl.updateUserFormData)
-    app.delete('/form/delete', usersCtrl.deleteUserRecord)
+    app.post('/form/acad', formsCtrl.saveAcademicDetails)
+    app.post('/form/details', formsCtrl.savePersonalDetail)
 
 }

@@ -1,6 +1,6 @@
-const users = require('./user')
+const forms = require('./form')
 
 module.exports = {
-    users,
+    forms,
     
 }
