@@ -17,17 +17,19 @@
         <h1 id="enterotp">Enter OTP Please</h1>
         <p id="detailstoverify">We've sent OTP to <span id="enteredno">+9198*****676</span> </p>
         <div id="otpnumbers">
-            <input type="tel" id="otp1" class="otp" maxlength="1" onkeyup="movecursor(this,'otp2')">
-            <input type="tel" id="otp2" class="otp" maxlength="1" onkeyup="movecursor(this,'otp3')">
-            <input type="tel" id="otp3" class="otp" maxlength="1" onkeyup="movecursor(this,'otp4')">
-            <input type="tel" id="otp4" class="otp" maxlength="1" onkeyup="movecursor(this,'otp5')">
-            <input type="tel" id="otp5" class="otp" maxlength="1" onkeyup="movecursor(this,'otp6')">
-            <input type="tel" id="otp6" class="otp" maxlength="1">
-            <p>Did'nt receive OTP?<span id="resendotp"><a href="#" id="resentotplink">Resend OTP</a></span></p>
+            <input type="number" id="otp1" class="otp" maxlength="1" onkeyup="movecursor(this,'otp2')">
+            <input type="number" id="otp2" class="otp" maxlength="1" onkeyup="movecursor(this,'otp3')">
+            <input type="number" id="otp3" class="otp" maxlength="1" onkeyup="movecursor(this,'otp4')">
+            <input type="number" id="otp4" class="otp" maxlength="1" onkeyup="movecursor(this,'otp5')">
+            <input type="number" id="otp5" class="otp" maxlength="1" onkeyup="movecursor(this,'otp6')">
+            <input type="number" id="otp6" class="otp" maxlength="1" >
+                <!--ON ENTER THE USER IS REDIRECTED TO DASHBOARD-->
+
+
+            <p>Did'nt receive OTP ?<span id="resendotp">
+                <a href="#" id="resentotplink">Resend OTP</a></span></p>
 
         </div>
-
-
 
         <div id="gradient">
             <img src="/images/monktree%20white.png" id="brandlogo">
@@ -35,12 +37,13 @@
             <img src="/images/Intersection%203.png" id="intersectionpath2">
             <h1>Just one more<br />step</h1>
             <p>Your data is safe with us <br /> see our privacy policy</p>
-            <a href="dashboard.html">
+            <a href="/dashboard">
                 <input type="button" value="SKIP FOR NOW" id="skip" name="skip">
             </a>
         </div>
     </div>
-    <script src="/js/enterotp.js"></script>
+
+<script src="/scripts/js/enterotp.js"></script>
 
 </body>
 

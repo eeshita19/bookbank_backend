@@ -18,19 +18,17 @@
 
 
 
-    <form method="post">
+    <form action="/register" method="post">
             <div id="wrap">
-                <input type="username" name="username" id="username" placeholder="Username" maxlength="100">
-                <input type="email" name="email" id="email" placeholder="Email" maxlength="100">
+                <input type="username" name="username" id="username" placeholder="Username" maxlength="100" required>
+                <input type="email" name="signup-email" id="email" placeholder="Email" maxlength="100" required>
                 <br />
-                <input type="password" name="password" id="password" placeholder="Password" maxlength="100">
+                <input type="password" name="signup-password" id="password" placeholder="Password" maxlength="100" required>
             </div>
        
         <div id="wrap2">
-            <!--<a href="verification.html">
-                <input type="button" value="SIGN UP" id="signup" name="signup">
-            </a>-->
-            <input type="button" value="SIGN UP" id="signup" name="signup">
+          
+            <button id="signup" name="signup">SIGN UP</button>
 
         </div>
     </form>
@@ -43,22 +41,14 @@
             <img src="/images/Intersection%203.png" id="intersectionpath2">
             <h1>Welcome Back!</h1>
             <p>Please login with your credentials</p>
-            <a href=" # ">
+            <a href="/login">
                 <input type="button" value="SIGN IN" id="signin" name="signin">
-
             </a>
-
-
         </div>
-
-
-
-
-
     </div>
 
 
-
+    <script src="/scripts/signup.js"></script>
 
 </body>
 

@@ -15,25 +15,27 @@
         <img src="/images/orange.png" id="brandlogo">
         <img src="/images/Intersection%202.png" id="intersectionpath">
         <h1 id="loginquote">Log in to Monktree</h1>
-        <form method="post">
+        <form action="/login" method="post">
             <div id="wrap">
-                <input type="email" name="email" id="email" placeholder="Email" maxlength="100">
+                <input type="email" name="login-email" id="email" placeholder="Email" maxlength="100" required>
                 <br />
-                <input type="password" name="password" id="password" placeholder="Password" maxlength="100">
+                <input type="password" name="login-password" id="password" placeholder="Password" maxlength="100" required>
             </div>
-        </form>
+        
         <div id="wrap2">
             <p id="forget">Forgot your password?<span id="reset"><a href="#">Reset</a></span></p>
-            <input type="button" value="SIGN IN" id="signin" name="signin">
+          
+            <button id="signin" name="signin">SIGN IN</button>
 
 
         </div>
+    </form>
 
         <div id="gradient">
             <img src="/images/Intersection%201.png" id="intersectionpolygon">
             <h1>Hello, Friend!</h1>
             <p>Enter your details and start <br /> journey with us</p>
-            <a href="signup.html">
+            <a href="/register">
                 <input type="button" value="SIGN UP" id="signup" name="signup">
 
             </a>
@@ -41,7 +43,7 @@
     </div>
 
 
-
+    <script src="/scripts/login.js"></script>  
 
 </body>
 
