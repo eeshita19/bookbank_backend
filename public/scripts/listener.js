@@ -1,4 +1,5 @@
 // listen for auth status changes
+
 function initApp() {
     auth.onAuthStateChanged(user => {
         if (user) {

@@ -8,7 +8,7 @@ body{
 
 #notestutorial{
     position: relative;
-    top: -15px
+    top: -15px;
 }
 
 #container{
@@ -24,7 +24,7 @@ body{
     font-weight: 100;
     position: absolute;
     left: 60px;
-    top: 60px
+    top: 60px;
 }
 #username{
     font-style: normal;
@@ -54,7 +54,8 @@ body{
   width: 200px;
   padding: 2px 8px;
   box-shadow: 1px 1px 20px 4px #acacbd;
-   text-decoration: none;
+
+  text-decoration: none;
   outline: none;
   font-size: 20px;
   margin-top: 0px;
@@ -71,6 +72,7 @@ body{
   width: 470px;
   padding: 2px 8px;
   box-shadow: 1px 1px 20px 4px #acacbd;
+  
   text-decoration: none;
   outline: none;
   font-size: 20px;
@@ -86,7 +88,8 @@ body{
   width: 340px;
   padding: 2px 8px;
   box-shadow: 1px 1px 20px 4px #acacbd;
-   text-decoration: none;
+
+  text-decoration: none;
   outline: none;
   font-size: 20px;
   margin-top: 0px;
@@ -186,40 +189,40 @@ body{
     position: absolute;
     left: 650px;
     border-radius: 3px;
-    top: 8px
+    top: 8px;
 }
 #completeprofile{
     position: relative;
-    bottom: 6px
+    bottom: 6px;
 }
 #lock1{
     position: absolute;
     top: -90px;
-    left: -10px
+    left: -10px;
     
 }
 #lock2{
     position: absolute;
     top: -90px;
-    right: 670px
+    right: 670px;
 }
 
 
 #lock3{
     position: absolute;
     top: -90px;
-    right: 280px
+    right: 280px;
 }
 
 #lock4{
     position: absolute;
     top:140px;
-    left: -7px
+    left: -7px;
 }
 #lock5{
     position: absolute;
     top: 140px;
-    left: 307px
+    left: 307px;
 }
 #lock6{
     position: absolute;
@@ -240,11 +243,11 @@ body{
 #wlellipse{
     position: relative;
     left: -10px;
-    top:-5px
+    top:-5px;
 }
 #larrow{
     position: relative;
-    top: -45px
+    top: -45px;
     
     
 }
@@ -262,11 +265,11 @@ body{
 #wrellipse{
 position: relative;
 left: -10px;
-    top:-5px
+    top:-5px;
 }
 #warrow{
     position: relative;
-    top: -45px
+    top: -45px;
 }
 #iconidea{
     position: absolute;
@@ -280,12 +283,12 @@ left: -10px;
    position: relative;
     left: -5px;
     top:-5px;
-    width: 40px
+    width: 40px;
 }
 #idea{
  position: relative;
     top: -48px;
-    left: -4px
+    left: -4px;
 }
 #iconidea:hover{
     cursor: pointer;
@@ -303,13 +306,13 @@ left: -10px;
      position: relative;
     left: -10px;
     top:-5px;
-    width: 40px
+    width: 40px;
     
 }
 #gifti{
      position: relative;
     top: -48px;
-    left: -9.2px
+    left: -9.2px;
 }
 #gifticon:hover{
     cursor: pointer;
@@ -327,12 +330,12 @@ left: -10px;
     position: relative;
     left: -9px;
     top:-5px;
-    width: 40px
+    width: 40px;
 }
 #shop{
       position: relative;
     top: -50px;
-    left: -8px
+    left: -8px;
 }
 #shopicon:hover{
     cursor: pointer;
@@ -349,12 +352,12 @@ left: -10px;
      position: relative;
     left: -9px;
     top:-5px;
-    width: 40px
+    width: 40px;
 }
 #chart{
        position: relative;
     top: -50px;
-    left: -8px
+    left: -8px;
 }
 #graphicon:hover{
     cursor: pointer;
@@ -371,12 +374,12 @@ left: -10px;
       position: relative;
     left: -9px;
     top:-5px;
-    width: 40px
+    width: 40px;
 }
 #code{
          position: relative;
     top: -47px;
-    left: -8px
+    left: -8px;
 }
 #dateicon:hover{
     cursor: pointer;
@@ -392,5 +395,5 @@ left: -10px;
     padding-left: 30px;
     padding-top: 5px;
     position: absolute;
-    left: 890px
+    left: 890px;
 }
