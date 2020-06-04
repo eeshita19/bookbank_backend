@@ -2,14 +2,14 @@
 <html>
 
 <head>
-<meta charset="utf-8">
-<title>Dashboard</title>
-<meta name="viewport" content="width=device-width, user-scalable=yes">
-<link rel="stylesheet" type="text/css" href="/css/submission_styling.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="/css/submission_styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<%- include ("../partials/header") %>
-    
+    <%- include ("../partials/header") %>
+
     <div id="container">
         <div id="notactive">Not Active</div>
     </div>
@@ -24,7 +24,7 @@
                 </button>
             </div>
             <div class="column2 mid2">
-            <button class="button51" style="margin-left: 0px;">
+                <button class="button51" style="margin-left: 0px;">
                     <div class="column21 left21">Academic Details</div>
                     <div class="column21 right21">
                         <div class="saved">Saved</div>
@@ -33,7 +33,8 @@
             </div>
             <div class="column2 right2">
                 &nbsp&nbsp
-                <button class="button5" style="margin-left: -7px; background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A); color: white;">
+                <button class="button5"
+                    style="margin-left: -7px; background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A); color: white;">
                     <div class="column21 left21">Submission</div>
                     <div class="column21 right21">
                         <div></div>
@@ -41,7 +42,7 @@
                 </button>
             </div>
             <div class="container1">
-                <form method="post" action="">
+                <form method="get" action="/response">
                     <label>Upload photo</label>
                     <input type="file" class="textbox1">
                     <br>
@@ -52,16 +53,14 @@
                     &nbsp&nbsp&nbsp
                     I understand and agree all <a href="" style="color: orange"> terms and conditions.</a>
                     <br>
-                    <a href="/response" id="submit">Submit</a>
+                    <!-- <a href="/response" id="submit">Submit</a> -->
+                    <button type="submit" id="submit"> Submit </button>
                 </form>
             </div>
-
         </div>
-
     </div>
 
-
-
+    <script src="/scripts/listener.js"></script>
     <script src="/scripts/fileupload.js"></script>
 
     <%- include ("../partials/footer") %>

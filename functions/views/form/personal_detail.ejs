@@ -2,28 +2,29 @@
 <html>
 
 <head>
-<meta charset="utf-8">
-<title>Dashboard</title>
-<meta name="viewport" content="width=device-width, user-scalable=yes">
-<link rel="stylesheet" type="text/css" href="/css/personaldetails_styling.css">
-<style>
-    #status:hover{
-        cursor: pointer;
-    } 
-    #change:hover{
-        cursor: pointer;
-    }
-     #statusmobile:hover{
-        cursor: pointer;
-    } 
-    #changemobile:hover{
-        cursor: pointer;
-    }    
-</style>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="/css/personaldetails_styling.css">
+    <style>
+        #status:hover {
+            cursor: pointer;
+        }
 
+        #change:hover {
+            cursor: pointer;
+        }
 
-<%- include ("../partials/header") %>
+        #statusmobile:hover {
+            cursor: pointer;
+        }
 
+        #changemobile:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <%- include ("../partials/header") %>
 
     <div id="container">
         <div id="notactive">Not Active</div>
@@ -55,7 +56,7 @@
                     </button>
                 </div>
                 <div class="container1">
-                    <form method="post" action="/Academics.html">
+                    <form method="post" action="/form/details">
                         <label id="">Student's name</label>
                         <input type="" name="" class="textbox1" placeholder="  First Name" style="margin-left: 31px;"
                             required>&nbsp&nbsp
@@ -128,18 +129,13 @@
                                     <label for="England">Haryana</label>
                                     <input type="radio" class="radio" id="England" name="England">
                                 </div>
-
                             </div>
-
                         </div>
                         <div class="selected1">
                             <img src="/images/Polygon%203.png" id="downarrow1">
                             <img src="/images/Polygon%204.png" id="uparrow1">
                             <ul id="lis2">
                                 <li id="country1">City</li>
-
-
-
                             </ul>
                         </div>
                         <div class="selectbox1">
@@ -147,13 +143,10 @@
                                 <div class="options1">
                                     <label for="india">New Delhi</label>
                                     <input type="radio" class="radio1" id="india" name="country">
-
                                 </div>
                                 <div class="options1">
                                     <label for="Bangladesh">Gorakhpur</label>
                                     <input type="radio" class="radio1" id="Bangladesh" name="country">
-
-
                                 </div>
                                 <div class="options1">
                                     <label for="Bhutan">Hyderabad</label>
@@ -167,98 +160,77 @@
                                     <label for="England">Ghaziabad</label>
                                     <input type="radio" class="radio1" id="England" name="England">
                                 </div>
-
                             </div>
-
                         </div>
-
-
-
-                        <a href="/form/academic">
+                        <!-- <a href="/form/academic">
                             <input type="button" name="" value="Save" class="save">
-                        </a>
+                        </a> -->
+                        <button type="submit" class="Save"> Submit </button>
+
                     </form>
                 </div>
             </div>
         </div>
-			
-		</div>   
-        
-        
-        
-        
-        
-       
-</div> 
- <script>
-$(function(){
-$("#change").click(function(){
-$("#status").css("background-color","#f1413b");
-$("#status").text("VERIFY");
-$("#email").removeAttr("disabled");
-$("#status").click(function(){
-$("#change").attr("disabled",true);
-$("#status").css("background-color", "#eea553");
-$("#status").text("VERIFING...");
-$("#email").attr("disabled",true);
 
+    </div>
+    </div>
+    <script>
+        $(function () {
+            $("#change").click(function () {
+                $("#status").css("background-color", "#f1413b");
+                $("#status").text("VERIFY");
+                $("#email").removeAttr("disabled");
+                $("#status").click(function () {
+                    $("#change").attr("disabled", true);
+                    $("#status").css("background-color", "#eea553");
+                    $("#status").text("VERIFING...");
+                    $("#email").attr("disabled", true);
+                })
+            })
+            $("#changemobile").click(function () {
+                $("#statusmobile").css("background-color", "#f1413b");
+                $("#statusmobile").text("VERIFY");
+                $("#mobile").removeAttr("disabled");
+                $("#statusmobile").click(function () {
+                    $("#changemobile").attr("disabled", true);
+                    $("#statusmobile").css("background-color", "#eea553");
+                    $("#statusmobile").text("VERIFING...");
+                    $("#mobile").attr("disabled", true);
+                })
+            })
+        });
 
+        var selected = document.querySelector(".selected");
+        var listitem = document.querySelector("#country");
+        var optionscontainer = document.querySelector(".options-container");
+        var optionslist = document.querySelectorAll(".options");
 
-})
-})
-$("#changemobile").click(function(){
-$("#statusmobile").css("background-color","#f1413b");
-$("#statusmobile").text("VERIFY");
-$("#mobile").removeAttr("disabled");
-$("#statusmobile").click(function(){
-$("#changemobile").attr("disabled",true);
-$("#statusmobile").css("background-color", "#eea553");
-$("#statusmobile").text("VERIFING...");
-$("#mobile").attr("disabled",true);
+        selected.addEventListener("click", function () {
+            optionscontainer.classList.toggle("active");
+        });
 
+        optionslist.forEach(function (option) {
+            option.addEventListener("click", function () {
+                listitem.innerHTML = option.querySelector("label").innerHTML;
+                optionscontainer.classList.remove("active");
+            });
+        });
+        var selected1 = document.querySelector(".selected1");
+        var listitem1 = document.querySelector("#country1");
+        var optionscontainer1 = document.querySelector(".options-container1");
+        var optionslist1 = document.querySelectorAll(".options1");
 
+        selected1.addEventListener("click", function () {
+            optionscontainer1.classList.toggle("active");
+        });
 
-})
-})
+        optionslist1.forEach(function (option) {
+            option.addEventListener("click", function () {
+                listitem1.innerHTML = option.querySelector("label").innerHTML;
+                optionscontainer1.classList.remove("active");
+            });
+        });
+    </script>
+    <script src="/scripts/listener.js"></script>
 
-});
-    
-var selected = document.querySelector(".selected");
-var listitem = document.querySelector("#country");
-var optionscontainer = document.querySelector(".options-container");
-var optionslist = document.querySelectorAll(".options");
-
-selected.addEventListener("click", function(){
-optionscontainer.classList.toggle("active");    
-});
-
-optionslist.forEach(function(option){
-  option.addEventListener("click",function(){
-      listitem.innerHTML = option.querySelector("label").innerHTML;
-      optionscontainer.classList.remove("active");
-  });  
-});
-var selected1 = document.querySelector(".selected1");
-var listitem1 = document.querySelector("#country1");
-var optionscontainer1 = document.querySelector(".options-container1");
-var optionslist1 = document.querySelectorAll(".options1");
-
-selected1.addEventListener("click", function(){
-optionscontainer1.classList.toggle("active");    
-});
-
-optionslist1.forEach(function(option){
-  option.addEventListener("click",function(){
-      listitem1.innerHTML = option.querySelector("label").innerHTML;
-      optionscontainer1.classList.remove("active");
-  });  
-});
-    
-    
-</script>   
-   
-    
-
-
-<%- include ("../partials/footer") %>
-      
+    <%- include ("../partials/footer") %>

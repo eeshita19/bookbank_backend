@@ -2,15 +2,14 @@
 <html>
 
 <head>
-<meta charset="utf-8">
-<title>Dashboard</title>
-<meta name="viewport" content="width=device-width, user-scalable=yes">
-<link rel="stylesheet" type="text/css" href="/css/academics_styling.css">
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="/css/academics_styling.css">
 
 
-<%- include ("../partials/header") %>
+    <%- include ("../partials/header") %>
 
- 
     <div id="container">
         <div id="notactive">Not Active</div>
         <div id="containsform">
@@ -42,7 +41,7 @@
                     </button>
                 </div>
                 <div class="container1">
-                    <form method="post" action="">
+                    <form method="post" action="/form/acad">
                         <label>University/Institition</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <div class="selected">
@@ -95,8 +94,6 @@
                                 <div class="options1">
                                     <label for="Bangladesh">Course</label>
                                     <input type="radio" class="radio1" id="Bangladesh" name="country">
-
-
                                 </div>
                                 <div class="options1">
                                     <label for="Bhutan">Course</label>
@@ -110,10 +107,9 @@
                                     <label for="England">Course</label>
                                     <input type="radio" class="radio1" id="England" name="England">
                                 </div>
-
                             </div>
-
-                        </div> <label>Course duration</label>
+                        </div>
+                        <label>Course duration</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <input type="date" name="" class="textbox2" style="margin-right: 20px; margin-left: px;"> To
                         <input type="date" name="" class="textbox2"><br>
@@ -124,32 +120,21 @@
                             type="button" name="" class="textbox2" id="home" value="Home">&nbsp<input type="button"
                             name="" class="textbox2" id="pg" value="PG">&nbsp<input type="button" name=""
                             class="textbox2" id="hostel" value="Hostel">
-
-
-
                         <br>
                         <label>UID/Enrollment number</label>&nbsp
                         <input type="text" name="" id="enroll" placeholder="Enter" class="textbox2">
                         <input type="button" name="" id="donthave" class="textbox2" value="I Don't have">
                         <br>
                         <br>
-                        <a href="/form/file">
+                        <!-- <a href="/form/file">
                             <input type="button" name="" value="Save" class="save">
-                        </a>
+                        </a> -->
+                        <button type="submit" class="save"> Submit </button>
                     </form>
                 </div>
-
             </div>
-
-
         </div>
-
-
-
-
-
     </div>
-
     <script>
         $(function () {
             $("#evening").click(function () {
@@ -157,16 +142,12 @@
                 $("#evening").css("color", "white");
                 $("#morning").css("background-color", "#F9F9F9")
                 $("#morning").css("color", "#989898")
-
-
             })
             $("#morning").click(function () {
                 $("#morning").css("background-color", "#989898");
                 $("#morning").css("color", "white");
                 $("#evening").css("background-color", "#F9F9F9")
                 $("#evening").css("color", "#989898")
-
-
             });
             $("#donthave").click(function () {
                 $("#donthave").css("background-color", "#989898")
@@ -179,7 +160,6 @@
                 $("#pg").css("color", "#989898")
                 $("#hostel").css("background-color", "#F9F9F9")
                 $("#hostel").css("color", "#989898")
-
             });
             $("#pg").click(function () {
                 $("#pg").css("background-color", "#989898");
@@ -233,15 +213,5 @@
             });
         });
     </script>
-
-
-
-<%- include ("../partials/footer") %>
-
-
-
-    
-    
-    
-    
-    
+    <script src="/scripts/listener.js"></script>
+    <%- include ("../partials/footer") %>

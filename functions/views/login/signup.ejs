@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=yes">
     <link rel="stylesheet" type="text/css" href="/css/signup_styling.css">
 </head>
-<img src="/images/Polygon%201.png" id="polygon">  
+<img src="/images/Polygon%201.png" id="polygon">
 <img src="/images/Path%201.png" id="path">
 
 <body>
@@ -18,22 +18,19 @@
 
 
 
-    <form action="/register" method="post">
+        <form action="/register" method="post" id="signup-form">
             <div id="wrap">
-                <input type="username" name="username" id="username" placeholder="Username" maxlength="100" required>
-                <input type="email" name="signup-email" id="email" placeholder="Email" maxlength="100" required>
+                <!-- <input type="username" name="username" id="username" placeholder="Username" maxlength="100" required> -->
+                <input type="email" name="signup-email" id="signup-email" placeholder="Email" maxlength="100" required>
                 <br />
-                <input type="password" name="signup-password" id="password" placeholder="Password" maxlength="100" required>
+                <input type="password" name="signup-password" id="signup-password" placeholder="Password" maxlength="100"
+                    required>
             </div>
-       
-        <div id="wrap2">
-          
-            <button id="signup" name="signup">SIGN UP</button>
 
-        </div>
-    </form>
-
-
+            <div id="wrap2">
+                <button id="signup" type="submit" name="signup">SIGN UP</button>
+            </div>
+        </form>
 
         <div id="gradient">
             <img src="/images/monktree%20white.png" id="brandlogo">
@@ -47,7 +44,7 @@
         </div>
     </div>
 
-
+    <script src="/scripts/config.js"></script>
     <script src="/scripts/signup.js"></script>
 
 </body>

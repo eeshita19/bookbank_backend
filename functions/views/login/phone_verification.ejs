@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Sign Up Page</title>
@@ -14,9 +15,9 @@
     <div id="container">
         <img src="/images/Intersection%201.png" id="intersectionpolygon">
         <h1 id="verificationprocess">Verification Process</h1>
-        <p id="detailstoverify">Enter your mobile number to verify detail        
+        <p id="detailstoverify">Enter your mobile number to verify detail
 
-            <div class="selected">             
+            <div class="selected">
                 <ul id="list1">
                     <li id="icon"><span id="span1"><img src="/images/NoPath%20-%20Copy%20(7).png"></span></li>
                     <li id="country">India</li>
@@ -25,18 +26,19 @@
             </div>
 
             <form action="/phone" method="post">
-            <div id="codeandnumber">
-                <ul id="list2">
-                    <li id="code"><span id="numcode">+91</span></li>
-                    <li id="phoneno">
-                        <input type="tel" name="phone" placeholder="Phone No." id="inputphoneno" pattern="[6-9]{1}-[0-9]{4}-[0-9]{5}">
-                    </li>
-                </ul>
-            </div>
+                <div id="codeandnumber">
+                    <ul id="list2">
+                        <li id="code"><span id="numcode">+91</span></li>
+                        <li id="phoneno">
+                            <input type="tel" name="phone" placeholder="Phone No." id="inputphoneno"
+                                pattern="[6-9]{1}-[0-9]{4}-[0-9]{5}">
+                        </li>
+                    </ul>
+                </div>
 
-            <div id="wrap2">
-                    <button  id="getotp" name="getotp">GET OTP</button>
-            </div>
+                <div id="wrap2">
+                    <button id="getotp" name="getotp">GET OTP</button>
+                </div>
             </form>
 
             <div id="gradient">
@@ -52,4 +54,5 @@
             <p id="error"></p>
     </div>
 </body>
+
 </html>

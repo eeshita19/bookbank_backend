@@ -15,21 +15,22 @@
         <img src="/images/orange.png" id="brandlogo">
         <img src="/images/Intersection%202.png" id="intersectionpath">
         <h1 id="loginquote">Log in to Monktree</h1>
-        <form action="/login" method="post">
+        <form action="/login" method="post" id="login-form">
             <div id="wrap">
-                <input type="email" name="login-email" id="email" placeholder="Email" maxlength="100" required>
+                <input type="email" name="login-email" id="login-email" placeholder="Email" maxlength="100" required>
                 <br />
-                <input type="password" name="login-password" id="password" placeholder="Password" maxlength="100" required>
+                <input type="password" name="login-password" id="login-password" placeholder="Password" maxlength="100"
+                    required>
             </div>
-        
-        <div id="wrap2">
-            <p id="forget">Forgot your password?<span id="reset"><a href="#">Reset</a></span></p>
-          
-            <button id="signin" name="signin">SIGN IN</button>
+
+            <div id="wrap2">
+                <p id="forget">Forgot your password?<span id="reset"><a href="#">Reset</a></span></p>
+
+                <button id="signin" type="submit" name="signin">SIGN IN</button>
 
 
-        </div>
-    </form>
+            </div>
+        </form>
 
         <div id="gradient">
             <img src="/images/Intersection%201.png" id="intersectionpolygon">
@@ -43,7 +44,8 @@
     </div>
 
 
-    <script src="/scripts/login.js"></script>  
+    <script src="/scripts/config.js"></script>
+    <script src="/scripts/login.js"></script>
 
 </body>
 
