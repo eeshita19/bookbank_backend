@@ -13,8 +13,12 @@ window.onload = function () {
 };
 
 function render() {
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+  // window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+    'size': 'invisible',  
+  });
     recaptchaVerifier.render();
+
 }
 
 function phoneAuth() {
@@ -31,7 +35,7 @@ function phoneAuth() {
         alert("OTP sent");
         $('#phoneDiv').hide();
         $('#otpDiv').show();
-        getPhNum();
+       // getPhNum();
         let phoNum = "+91" + number[3] + number[4] + "*****" + number[11] + number[11] + number[12];
         $('#phText').html(phoNum);
 
@@ -39,6 +43,16 @@ function phoneAuth() {
         console.log(error.message);
     });
 }
+
+// function movecursor(moveFrom,moveTo){
+//     var length = moveFrom.value.length;
+//     var maxlength = moveFrom.getAttribute("maxlength");
+    
+//     if(length == maxlength)
+//         {
+//             document.getElementById(moveTo).focus();
+//         }
+// }
 
 function codeverify() {
     var code = document.getElementById('verificationCode').value;
@@ -56,3 +70,4 @@ function codeverify() {
         console.log(error.message);
     });
 }
+

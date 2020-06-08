@@ -32,9 +32,9 @@ main.get('/phone', (req, res) => {
     res.render('login/phone_verification')
 })
 
-main.get('/otp', (req, res) => {
-    res.render('login/otp_verification')
-})
+// main.get('/otp', (req, res) => {
+//     res.render('login/otp_verification')
+// })
 
 main.get('/dashboard', (req, res) => {
     res.render('dashboard')
