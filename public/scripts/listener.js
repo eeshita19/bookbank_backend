@@ -2,15 +2,15 @@
 function initApp() {
     auth.onAuthStateChanged(user => {
         if (user) {
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var uid = user.uid;
+            // let displayName = user.displayName;
+            let email = user.email;
+            // let emailVerified = user.emailVerified;
+            // let photoURL = user.photoURL;
+            let uid = user.uid;
 
-            if (!emailVerified) {
-                document.getElementById('quickstart-verify-email').disabled = false;
-            }
+            // if (!emailVerified) {
+            //     document.getElementById('quickstart-verify-email').disabled = false;
+            // }
 
         } else {
             // logout or redirect to login

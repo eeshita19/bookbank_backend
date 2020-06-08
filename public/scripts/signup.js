@@ -4,8 +4,8 @@ signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // get user info
-    const email = signupForm['signup-email'].value;
-    const password = signupForm['signup-password'].value;
+    const email = signupForm['email'].value;
+    const password = signupForm['password'].value;
 
     if (email.length < 4) {
         alert('Please enter an email address.');
@@ -21,20 +21,26 @@ signupForm.addEventListener('submit', (e) => {
         .then(() => {
             sendEmailVerification();
             signupForm.reset();
-            signupForm.querySelector('.error').innerHTML = ''
+            sendToPhone();
+            // signupForm.querySelector('error').innerHTML = 'Email Verification Sent!'
         }).catch(err => {
-            signupForm.querySelector('.error').innerHTML = err.message;
+            // signupForm.querySelector('error').innerHTML = err.message;
         });
 
 });
 
 function sendEmailVerification() {
     // [START sendemailverification]
-    firebase.auth().currentUser.sendEmailVerification().then(function () {
-        // Email Verification sent!
+    auth.currentUser.sendEmailVerification().then(function () {
+        // alert('Email Verification sent!');
         // [START_EXCLUDE]
-        alert('Email Verification Sent!');
+        // signupForm.querySelector('.error').innerHTML = 'Email Verification Sent!';
         // [END_EXCLUDE]
     });
     // [END sendemailverification]
 }
+
+function sendToPhone() {
+    alert("Email Verification sent!");
+    document.location.href = '/phone'
+};

@@ -4,8 +4,8 @@ loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // get user info
-    const email = loginForm['login-email'].value;
-    const password = loginForm['login-password'].value;
+    const email = loginForm['email'].value;
+    const password = loginForm['password'].value;
 
     if (email.length < 4) {
         alert('Please enter an email address.');
@@ -17,11 +17,21 @@ loginForm.addEventListener('submit', (e) => {
     }
 
     // log the user in
-    auth.signInWithEmailAndPassword(email, password).then(() => {
-        loginForm.reset();
-        loginForm.querySelector('.error').innerHTML = '';
-    }).catch(err => {
-        loginForm.querySelector('.error').innerHTML = err.message;
-    });
+    auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+            loginForm.reset();
+            this.user = auth.currentUser;
+            sendToDashboard();
+            // loginForm.querySelector('.error').innerHTML = '';
+        }).catch(err => {
+            // loginForm.querySelector('.error').innerHTML = err.message;
+            console.log(err)
+        });
 
 });
+
+
+function sendToDashboard() {
+    // alert("Email Verification sent!");
+    document.location.href = '/dashboard'
+};

@@ -1,4 +1,6 @@
 // Initialize Firebase
+// alert('loaded');
+
 const config = {
     apiKey: "AIzaSyBgtoAqzDTAJU4XB4kr6Qab79tQO4zVWcM",
     authDomain: "bookbank-11bc5.firebaseapp.com",
@@ -6,7 +8,7 @@ const config = {
     projectId: "bookbank-11bc5",
 };
 
-firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
 
 // make auth and firestore references
 const auth = firebase.auth();

@@ -14,45 +14,75 @@
 <body>
     <div id="container">
         <img src="/images/Intersection%201.png" id="intersectionpolygon">
-        <h1 id="verificationprocess">Verification Process</h1>
-        <p id="detailstoverify">Enter your mobile number to verify detail
 
-            <div class="selected">
-                <ul id="list1">
-                    <li id="icon"><span id="span1"><img src="/images/NoPath%20-%20Copy%20(7).png"></span></li>
-                    <li id="country">India</li>
 
-                </ul>
-            </div>
-
-            <form action="/phone" method="post">
-                <div id="codeandnumber">
-                    <ul id="list2">
-                        <li id="code"><span id="numcode">+91</span></li>
-                        <li id="phoneno">
-                            <input type="tel" name="phone" placeholder="Phone No." id="inputphoneno"
-                                pattern="[6-9]{1}-[0-9]{4}-[0-9]{5}">
-                        </li>
+        <div id="phoneDiv" style="display:show;">
+            <h1 id="verificationprocess">Verification Process</h1>
+            <p id="detailstoverify">Enter your mobile number to verify detail
+                <div class="selected">
+                    <ul id="list1">
+                        <li id="icon"><span id="span1"><img src="/images/NoPath%20-%20Copy%20(7).png"></span></li>
+                        <li id="country">India</li>
                     </ul>
                 </div>
+                <form id="phone-form">
+                    <div id="codeandnumber">
+                        <ul id="list2">
+                            <li id="code"><span id="numcode">+91</span></li>
+                            <li id="phoneno">
+                                <input type="tel" name="phone" placeholder="Phone No." id="inputphoneno">
+                            </li>
+                            <li id=phoneno>
+                                <div id="recaptcha-container"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div id="recaptcha-container"></div> -->
+                    <div id="wrap2">
+                        <button id="getotp" type="button" onclick="phoneAuth();" name="getotp">GET OTP</button>
+                    </div>
+                </form>
+        </div>
 
-                <div id="wrap2">
-                    <button id="getotp" name="getotp">GET OTP</button>
-                </div>
-            </form>
+        <div id="otpDiv" style="display:none;">
+            <h1 id="verificationprocess">Enter Verification code</h1>
+            <p id="detailstoverify"> phone number : <span id="phText"></span>
+                <form id="otp-form">
+                    <div id="codeandnumber">
+                        <ul id="list2">
+                            <li id="phoneno">
+                                <input type="text" id="verificationCode" placeholder="Enter verification code">
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="wrap2">
+                        <button id="getotp" type="button" onclick="codeverify();" name="getotp">Verify code</button>
+                    </div>
+                </form>
+        </div>
 
-            <div id="gradient">
-                <img src="/images/monktree%20white.png" id="brandlogo">
-                <img src="/images/Intersection%202.png" id="intersectionpath">
-                <img src="/images/Intersection%203.png" id="intersectionpath2">
-                <h1>Just one more <br />step</h1>
-                <p>Your data is safe with us <br /> see our privacy policy</p>
-                <a href="/dashboard">
-                    <input type="button" value="SKIP FOR NOW" id="skip" name="skip">
-                </a>
-            </div>
-            <p id="error"></p>
+        <div id="gradient">
+            <img src="/images/monktree%20white.png" id="brandlogo">
+            <img src="/images/Intersection%202.png" id="intersectionpath">
+            <img src="/images/Intersection%203.png" id="intersectionpath2">
+            <h1>Just one more <br />step</h1>
+            <p>Your data is safe with us <br /> see our privacy policy</p>
+            <a href="/dashboard">
+                <input type="button" value="SKIP FOR NOW" id="skip" name="skip">
+            </a>
+        </div>
+        <p id="error"></p>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script>
+        // let prevUser = firebase.auth().currentUser.uid;
+    </script>
+    <script src="/scripts/config.js"></script>
+    <script src="/scripts/listener.js"></script>
+    <script src="/scripts/otp.js"></script>
 </body>
 
 </html>

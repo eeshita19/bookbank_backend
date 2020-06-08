@@ -15,17 +15,15 @@
         <img src="/images/Intersection%201.png" id="intersectionpolygon">
         <h1 id="createaccount">Create Account</h1>
 
-
-
-
-        <form action="/register" method="post" id="signup-form">
+        <form action="" method="post" id="signup-form">
             <div id="wrap">
                 <!-- <input type="username" name="username" id="username" placeholder="Username" maxlength="100" required> -->
+                <!-- <p id="error" class="error pink-text center-align"></p> -->
                 <input type="email" name="signup-email" id="email" placeholder="Email" maxlength="100" required>
                 <br />
-                <input type="password" name="signup-password" id="password" placeholder="Password" maxlength="100" required>
+                <input type="password" name="signup-password" id="password" placeholder="Password" maxlength="100"
+                    required>
             </div>
-
             <div id="wrap2">
                 <button id="signup" type="submit" name="signup">SIGN UP</button>
             </div>
@@ -42,7 +40,11 @@
             </a>
         </div>
     </div>
-
+    <!-- 
+    <script src="/__/firebase/7.14.5/firebase-app.js"></script>
+    <script src="/__/firebase/7.14.5/firebase-auth.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
     <script src="/scripts/config.js"></script>
     <script src="/scripts/signup.js"></script>
 
