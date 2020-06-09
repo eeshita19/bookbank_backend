@@ -19,10 +19,6 @@ main.get('/login', (req, res) => {
     res.render('login/signin')
 })
 
-main.post('/login', (req, res) => {
-    res.redirect('/dashboard')
-})
-
 main.get('/register', (req, res) => {
     res.render('login/signup')
 })
@@ -31,10 +27,6 @@ main.get('/register', (req, res) => {
 main.get('/phone', (req, res) => {
     res.render('login/phone_verification')
 })
-
-// main.get('/otp', (req, res) => {
-//     res.render('login/otp_verification')
-// })
 
 main.get('/dashboard', (req, res) => {
     res.render('dashboard')
@@ -58,12 +50,20 @@ main.get('/response', (req, res) => {
 })
 
 require('./routes')(app)
-app.get('*', (req, res) => res.status(200).send({
-    message: 'Welcome'
-}))
+app.get('*', (req, res) => {
+    res.redirect('/login')
+})
 
-main.get('*', (req, res) => res.status(200).send({
-    message: 'Welcome'
-}))
+main.get('*', (req, res) => {
+    res.redirect('/login')
+})
+
+app.post('*', (req, res) => {
+    res.redirect('/login')
+})
+
+main.post('*', (req, res) => {
+    res.redirect('/login')
+})
 
 exports.webApi = functions.https.onRequest(main)

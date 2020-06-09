@@ -20,7 +20,6 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password)
         .then(() => {
             loginForm.reset();
-            this.user = auth.currentUser;
             sendToDashboard();
             // loginForm.querySelector('.error').innerHTML = '';
         }).catch(err => {
@@ -30,8 +29,6 @@ loginForm.addEventListener('submit', (e) => {
 
 });
 
-
 function sendToDashboard() {
-    // alert("Email Verification sent!");
     document.location.href = '/dashboard'
 };

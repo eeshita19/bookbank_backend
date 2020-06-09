@@ -1,4 +1,6 @@
 // signup
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -8,45 +10,57 @@ signupForm.addEventListener('submit', (e) => {
     const email = signupForm['email'].value;
     const password = signupForm['password'].value;
 
-    if (username.length < 4) {
-        alert('Please enter an email address.');
+    if (username.length < 6) {
+        alert('Please enter a suitable username.');
         return;
     }
 
-    if (email.length < 4) {
-        alert('Please enter an email address.');
+    if (email.length < 5) {
+        alert('Please enter a valid email address.');
         return;
     }
-    if (password.length < 4) {
-        alert('Please enter a password.');
+    if (password.length < 7) {
+        alert('Please enter a password of length greater than 7.');
         return;
     }
 
     // sign up the user & add firestore data
-    auth.createUserWithEmailAndPassword(username, email, password)
+    auth.createUserWithEmailAndPassword(email, password)
         .then(() => {
-            sendEmailVerification();
             signupForm.reset();
+
+            auth.currentUser.updateProfile({
+                displayName: username
+            }).catch(function(error) {
+                console.error(error)
+            })
+
+            sendEmailVerification();
+            alert('Email Verification sent!');
+
+            delay(3000);
             sendToPhone();
-            // signupForm.querySelector('error').innerHTML = 'Email Verification Sent!'
-        }).catch(err => {
-            // signupForm.querySelector('error').innerHTML = err.message;
+
+        }).catch(function (error) {
+            // console.error(error)
+            alert("Try to signup again with proper details");
         });
 
 });
 
 function sendEmailVerification() {
     // [START sendemailverification]
-    auth.currentUser.sendEmailVerification().then(function () {
-        // alert('Email Verification sent!');
-        // [START_EXCLUDE]
-        // signupForm.querySelector('.error').innerHTML = 'Email Verification Sent!';
-        // [END_EXCLUDE]
-    });
+    auth.currentUser.sendEmailVerification()
+    .then(function () {
+        alert('Email Verification sent!');
+    })
+    .catch(function (error) {
+        // console.error(error);
+        alert("Error: unable to send verification. Please contact support");
+    })
     // [END sendemailverification]
 }
 
 function sendToPhone() {
-    alert("Email Verification sent!");
     document.location.href = '/phone'
 };

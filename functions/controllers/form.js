@@ -36,7 +36,7 @@ module.exports = {
 
             if (!userUid) throw new Error('Please sign in again')
 
-            const usersRef = await db.collection('users').doc(userUid).set(data).catch(error => res.status(400).send(error))
+            const usersRef = await db.collection('users').doc(userUid).set(data, {merge: true}).catch(error => res.status(400).send(error))
             // const userR = 
 
             await usersRef.get()
@@ -48,11 +48,7 @@ module.exports = {
         }
 
     },
-
-    // async saveFileUpload(req, res) {
-
-    // },
-
+    
     async savePersonalDetail(req, res) {
         try {
             let {

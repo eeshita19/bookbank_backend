@@ -33,7 +33,7 @@
                 <div class="column2 left2">
                     <button class="button5"
                         style="background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A); color: white;">
-                        <div class="column21 left21">Personal Details</div>
+                        <div class="column21 left21"> <a href="/form/personal"> Personal Details </a> </div>
                         <div class="column21 right21">
                             <div class="draft">Draft</div>
                         </div>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="column2 mid2">
                     <button class="button51" style="margin-left: 0px;">
-                        <div class="column21 left21">Academic Details</div>
+                        <div class="column21 left21"> <a href="/form/academic"> Academic Details </a> </div>
                         <div class="column21 right21">
                             <div class="draft"></div>
                         </div>
@@ -49,29 +49,29 @@
                 </div>
                 <div class="column2 right2">
                     <button class="button51" style="margin-left: 8px;">
-                        <div class="column21 left21">Submission</div>
+                        <div class="column21 left21"> <a href="/form/file/">Submission</a> </div>
                         <div class="column21 right21">
                             <div class="draft"></div>
                         </div>
                     </button>
                 </div>
                 <div class="container1">
-                    <form method="post" action="/api/v1/form/details">
+                    <form method="" action="" id="details-form">
                         <label id="">Student's name</label>
-                        <input type="" name="" class="textbox1" placeholder="  First Name" style="margin-left: 31px;"
-                            required>&nbsp&nbsp
-                        <input type="" name="" class="textbox1" placeholder="  Middle Name">&nbsp&nbsp
-                        <input type="" name="" class="textbox1" placeholder="  Last Name" required>
+                        <input type="" name="" class="textbox1" id="firstname" placeholder="First Name"
+                            style="margin-left: 31px;" required>&nbsp&nbsp
+                        <input type="" name="" class="textbox1" id="middlename" placeholder="Middle Name">&nbsp&nbsp
+                        <input type="" name="" class="textbox1" id="lastname" placeholder="Last Name" required>
                         <br><br>
 
                         <label id="">Father's name</label>
-                        <input type="" name="" class="textbox1" placeholder="  First Name" style="margin-left: 40px;"
-                            required>&nbsp&nbsp
-                        <input type="" name="" class="textbox1" placeholder="  Last Name" required>
+                        <input type="" name="" class="textbox1" id="fatherfirstname" placeholder="First Name"
+                            style="margin-left: 40px;" required>&nbsp&nbsp
+                        <input type="" name="" class="textbox1" id="fatherlastname" placeholder="Last Name" required>
                         <br><br>
 
                         <label id="">Date of Birth</label>
-                        <input type="date" name="" class="textbox1" value="  DD/MM/YYYY"
+                        <input type="date" name="" id="dob" class="textbox1" value="  DD/MM/YYYY"
                             style="margin-left: 52px;">&nbsp&nbsp
 
                         <br><br>
@@ -82,7 +82,7 @@
                         <div id="status"
                             style="width: 80px;height: 15px;background-color:#6ff55b;position: absolute;left: 450px; bottom: 249px;border-radius: 0px;color: white;padding: 10px;font-weight: bold">
                             VERIFIED</div>
-                        <input type="button" value="Change" id="change"
+                        <input type="button" value="Refresh" id="change"
                             style="width: 80px;height: 36px;background-color:#f5f5f5;position: absolute;left: 555px; bottom: 249px;border-radius: 0px;color: grey;padding: 10px;font-weight: bold;border: 1px;font-size: 15px">
 
                         <br><br>
@@ -93,8 +93,6 @@
                         <div id="statusmobile"
                             style="width: 80px;height: 15px;background-color:#6ff55b;position: absolute;left: 450px; bottom: 192px;border-radius: 0px;color: white;padding: 10px;font-weight: bold">
                             VERIFIED</div>
-                        <input type="button" value="Change" id="changemobile"
-                            style="width: 80px;height: 36px;background-color:#f5f5f5;position: absolute;left: 555px; bottom: 192px;border-radius: 0px;color: grey;padding: 10px;font-weight: bold;border: 1px;font-size: 15px">
                         <br><br>
                         <label id="">Resident</label>
                         <div class="selected">
@@ -105,7 +103,7 @@
                             </ul>
                         </div>
                         <div class="selectbox">
-                            <div class="options-container">
+                            <div class="options-container" id="residentState">
                                 <div class="options">
                                     <label for="india">Delhi</label>
                                     <input type="radio" class="radio" id="india" name="country">
@@ -138,7 +136,7 @@
                                 <li id="country1">City</li>
                             </ul>
                         </div>
-                        <div class="selectbox1">
+                        <div class="selectbox1" id="residentCity">
                             <div class="options-container1">
                                 <div class="options1">
                                     <label for="india">New Delhi</label>
@@ -162,11 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <a href="/form/academic">
-                            <input type="button" name="" value="Save" class="save">
-                        </a> -->
                         <button type="submit" class="save"> Submit </button>
-
                     </form>
                 </div>
             </div>
@@ -175,31 +169,6 @@
     </div>
     </div>
     <script>
-        $(function () {
-            $("#change").click(function () {
-                $("#status").css("background-color", "#f1413b");
-                $("#status").text("VERIFY");
-                $("#email").removeAttr("disabled");
-                $("#status").click(function () {
-                    $("#change").attr("disabled", true);
-                    $("#status").css("background-color", "#eea553");
-                    $("#status").text("VERIFING...");
-                    $("#email").attr("disabled", true);
-                })
-            })
-            $("#changemobile").click(function () {
-                $("#statusmobile").css("background-color", "#f1413b");
-                $("#statusmobile").text("VERIFY");
-                $("#mobile").removeAttr("disabled");
-                $("#statusmobile").click(function () {
-                    $("#changemobile").attr("disabled", true);
-                    $("#statusmobile").css("background-color", "#eea553");
-                    $("#statusmobile").text("VERIFING...");
-                    $("#mobile").attr("disabled", true);
-                })
-            })
-        });
-
         var selected = document.querySelector(".selected");
         var listitem = document.querySelector("#country");
         var optionscontainer = document.querySelector(".options-container");
@@ -231,6 +200,6 @@
             });
         });
     </script>
-    <script src="/scripts/listener.js"></script>
+    <script src="/scripts/personalDetail.js" defer></script>
 
     <%- include ("../partials/footer") %>

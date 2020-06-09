@@ -2,21 +2,20 @@
 function initApp() {
     auth.onAuthStateChanged(user => {
         if (user) {
-            // let displayName = user.displayName;
-           
-            let email = user.email;
-            // let emailVerified = user.emailVerified;
+            let emailVerified = user.emailVerified;
+            let username = user.displayName;
             // let photoURL = user.photoURL;
-            let uid = user.uid;
 
-            // if (!emailVerified) {
-            //     document.getElementById('quickstart-verify-email').disabled = false;
-            // }
-          
+            if (!emailVerified)
+                alert("Please verify your email");
+            else
+                $('#notactive').html("Active");
 
-        } else {
-            // logout or redirect to login
-        }
+            $('#caste').html(username);
+            $('#username').html(username);
+
+        } else
+            document.location.href = '/login'
     });
 }
 
