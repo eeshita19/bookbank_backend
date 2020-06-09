@@ -38,15 +38,16 @@ function initDetails() {
                 .catch(function (error) {
                     console.log(error);
                 })
-                
+
         } else
             document.location.href = '/login'
     });
 }
 
-window.onload = () => {
+window.addEventListener('load', function () {
     initDetails();
-};
+
+})
 
 $("#change").click(function () {
     // const refresh = initDetails();
@@ -71,8 +72,8 @@ signupForm.addEventListener('submit', (e) => {
     const lastname = signupForm['lastname'].value;
     const fatherfirstname = signupForm['fatherfirstname'].value;
     const fatherlastname = signupForm['fatherlastname'].value;
-    // const residentState = signupForm['country'].value;
-    // const residentCity = signupForm['country1'].value;
+    const residentState = signupForm.elements['country'].value;
+    const residentCity = signupForm.elements['country1'].value;
     const dob = signupForm['dob'].value;
 
     db.collection("usersdata").doc(auth.currentUser.uid).set({
@@ -85,8 +86,8 @@ signupForm.addEventListener('submit', (e) => {
         dob: dob,
         fatherfirstname: fatherfirstname,
         fatherlastname: fatherlastname,
-        // residentState: residentState,
-        // residentCity: residentCity
+        residentState: residentState,
+        residentCity: residentCity,
         form1: true,
         adminVerification: false,
     }, {
