@@ -6,6 +6,27 @@
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, user-scalable=yes">
     <link rel="stylesheet" type="text/css" href="/css/academics_styling.css">
+    <style>
+        .radio-toolbar input[type="radio"] {
+            padding-left: 10px;
+  display: none;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+  width : 50px;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+  background-color: rgb(117, 115, 115);
+  
+}
+    </style>
 
 
     <%- include ("../partials/header") %>
@@ -40,6 +61,7 @@
                         </div>
                     </button>
                 </div>
+
                 <div class="container1">
                     <form method="" action="">
                         <label>University/Institition</label>
@@ -75,6 +97,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <label>Course/Descipline</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <div class="selected1">
@@ -109,17 +132,43 @@
                                 </div>
                             </div>
                         </div>
+
                         <label>Course duration</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <input type="date" name="" class="textbox2" style="margin-right: 20px; margin-left: px;"> To
                         <input type="date" name="" class="textbox2"><br>
+
+
+
                         <label id="shift">Classroom shift</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        <input type="button" name="" class="textbox2" id="morning" value="Morning">&nbsp<input
-                            type="button" name="" class="textbox2" id="evening" value="Evening">&nbsp<input
-                            type="button" name="" class="textbox2" id="home" value="Home">&nbsp<input type="button"
-                            name="" class="textbox2" id="pg" value="PG">&nbsp<input type="button" name=""
-                            class="textbox2" id="hostel" value="Hostel">
+                           <span class="textbox2">                       
+                            <span class="radio-toolbar">
+                                <input type="radio" id="Morning" name="shift" value="Morning" checked>
+                                <label for="Morning">Morning</label>
+                              
+                                <input type="radio" id="Evening" name="shift" value="Evening">
+                                <label for="Evening">Evening</label>
+                                                
+                            </span>
+                        </span>  
+                        <span class="textbox2">    
+                        
+                            <span class="radio-toolbar">
+                                <input type="radio" id="Home" name="place" value="Home" checked>
+                                <label for="Home">Home</label>
+                                <input type="radio" id="PG" name="place" value="PG" checked>
+                                <label for="PG">PG</label>
+                                <input type="radio" id="Hostel" name="place" value="Hostel" checked>
+                                <label for="Hostel">Hostel</label>
+                              
+                                
+                                                
+                            </span>
+                        </span>
+                      
+                        <br>
+                            
                         <br>
                         <label>UID/Enrollment number</label>&nbsp
                         <input type="text" name="" id="enroll" placeholder="Enter" class="textbox2">
@@ -134,48 +183,14 @@
     </div>
     <script>
         $(function () {
-            $("#evening").click(function () {
-                $("#evening").css("background-color", "#989898");
-                $("#evening").css("color", "white");
-                $("#morning").css("background-color", "#F9F9F9")
-                $("#morning").css("color", "#989898")
-            })
-            $("#morning").click(function () {
-                $("#morning").css("background-color", "#989898");
-                $("#morning").css("color", "white");
-                $("#evening").css("background-color", "#F9F9F9")
-                $("#evening").css("color", "#989898")
-            });
+            
             $("#donthave").click(function () {
                 $("#donthave").css("background-color", "#989898")
                 $("#donthave").css("color", "white")
             });
-            $("#home").click(function () {
-                $("#home").css("background-color", "#989898");
-                $("#home").css("color", "white");
-                $("#pg").css("background-color", "#F9F9F9")
-                $("#pg").css("color", "#989898")
-                $("#hostel").css("background-color", "#F9F9F9")
-                $("#hostel").css("color", "#989898")
-            });
-            $("#pg").click(function () {
-                $("#pg").css("background-color", "#989898");
-                $("#pg").css("color", "white");
-                $("#home").css("background-color", "#F9F9F9")
-                $("#home").css("color", "#989898")
-                $("#hostel").css("background-color", "#F9F9F9")
-                $("#hostel").css("color", "#989898")
+           
 
-            });
-            $("#hostel").click(function () {
-                $("#hostel").css("background-color", "#989898");
-                $("#hostel").css("color", "white");
-                $("#pg").css("background-color", "#F9F9F9")
-                $("#pg").css("color", "#989898")
-                $("#home").css("background-color", "#F9F9F9")
-                $("#home").css("color", "#989898")
-
-            });
+            
         });
         var selected = document.querySelector(".selected");
         var listitem = document.querySelector("#country");
