@@ -4,8 +4,14 @@ signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // get user info
+    const username = signupForm['username'].value;
     const email = signupForm['email'].value;
     const password = signupForm['password'].value;
+
+    if (username.length < 4) {
+        alert('Please enter an email address.');
+        return;
+    }
 
     if (email.length < 4) {
         alert('Please enter an email address.');
@@ -17,7 +23,7 @@ signupForm.addEventListener('submit', (e) => {
     }
 
     // sign up the user & add firestore data
-    auth.createUserWithEmailAndPassword(email, password)
+    auth.createUserWithEmailAndPassword(username, email, password)
         .then(() => {
             sendEmailVerification();
             signupForm.reset();

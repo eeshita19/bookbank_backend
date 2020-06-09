@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -6,6 +6,8 @@
     <title>Sign Up Page</title>
     <meta name="viewport" content="width=device-width, user-scalable=yes">
     <link rel="stylesheet" type="text/css" href="/css/verification_styling.css">
+    <link rel="stylesheet" type="text/css" href="/css/enterotp_styling.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <img src="/images/Polygon%201.png" id="polygon">
@@ -46,15 +48,19 @@
 
         <div id="otpDiv" style="display:none;">
             <h1 id="verificationprocess">Enter Verification code</h1>
-            <p id="detailstoverify"> phone number : <span id="phText"></span>
+            <p id="detailstoverify"> We've sent it to your phone! <span id="phText"></span></p>
                 <form id="otp-form">
-                    <div id="codeandnumber">
+                    
+                     <div id="otpnumbers">
                         <ul id="list2">
-                            <li id="phoneno">
-                                <input type="text" id="verificationCode" placeholder="Enter verification code">
+                            <li id="phoneno" >
+                                <input type="tel" id='verificationCode' class="otp " maxlength="6">  
+                               
+                               <!--<input type="text"  placeholder="Enter verification code">--> 
                             </li>
                         </ul>
                     </div>
+                
                     <div id="wrap2">
                         <button id="getotp" type="button" onclick="codeverify();" name="getotp">Verify code</button>
                     </div>
