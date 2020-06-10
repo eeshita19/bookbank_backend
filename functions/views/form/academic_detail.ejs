@@ -9,23 +9,33 @@
     <style>
         .radio-toolbar input[type="radio"] {
             padding-left: 10px;
-  display: none;
-}
+            display: none;
+        }
 
-.radio-toolbar label {
-  display: inline-block;
-  background-color: #ddd;
-  padding: 4px 11px;
-  font-family: Arial;
-  font-size: 16px;
-  cursor: pointer;
-  width : 50px;
-}
+        .radio-toolbar label {
+            display: inline-block;
+            background-color: #ddd;
+            padding: 4px 11px;
+            font-family: Arial;
+            font-size: 16px;
+            cursor: pointer;
+            width: 50px;
+        }
 
-.radio-toolbar input[type="radio"]:checked+label {
-  background-color: rgb(117, 115, 115);
-  
-}
+        .radio-toolbar input[type="radio"]:checked+label {
+            background-color: rgb(117, 115, 115);
+
+        }
+
+        .colorEnroll1 {
+            background-color: white;
+            color: black;
+        }
+
+        .colorEnroll2 {
+            color: white;
+            background-color: #989898;
+        }
     </style>
 
     <%- include ("../partials/header") %>
@@ -62,7 +72,7 @@
                 </div>
 
                 <div class="container1">
-                    <form method="" action="">
+                    <form method="" action="" id="acad-form">
                         <label>University/Institition</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <div class="selected" id="uni1">
@@ -84,15 +94,15 @@
                                 </div>
                                 <div class="options">
                                     <label for="Bhutan">Maharaja Agrasen Institute of Technology</label>
-                                    <input type="radio" class="radio" id="Bhutan" name="Bhutan">
+                                    <input type="radio" class="radio" id="Bhutan" name="country">
                                 </div>
                                 <div class="options">
                                     <label for="UK">Indian Institute of Technology</label>
-                                    <input type="radio" class="radio" id="UK" name="UK">
+                                    <input type="radio" class="radio" id="UK" name="country">
                                 </div>
                                 <div class="options">
                                     <label for="England">Netaji Subhash Institute of Technology</label>
-                                    <input type="radio" class="radio" id="England" name="England">
+                                    <input type="radio" class="radio" id="England" name="country">
                                 </div>
                             </div>
                         </div>
@@ -111,7 +121,6 @@
                                 <div class="options1">
                                     <label for="india">Course</label>
                                     <input type="radio" class="radio1" id="india" name="country">
-
                                 </div>
                                 <div class="options1">
                                     <label for="Bangladesh">Course</label>
@@ -134,44 +143,34 @@
 
                         <label>Course duration</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        <input type="date" name="" class="textbox2" style="margin-right: 20px; margin-left: px;"> To
-                        <input type="date" name="" class="textbox2"><br>
-
-
-
-                        <label id="shift">Classroom shift</label>
+                        <input type="date" id="courseStart" name="" class="textbox2"
+                            style="margin-right: 20px; margin-left: px;"> To
+                        <input type="date" id="courseEnd" name="" class="textbox2"><br>
+                        <label id="">Classroom shift</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                           <span class="textbox2">                       
+                        <span class="textbox2">
                             <span class="radio-toolbar">
-                                <input type="radio" id="Morning" name="shift" value="Morning" checked>
+                                <input type="radio" id="Morning" name="shift" value="Morning">
                                 <label for="Morning">Morning</label>
-                              
                                 <input type="radio" id="Evening" name="shift" value="Evening">
                                 <label for="Evening">Evening</label>
-                                                
-                            </span>
-                        </span>  
-                        <span class="textbox2">    
-                        
-                            <span class="radio-toolbar">
-                                <input type="radio" id="Home" name="place" value="Home" checked>
-                                <label for="Home">Home</label>
-                                <input type="radio" id="PG" name="place" value="PG" checked>
-                                <label for="PG">PG</label>
-                                <input type="radio" id="Hostel" name="place" value="Hostel" checked>
-                                <label for="Hostel">Hostel</label>
-                              
-                                
-                                                
                             </span>
                         </span>
-                      
+                        <span class="textbox2">
+                            <span class="radio-toolbar">
+                                <input type="radio" id="Home" name="place" value="Home">
+                                <label for="Home">Home</label>
+                                <input type="radio" id="PG" name="place" value="PG">
+                                <label for="PG">PG</label>
+                                <input type="radio" id="Hostel" name="place" value="Hostel">
+                                <label for="Hostel">Hostel</label>
+                            </span>
+                        </span>
                         <br>
-                            
                         <br>
                         <label>UID/Enrollment number</label>&nbsp
-                        <input type="text" name="" id="enroll" placeholder="Enter" class="textbox2">
-                        <input type="button" name="" id="donthave" class="textbox2" value="I Don't have">
+                        <input type="text" name="enum" id="enroll" placeholder="Enter" class="textbox2">
+                        <input type="button" name="" id="donthave" class="textbox2 colorEnroll1" value="I Don't have">
                         <br>
                         <br>
                         <button type="submit" class="save"> Submit </button>
@@ -182,14 +181,10 @@
     </div>
     <script>
         $(function () {
-            
             $("#donthave").click(function () {
-                $("#donthave").css("background-color", "#989898")
-                $("#donthave").css("color", "white")
+                $(this).toggleClass("colorEnroll2");
+                $('#enroll').prop('disabled', (i, v) => !v);
             });
-           
-
-            
         });
         var selected = document.querySelector(".selected");
         var listitem = document.querySelector("#country");
@@ -224,4 +219,6 @@
             });
         });
     </script>
+    <script src="/scripts/academicDetail.js" defer></script>
+
     <%- include ("../partials/footer") %>

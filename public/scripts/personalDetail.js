@@ -63,7 +63,7 @@ function sendToPhone() {
 };
 
 const signupForm = document.querySelector('#details-form');
-signupForm.addEventListener('submit', (e) => {
+signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // get user data
@@ -72,11 +72,11 @@ signupForm.addEventListener('submit', (e) => {
     const lastname = signupForm['lastname'].value;
     const fatherfirstname = signupForm['fatherfirstname'].value;
     const fatherlastname = signupForm['fatherlastname'].value;
-    const residentState = signupForm.elements['country'].value;
-    const residentCity = signupForm.elements['country1'].value;
+    const residentState = listitem.textContent;
+    const residentCity = listitem1.textContent;
     const dob = signupForm['dob'].value;
 
-    db.collection("usersdata").doc(auth.currentUser.uid).set({
+    await db.collection("usersdata").doc(auth.currentUser.uid).set({
         username: auth.currentUser.displayName,
         email: auth.currentUser.email,
         phoneNumber: auth.currentUser.phoneNumber,
