@@ -88,20 +88,21 @@ body{
     font-size: 18px
     
 }
-/*Designed the signup button*/
+/*Designed the signin button*/
 #signin{
     width: 230px;
     height: 50px;
     border-radius: 25px;
     margin-top:20px;
-    border: 1px solid white;
+    border: 2px solid white;
     background-color: transparent;
     color: white;
     font-weight: 550;
-    font-size: 20px
+    font-size: 20px;
+    outline: none;
     
 }
-/*hover ability of that signup button*/
+/*hover ability of that signin button*/
 #signin:hover{
     cursor: pointer;
     
@@ -174,7 +175,8 @@ body{
     color: white;
     font-weight: 550;
     font-size: 20px;
-    margin-left: -36px 
+    margin-left: -36px;
+    outline: :none;
 }
 /*gave sign in button a hover ability*/
 #signup:hover{

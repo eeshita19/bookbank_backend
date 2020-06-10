@@ -51,6 +51,8 @@ body{
   left: 30px;
 }
 
+
+
 .left2 {
   width: 33.33%;
 
@@ -92,6 +94,7 @@ body{
   margin-top: 0px;
   margin-left: -10px;
   cursor: pointer; 
+  
 }
 /*.button5:focus {
   background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A);
@@ -102,6 +105,16 @@ body{
   background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A);
   box-shadow: 1px 1px 20px 4px #acacbd;
   color: white;
+}
+
+#current{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.986);
+}
+
+a:any-link{
+  text-decoration: none;
+  color: rgba(3, 3, 3, 0.986);
 }
 
 
@@ -127,6 +140,7 @@ body{
   height:35px; 
   width: 200px;
   border: none;
+  box-shadow: 1px 1px 4px 1px #ccc;
 }
 .save{
   font-family: Segoe UI, sans-serif; 
@@ -138,6 +152,7 @@ body{
   cursor: pointer; 
   color: white;
   border: none;
+  box-shadow: 1px 1px 4px 1px #ccc;
 }
 a:link {
   text-decoration: none;
@@ -164,6 +179,7 @@ a:link {
   padding: 0px;
   position: relative;
   left: 30px;
+  
 }
 
 .left21 {
@@ -384,4 +400,5 @@ a:link {
 #country1:hover{
     cursor:pointer;
 }
+
 

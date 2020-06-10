@@ -53,7 +53,8 @@ body{
   height: 150px;
   width: 200px;
   padding: 2px 8px;
-  box-shadow: 1px 1px 20px 4px #acacbd;
+  
+  box-shadow: 1px 4px 42px 0px rgba(97, 94, 97, 0.2);
 
   text-decoration: none;
   outline: none;
@@ -71,7 +72,7 @@ body{
   border-radius: 4px;
   width: 470px;
   padding: 2px 8px;
-  box-shadow: 1px 1px 20px 4px #acacbd;
+  box-shadow: 1px 4px 42px 2px rgba(97, 94, 97, 0.2);
   
   text-decoration: none;
   outline: none;
@@ -87,7 +88,7 @@ body{
   border-radius: 4px;
   width: 340px;
   padding: 2px 8px;
-  box-shadow: 1px 1px 20px 4px #acacbd;
+  box-shadow: 1px 4px 42px 2px rgba(97, 94, 97, 0.2);
 
   text-decoration: none;
   outline: none;
@@ -95,24 +96,29 @@ body{
   margin-top: 0px;
   margin-left: 0px;
 }
+
 .div41 {
-  background-color: #ffffff;
-  border: none;
-  color: grey;
-  height: 35px;
-  width: 850px;
-  padding: 5px 14px;
-  box-shadow: 1px 1px 20px 4px #acacbd;
-  text-align: left;
-  text-decoration: none;
-  outline: none;
-  font-size: 16px;
-  font-weight: 1px;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-    right: 130px;
+
+    background-color: #ffffff;
+    border: none;
+    color: grey;
+    height: 35px;
+    width: 78%;
+    padding: 5px 14px;
+    padding-right: 0px;
+    box-shadow: 1px 4px 42px 2px rgba(97, 94, 97, 0.2);
+    text-align: left;
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
+    margin-top: 180px;
+      margin-left: 50px;
+      margin-bottom: 20px;
+    margin-right: auto;
+    position: relative;
+    right: auto;
+    left: auto;
+    border-radius: 4px;
 }
 
 .save{
@@ -165,14 +171,14 @@ body{
 	background-color: #FFFFFF;
 	width: 905;
 	height: 45;
-	box-shadow: 1px 1px 20px 4px #acacbd;
+	box-shadow: 1px 4px 42px 2px  rgba(97, 94, 97, 0.2);
 	text-align: left;
 }
 
 
 
 .uppernav{
-  box-shadow: 0px .1px .1px .1px #acacbd; 
+  box-shadow: 1px 4px 42px 2px  rgba(97, 94, 97, 0.2);
   height: 45; 
   width: 45; 
 }
@@ -185,7 +191,7 @@ body{
 
 #begin{
     width: 100px;
-    height: 30px;
+    height: 100%;
     position: absolute;
     left: 650px;
     border-radius: 3px;
@@ -216,17 +222,17 @@ body{
 
 #lock4{
     position: absolute;
-    top:140px;
+    top:180px;
     left: -7px;
 }
 #lock5{
     position: absolute;
-    top: 140px;
+    top: 180px;
     left: 307px;
 }
 #lock6{
     position: absolute;
-    top: 140px;
+    top: 180px;
     right: 260px;
 }
 #lbutton{
@@ -392,8 +398,10 @@ left: -10px;
     background-color: #1A95FF;
     text-decoration: none;
     color: white;
-    padding-left: 30px;
-    padding-top: 5px;
-    position: absolute;
-    left: 890px;
+   
+    left: 880px;
+
+    text-align: center;
+    font-size: larger;
+    padding: 2px;
 }

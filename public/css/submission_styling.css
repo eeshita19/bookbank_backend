@@ -106,6 +106,13 @@ body{
   box-shadow: 1px 1px 20px 4px #acacbd;
   color: white;
 }
+
+
+
+#current{
+  text-decoration: none;
+color: rgba(255, 255, 255, 0.986);
+}
 .container1{ 
     height: 400px;
     width: 775px;
@@ -185,6 +192,7 @@ body{
   border: none;
   margin-left: 30px;
   margin-bottom: 15px;
+  box-shadow: 1px 1px 4px 1px #ccc;
 }
 
 
