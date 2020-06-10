@@ -1,0 +1,70 @@
+<%- include ("../partials/admin_header") %>
+    
+
+<div class="container1" id="userinfocontent">
+<div id="allcontent">
+<img id="userimage" src="/images/admin/Mask%20Group%201@2x.png">
+<h4>User1</h4>
+<p>Laxmi Nagar,Delhi</p> 
+<input type="button" class="btn" id="accept" value="Accept">
+<input type="button" class="btn" id="reject" value="Reject">
+<hr class="hrlines">
+
+<p id="year">2020<br /><span id="admissionyear">Admission year</span></p>
+<p id="third">Morning<br /><span id="currentsemester">Admission year</span></p>
+<p id="morning">Third<br /><span id="shift">Admission year</span></p>
+<hr class="hrlines">
+<p id="branchname">Computer Science<br /><span id="collegename">Guru Nanak Dev Institute Of Technology</span></p>
+</div>
+</div>
+
+    
+    
+
+
+<div class="container1" id="userdetailcontent">
+<div class="carousel slide" id="mycarousel" data-ride="carousel">
+<ol class="carousel-indicators">
+<li  data-target="#mycarousel" data-slide-to="0"></li>    
+<li  data-target="#mycarousel" data-slide-to="1"></li>    
+<li class="active" data-target="#mycarousel" data-slide-to="2"></li>    
+</ol>
+</div>	
+	<div class="corousel-item active">
+	<p id="submission">Submission</p>
+ <a href="usersinfo1.html"><input type="button" class="btn" id="previous" value="Previous" ></a>
+ <a href="#"><input type="button" class="btn" id="next1" value="Next" ></a>
+<hr id="straight1">   
+
+<div class="form-group col-md-12">
+<label for="photo" style="color: #172B4D">Photo</label>
+<input type="text" class="form-control" value="Passport_photo.jpg" id="photo" style="background-color: #F7FAFC;color: #8898AA;  box-shadow: 1px 2px 5px #8898AA">
+<img src="/images/admin/icons8-eye-100.png" id="eyeforeye">
+</div>
+<br />
+<br />
+<div class="form-group col-md-12">
+<label for="user1" style="color: #172B4D">Upload ID</label>
+<input type="text" class="form-control" value="Admissionslip.JPG" id="user1" style="color: #8898AA;background-color: #F7FAFC; border: 1px; box-shadow: 1px 2px 5px">
+</div>
+<br />
+<br />
+<div class="form-group col-md-12">
+<label for="fathername" style="color: #172B4D">Objection if you have</label>
+<textarea class="form-control" id="objection" style="color: #8898AA; background-color: #F7FAFC; border: 1px; box-shadow: 1px 2px 5px; height: 110px; "></textarea>
+</div>
+<br />
+</div>
+</div>
+
+<div class="container1" id="rejectiondiv" hidden>
+<h5>Are you sure?</h5>
+<p>You won't be able to revert this action!</p>
+<input type="button" class="btn" id="yesreject" value="Yes,Reject">
+<input type="button" class="btn" id="cancel" value="Cancel">   
+    
+</div>
+    
+<%- include ("../partials/admin_footer") %>
+    
+    

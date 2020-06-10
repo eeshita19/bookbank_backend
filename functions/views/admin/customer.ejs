@@ -1,0 +1,53 @@
+<%- include ("../partials/admin_header") %>  
+  
+    
+<div class="col-md-8" id="content">
+<div class="row">
+<div class="container1" id="totalusers">TotalUsers<br /><span id="number">3045</span><br /><span id="percentage">+3.88%</span> <span id="month">from last month</span>
+<img id="uparrow" class="images"  src="/images/admin/Group%2075.png">
+</div>    
+<div class="container1" id="newusers" style="background-color: #1A95FF;color: white">New Users<br /><span id="number" style="color: white">147</span><br /><span id="percentage2" style="color: white">+3.88%</span> <span id="month">from last month</span>
+<img id="downarrow" class="images"  src="/images/admin/Group%2077white.png">    
+</div>    
+<div class="container1" id="sales">Sales<br /><span id="number">134</span><br /><span id="percentage" style="color: red">7 Entries</span> <span id="month">from last month</span>
+<img id="rupee" class="images" src="/images/admin/icons8-rupee-96%20(1).png">
+<img id="circle" class="images" src="/images/admin/icons8-synchronize-150.png">
+</div>    
+<div class="container1" id="invent">Inventory<br /><span id="number">3.4K</span><br /><span id="percentage"></span> <span id="month">Accept/Reject</span>
+<img id="eye" class="images" src="/images/admin/icons8-eye-100.png">    
+</div>    
+    
+</div>    
+<div class="container1" id="content2">
+<h3>New Users</h3>
+<div class="container1" id="tablecontent">
+<p id="pending">Pending for Reviews</p>
+<input type="button" class="btn" id="filter" value="Filter">
+<table class="table table-striped table-condensed" >
+<tr><th>Date <img src="/images/admin/Group%20130.png" id="arrows"></th><th>Applied</th><th>Year</th><th>Course</th><th>Institute</th><th>Address(City)</th><th>Refered<img src="/images/admin/Group%20130.png" id="arrows"></th></tr>
+<tr><td><a href="usersinfo.html" id="userlink"><img src="/images/admin/Mask%20Group%201.png">User1</a></td><td id="fulldate" class="rowitems">20/3/2020</td><td class="rowitems">First</td><td class="rowitems"><img src="/images/admin/Ellipse%20355.png" id="greencircle">Diploma</td><td class="rowitems">Guru Nanak Dev</td><td class="rowitems">Delhi</td><td>No <img src="/images/admin/Ellipse%20369.png" id="round"><img id="verticalline" src="/images/admin/more-vertical.png"></td></tr>
+<tr><td><a href="usersinfo.html" id="userlink" ><img src="/images/admin/Mask%20Group%201.png" >User2</a></td><td id="fulldate" class="rowitems">20/3/2020</td><td class="rowitems">First</td><td class="rowitems"><img src="/images/admin/Ellipse%20355.png" id="greencircle">Diploma</td><td class="rowitems">Guru Nanak Dev</td><td class="rowitems">Delhi</td><td>No <img src="/images/admin/Ellipse%20369.png" id="round"><img id="verticalline" src="/images/admin/more-vertical.png"></td></tr>
+<tr><td ><a href="usersinfo.html" id="userlink"><img src="/images/admin/Mask%20Group%201.png" >User3</a></td><td id="fulldate" >20/3/2020</td><td>First</td><td><img src="/images/admin/Ellipse%20355.png" id="greencircle">Diploma</td><td>Guru Nanak Dev</td><td>Delhi</td><td>No <img src="/images/admin/Ellipse%20369.png" id="round"><img id="verticalline" src="/images/admin/more-vertical.png"></td></tr>
+</table>
+<nav>
+<ul class="pagination pagination-sm">
+<li>
+<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>    
+    
+</li>
+<li class="active"><a href="#">1</a></li>
+<li><a href="#">2</a></li>
+<li><a href="#">3</a></li>
+<li><a href="#">4</a></li>
+<li>
+<a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a>    
+    
+</li>
+</ul>    
+
+</nav>
+</div>
+</div>
+</div>
+    
+<%- include ("../partials/admin_footer") %>

@@ -1,0 +1,685 @@
+html{
+    position: relative;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+#header{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 5px #cdcaca;
+}
+#brand{
+    width: 300px;
+    height: 794px;
+    position: absolute;
+    background-color: #324370;
+    top: -41px;
+    
+}
+#content{
+    position: relative;
+    width: 1236px;
+    height: 702px;
+    background-color: #f5f5f5;
+    left: 300px;
+    top: 6px
+}
+.col-md-offset-2{
+    position: absolute;
+    top: 6px;
+    left: 80px;
+    border-radius: 20px;
+    width: 420px;
+    height: 38px;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    padding-left: 35px
+    
+}
+#searchicon{
+    position: absolute;
+    left: 336px;
+    top: 11px;
+    width: 35px
+    
+}
+.notificationwrap{
+    width: 300px;
+    height: 50px;
+    position: relative;
+/*    background-color: aqua;*/
+    left: 1200px;
+    top: 4px
+/*    z-index: 2;*/
+}
+#admin{
+    position: absolute;
+    top: 12px;
+    left: 60px
+}
+.img-responsive{
+    position: absolute;
+    top: -1px;
+    width: 50px;
+}
+#gear{
+    left: 125px;
+    width: 60px;
+    top: -6px;
+    cursor: pointer;
+
+    
+}
+
+#notify{
+    left: 190px;
+    cursor: pointer;
+
+}
+#logout{
+   left: 250px;
+   cursor: pointer;
+
+}
+.line{
+    position: absolute;
+    transform: rotate(90deg);
+    width: 30px;
+    background-color: black;;
+    
+}
+#line1{
+    left: 228px;
+}
+#line2{
+    left: 170px
+}
+#line3{
+    left: 110px
+}
+#monktree{
+    position: absolute;
+    width: 150px;
+    left: 75px;
+}
+.listitems{
+    position: absolute;
+    top: 200px;
+    left: -20px;
+    margin-bottom: 5px;
+}
+#dash{
+    color: white;
+    text-decoration: none;
+    width: 320px;
+
+}
+#dash:hover{
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+}
+#dashicon{
+    margin-right: 10px
+}
+
+#customer{
+    color: white;
+    text-decoration: none;
+    width: 325px;
+    margin-left: -5px
+}
+#customer:hover{
+    background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+}
+#customericon{
+    margin-right: 7px;
+}
+
+#finance{
+    color: white;
+    text-decoration: none;
+    width: 340px;
+    margin-left: -20px
+    
+}
+#finance:hover{
+        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+}
+#financeicon{
+    margin-right: 10px
+}
+#inventory{
+    color: white;
+    text-decoration: none;
+    width: 335px;
+    margin-left: -14px
+}
+#inventory:hover{
+       background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+}
+#inventoryicon{
+    margin-right: 10px
+}
+#invoice{
+    color: white;
+    text-decoration: none;
+    width: 345px;
+    margin-left: -23px
+}
+#invoice:hover{
+        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+}
+#invoiceicon{
+    margin-right: 10px
+}
+#manage{
+    color: white;
+    text-decoration: none;
+    width: 320px;
+    margin-left: 4px
+}
+#manage:hover{
+        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+}
+#manageicon{
+    margin-right: 10px
+}
+#support{
+    color: white;
+    text-decoration: none;
+    width: 342px;
+    margin-left: -22px
+}
+#support:hover{
+        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+}
+#supporticon{
+    margin-right: 10px
+}
+#endline{
+    position: relative;
+    top: 70px
+}
+.row{
+    position: relative;
+    left: 60px;
+    width: auto;
+    height: 200px;
+    
+    
+}
+.container1{
+    width: 220px;
+    height: 120px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #bcb7b7;
+    font-size: 12px;
+    color: gray;
+
+    
+    
+}
+#totalusers{
+    position: relative;
+    top: 50px;
+    left: 30px;
+    
+}
+#newusers{
+    position: relative;
+    left: 300px;
+    top: -68.9px;
+}
+#sales{
+    position: relative;
+    left: 570px;
+    top: -188px
+    
+}
+#invent{
+    position: relative;
+    left: 850px;
+    top: -307px
+}
+#number{
+    font-size: 30px;
+    position: relative;
+    top: -5px;
+    color: #aaa6a6;
+}
+#percentage{
+    color: #00D386;
+    position: relative;
+    top: -10px
+}
+#month{
+    position: relative;
+    top: -10px
+}
+#percentage2{
+    color: red;
+    position: relative;
+    top: -10px
+}
+.images{
+    width: 30px;
+    position: relative;
+    top: -70px;
+    left: 20px
+}
+
+#chartsdiv{
+    position: relative;
+    color: white;
+}
+#curve_chart{
+    width: 550px;
+    height: 430px;
+    position: relative;
+    left: 76px;
+    top: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 5px #d6d5d5;
+    overflow: hidden;
+    background-color: white;
+    padding-top: 30px;
+}
+#title{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 330px;
+    z-index: 2;
+    background-color: white;
+    top: 33px;
+    left: 80px;
+    padding: 10px;
+    
+}
+#overview{
+    font-size: 13px;
+    color: #a19b9b;
+}
+#rev{
+    font-size: 20px;
+    font-weight: bold;
+}
+#buttons{
+    position: absolute;
+    left: 400px;
+    top: 50px;
+   
+}
+#monthly{
+  width: 100px;
+  background-color: #1A95FF;
+  color: white;
+  border-radius: 5px
+}
+#weekly{
+    width: 100px;
+    border-radius: 5px;
+}
+#columnchart_material{
+    width: 370px;
+    height: 430px;
+    position: relative;
+    left: 740px;
+    top: -400px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 5px #d6d5d5;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px; 
+    padding-top: 80px;
+    padding-left: 30px;
+}
+#title2{
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    top: 50px;
+    left: 770px;
+    font-size: 12px;
+    color: #a19b9b;
+}
+#order{
+   font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: -10px;
+}
+/*customer page styling*/
+#circle{
+    left: 147px;
+    top: -108px;
+    width: 45px;
+
+}
+#eye{
+    left: 70px;
+}
+#content2{
+    position: relative;
+    left: 75px;
+    top: 20px;
+    width: 1040px;
+    height: 430px
+}
+#content2 h3{
+    color: #b7adad;
+    font-weight: bold;
+    font-size: 23px
+}
+#tablecontent{
+    position: relative;
+    width: 960px;
+    height: 290px;
+    left: 19px;
+    top: 40px;
+    box-shadow: 0px 0px 8px 0px #a0a0a0;
+
+}
+#filter{
+    position: relative;
+    width: 70px;
+    height: 22px;
+    background-color: white;
+    border: 1px solid #1A95FF;
+    color: #1A95FF;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+    left: 850px;
+    top: -30px;
+}
+#arrows{
+    position: relative;
+    left: 30px
+}
+#round{
+    position: relative;
+    left: 70px;
+    
+}
+#verticalline{
+    position: relative;
+    left: 47px;
+    bottom: 2px
+}
+
+#greencircle{
+    margin-right: 5px
+}
+.pagination{
+    position: relative;
+    top: -40px;
+    left: 730px;
+}
+
+.pagination li a{
+    margin-right: 5px;
+    
+}
+/*userinfo styling*/
+
+#userinfocontent{
+    position: absolute;
+    left: 370px;
+    top: 100px;
+    height: 550px;
+    width: 340px;
+    text-align: center;
+    color: #172B4D;
+
+    
+}
+#userdetailcontent{
+    position: absolute;
+    left: 850px;
+    top: 100px;
+    height: 550px;
+    width: 600px;
+}
+#allcontent{
+    position: relative;
+    top: 200px;
+}
+#accept{
+    position: relative;
+    left: -10px;
+    width: 100px;
+    height: 30px;
+    background-color: #1A95FF;
+    color: white;
+}
+#reject{
+    width: 100px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    color: #1A95FF;
+    border: 1px solid #1A95FF;
+    background-color: white;
+}
+.hrlines{
+    position: relative;
+    left: -20px;
+    width: 340px;
+    border: 1.5px solid #e0e0e0;
+}
+#year{
+    font-size: 15px;
+    position: absolute;
+    color: #172B4D;
+}
+#admissionyear{
+    font-size: 10px
+}
+#third{
+    position: absolute;
+    left: 230px;
+    font-size: 15px;
+        color: #172B4D;
+
+}
+#currentsemester{
+    font-size: 10px;
+
+}
+#morning{
+    font-size: 15px;
+    color: #172B4D;
+
+}
+#shift{
+    font-size: 10px
+}
+#branchname{
+    font-size: 15px;
+    color: #172B4D;
+
+}
+#collegename{
+    font-size: 12px
+}
+#userimage{
+    position: absolute;
+    left: 90px;
+    top: -160px;
+    width: 130px;
+    
+}
+#mycarousel{
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    top: 580px;
+    left: 0px;
+}
+#mycarousel ol li{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background-color: #8898AA;
+    top: -60px
+}
+#mycarousel ol li.active{
+    background-color: #1A95FF;
+    position: relative;
+    top: -61px
+
+}
+.carousel-inner{
+    position: absolute;
+/*    background-color: aqua;*/
+    top: -580px;
+    border-radius: 10px;
+    height: 550px
+}
+#personal{
+    position: relative;
+    left: 20px;
+    top: 17px;
+    color:#172B4D;
+    font-weight: bold;
+    font-size: 13px;
+}
+#submission{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    color:#172B4D;
+    font-weight: bold;
+    font-size: 13px;
+}
+#previous{
+    position: relative;
+    left: 420px;
+    width: 65px;
+    height: 25px;
+    top: -30px;
+    background-color: #ffffff;
+    color: black;
+    padding: 1px;
+    border: 1px solid #1A95FF;
+}
+#next{
+    position: relative;
+    left: 520px;
+    width: 60px;
+    height: 25px;
+    top: -14px;
+    background-color: #1A95FF;
+    color: white;
+    padding: 1px;
+}
+#next1{
+    position: relative;
+    left: 430px;
+    width: 60px;
+    height: 25px;
+    top: -30px;
+    background-color: #1A95FF;
+    color: white;
+    padding: 1px;
+}
+#straight{
+    position: relative;
+    left: 0px;
+    width: 600px;
+    border: 1.2px solid #e0e0e0;
+    top: -20px
+}
+#straight1{
+    position: relative;
+    left: 0px;
+    width: 600px;
+    border: 1.2px solid #e0e0e0;
+    top: -30px
+}
+#notverified{
+    position: relative;
+    top: 3px;
+    color: red;
+}
+#upload {
+    opacity: 0;
+}
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#objection{
+    background-color: #F7FAFC;
+    height:70;
+    width: 400;
+}
+#straight2{
+    position: relative;
+    left: -20px;
+    width: 600px;
+    border: 1.2px solid #e0e0e0;
+    top: -30px;
+
+}
+#eyeforeye{
+    position: absolute;
+    top: 23px;
+    width: 30px;
+    left: 500px
+}
+#rejectiondiv{
+    position: absolute;
+    left: 690px;
+    top: 300px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+}
+#yesreject{
+    position: relative;
+    left: -10px;
+    width: 100px;
+    height: 30px;
+    background: linear-gradient( to left,#FF0055,#FFA000);
+    color: white;
+    font-size: 12px;
+    #FFA000
+}
+#cancel{
+    width: 100px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    color: #1A95FF;
+    border: 1px solid #1A95FF;
+    background-color: white;
+    font-size: 12px;
+
+}
+#rejectiondiv h5{
+    color: #172B4D;
+ 
+}
+#rejectiondiv p{
+ color: #172B4D;
+ margin-bottom: 30px;
+ margin-top: 20px
+}
+#userlink{
+    text-decoration: none;
+    color: #837b7b;
+}
