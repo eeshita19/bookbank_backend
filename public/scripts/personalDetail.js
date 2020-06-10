@@ -38,15 +38,16 @@ function initDetails() {
                 .catch(function (error) {
                     console.log(error);
                 })
-                
+
         } else
             document.location.href = '/login'
     });
 }
 
-window.onload = () => {
+window.addEventListener('load', function () {
     initDetails();
-};
+
+})
 
 $("#change").click(function () {
     // const refresh = initDetails();
@@ -62,7 +63,7 @@ function sendToPhone() {
 };
 
 const signupForm = document.querySelector('#details-form');
-signupForm.addEventListener('submit', (e) => {
+signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // get user data
@@ -71,11 +72,11 @@ signupForm.addEventListener('submit', (e) => {
     const lastname = signupForm['lastname'].value;
     const fatherfirstname = signupForm['fatherfirstname'].value;
     const fatherlastname = signupForm['fatherlastname'].value;
-    // const residentState = signupForm['country'].value;
-    // const residentCity = signupForm['country1'].value;
+    const residentState = listitem.textContent;
+    const residentCity = listitem1.textContent;
     const dob = signupForm['dob'].value;
 
-    db.collection("usersdata").doc(auth.currentUser.uid).set({
+    await db.collection("usersdata").doc(auth.currentUser.uid).set({
         username: auth.currentUser.displayName,
         email: auth.currentUser.email,
         phoneNumber: auth.currentUser.phoneNumber,
@@ -85,8 +86,8 @@ signupForm.addEventListener('submit', (e) => {
         dob: dob,
         fatherfirstname: fatherfirstname,
         fatherlastname: fatherlastname,
-        // residentState: residentState,
-        // residentCity: residentCity
+        residentState: residentState,
+        residentCity: residentCity,
         form1: true,
         adminVerification: false,
     }, {

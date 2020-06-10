@@ -1,4 +1,4 @@
-function initUp() {
+function initAcad() {
     auth.onAuthStateChanged(user => {
         if (user) {
             let docRef = db.collection("usersdata").doc(auth.currentUser.uid);
@@ -6,7 +6,7 @@ function initUp() {
                 .get()
                 .then(function (doc) {
                     if (doc.exists) {
-                        if (doc.data().form3 == true) {
+                        if (doc.data().form2 == true) {
                             sendResponse();
                         }
                     }
@@ -21,42 +21,36 @@ function initUp() {
 }
 
 window.addEventListener('load', function () {
-    initUp();
+    initAcad();
 
 })
 
-const upForm = document.querySelector('#up-form');
-upForm.addEventListener('submit', async (e) => {
+const acadForm = document.querySelector('#acad-form');
+acadForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const ref = storage.ref();
+    // get user data
+    const university = listitem.textContent;
+    const course = listitem1.textContent;
+    const courseStart = acadForm['courseStart'].value;
+    const courseEnd = acadForm['courseEnd'].value;
+    const classShift = acadForm['shift'].value;
+    const classLocation = acadForm['place'].value;
+    let uidNumber = acadForm['enroll'].value;
 
-    const file1 = $('#file1').get(0).files[0]
-    const file2 = $('#file2').get(0).files[0]
-
-    const name1 = auth.currentUser.email + file1.name;
-    const name2 = auth.currentUser.email + file2.name;
-
-    const metadata1 = {
-        contentType: file1.type
-    };
-
-    const metadata2 = {
-        contentType: file2.type
-    };
-
-    const task1 = await ref.child('photo/' + name1).put(file1, metadata1)
-        .catch((error) => {
-            alert('Error occured: please contact support')
-        })
-
-    const task2 = await ref.child('ID/' + name2).put(file2, metadata2)
-        .catch((error) => {
-            alert('Error occured: please contact support')
-        })
+    if (uidNumber == null || uidNumber == "") {
+        uidNumber = "Not provided";
+    }
 
     await db.collection("usersdata").doc(auth.currentUser.uid).set({
-        form3: true,
+        university: university,
+        course: course,
+        courseStart: courseStart,
+        courseEnd: courseEnd,
+        classShift: classShift,
+        classLocation: classLocation,
+        uidNumber: uidNumber,
+        form2: true,
     }, {
         merge: true,
     }).catch(function (error) {
@@ -70,4 +64,5 @@ upForm.addEventListener('submit', async (e) => {
 
 function sendResponse() {
     document.location.href = '/response'
+
 }
