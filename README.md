@@ -10,3 +10,7 @@ To host the project:
 ```
 firebase deploy
 ```
+Hosting URL 
+```
+https://bookbank-11bc5.web.app
+```
