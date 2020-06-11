@@ -1,3 +1,13 @@
+// check user
+function initLogin() {
+    if (auth.currentUser !== null)
+        auth.signOut();
+}
+
+window.addEventListener('load', function () {
+    initLogin();
+})
+
 // login
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
@@ -26,7 +36,6 @@ loginForm.addEventListener('submit', (e) => {
             // loginForm.querySelector('.error').innerHTML = err.message;
             console.log(err)
         });
-
 });
 
 function sendToDashboard() {

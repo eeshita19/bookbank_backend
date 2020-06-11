@@ -1,18 +1,19 @@
-html{
+html {
     background-color: #f5f5f5;
     overflow: hidden;
 }
-body{
+
+body {
     font-family: sans-serif;
 }
 
 
-#notestutorial{
+#notestutorial {
     position: relative;
     top: -15px
 }
 
-#container{
+#container {
     position: relative;
     width: 1235px;
     height: 690px;
@@ -20,11 +21,11 @@ body{
     bottom: 1000px;
 }
 
-#notactive{
+#notactive {
     width: 75px;
     height: 23px;
     position: absolute;
-    background: linear-gradient(to left ,#FF0A71,#FFB906);
+    background: linear-gradient(to left, #FF0A71, #FFB906);
     left: 1050px;
     top: 30px;
     padding-left: 8px;
@@ -32,93 +33,97 @@ body{
     color: white;
     font-size: 13px;
     font-weight: bold;
-    box-shadow: 0px 4px 6px  grey;
+    box-shadow: 0px 4px 6px grey;
 }
-.row2{
-	padding: 0px;
-	margin-top: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
+
+.row2 {
+    padding: 0px;
+    margin-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .column2 {
-  float: left;
-  padding: 0px;
-  position: relative;
-  left: 30px;
+    float: left;
+    padding: 0px;
+    position: relative;
+    left: 30px;
 }
 
 
 
 .left2 {
-  width: 33.33%;
+    width: 33.33%;
 
 }
 
 .mid2 {
-  width: 33.33%;
+    width: 33.33%;
 }
 
-.right2{
-	width: 33.33%;
+.right2 {
+    width: 33.33%;
 }
+
 .button51 {
-  background-color: #FFFFFF;
-  border: none;
-  color: #7A7A7A;
-  height: 40px;
-  width: 307px;
-  box-shadow: 1px 1px 20px 4px #acacbd;
-  text-align: left;
-  text-decoration: none;
-  outline: none;
-  font-size: 20px;
-  margin-top: 0px;
-  margin-left: -10px;
-  
+    background-color: #FFFFFF;
+    border: none;
+    color: #7A7A7A;
+    height: 40px;
+    width: 307px;
+    box-shadow: 1px 1px 20px 4px #acacbd;
+    text-align: left;
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+
 }
+
 .button5 {
-  background-color: #FFFFFF;
-  border: none;
-  color: #7A7A7A;
-  height: 40px;
-  width: 307px;
-  box-shadow: 1px 1px 20px 4px #acacbd;
-  text-align: left;
-  text-decoration: none;
-  outline: none;
-  font-size: 20px;
-  margin-top: 0px;
-  margin-left: -10px;
-  cursor: pointer; 
-  
+    background-color: #FFFFFF;
+    border: none;
+    color: #7A7A7A;
+    height: 40px;
+    width: 307px;
+    box-shadow: 1px 1px 20px 4px #acacbd;
+    text-align: left;
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-left: -10px;
+    cursor: pointer;
+
 }
+
 /*.button5:focus {
   background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A);
   box-shadow: 1px 1px 20px 4px #acacbd;
   color: white;
 }*/
-.button5:active{
-  background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A);
-  box-shadow: 1px 1px 20px 4px #acacbd;
-  color: white;
+.button5:active {
+    background-image: linear-gradient(-90deg, #FF0D6F, #FFB20A);
+    box-shadow: 1px 1px 20px 4px #acacbd;
+    color: white;
 }
 
-#current{
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.986);
+#current {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.986);
 }
 
-a:any-link{
-  text-decoration: none;
-  color: rgba(3, 3, 3, 0.986);
+a:any-link {
+    text-decoration: none;
+    color: rgba(3, 3, 3, 0.986);
 }
 
 
-.container1{ 
+.container1 {
     height: 400px;
     border-radius: 4px;
     width: 830px;
@@ -130,96 +135,100 @@ a:any-link{
     margin-top: 60px;
     text-align: left;
     left: 20px
-
 }
 
 
 
-.textbox1{
-  background-color: #F9F9F9; 
-  height:35px; 
-  width: 200px;
-  border: none;
-  box-shadow: 1px 1px 4px 1px #ccc;
+.textbox1 {
+    background-color: #F9F9F9;
+    height: 35px;
+    width: 200px;
+    border: none;
+    box-shadow: 1px 1px 4px 1px #ccc;
 }
-.save{
-  font-family: Segoe UI, sans-serif; 
-  margin-left: 720px; 
-  background-color: #1A95FF;  
-  font-weight: 600; 
-  height: 30;
-  width: 73;
-  cursor: pointer; 
-  color: white;
-  border: none;
-  box-shadow: 1px 1px 4px 1px #ccc;
+
+.save {
+    font-family: Segoe UI, sans-serif;
+    margin-left: 720px;
+    background-color: #1A95FF;
+    font-weight: 600;
+    height: 30;
+    width: 73;
+    cursor: pointer;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 4px 1px #ccc;
 }
+
 a:link {
-  text-decoration: none;
-  color: #1A95FF;
+    text-decoration: none;
+    color: #1A95FF;
 }
-#containsform{
+
+#containsform {
     position: absolute;
     top: 55px;
     left: 30px
 }
 
-.row21{
-  padding: 0px;
-  margin-top: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
+.row21 {
+    padding: 0px;
+    margin-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .column21 {
-  float: left;
-  padding: 0px;
-  position: relative;
-  left: 30px;
-  
+    float: left;
+    padding: 0px;
+    position: relative;
+    left: 30px;
+
 }
 
 .left21 {
-  width: 70%;
+    width: 70%;
 
 }
 
-.right21{
-  width: 30%;
+.right21 {
+    width: 30%;
 }
 
-.draft{
-  padding: 2px 4px;
-  text-align: center; 
-  font-size: 18px; 
-  width: 50px; 
-  margin-top: 0px; 
-  margin-left: -10px; 
-  background-color: white; 
-  opacity: 49%;
-  color: grey;
-  border-radius: 3px;
+.draft {
+    padding: 2px 4px;
+    text-align: center;
+    font-size: 18px;
+    width: 50px;
+    margin-top: 0px;
+    margin-left: -10px;
+    background-color: white;
+    opacity: 49%;
+    color: grey;
+    border-radius: 3px;
 }
 
-.saved{
-  padding: 3px 5px;
-  text-align: center; 
-  font-size: 16px; 
-  width: 50px; 
-  margin-top: 0px; 
-  margin-left: -10px; 
-  background: linear-gradient(to left ,#FF0A71,#FFB906);
-  opacity: none;
-  color: white;
-  border-radius: 3px; 
+.saved {
+    padding: 3px 5px;
+    text-align: center;
+    font-size: 16px;
+    width: 50px;
+    margin-top: 0px;
+    margin-left: -10px;
+    background: linear-gradient(to left, #FF0A71, #FFB906);
+    opacity: none;
+    color: white;
+    border-radius: 3px;
 }
+
 ::placeholder {
-  color: #4F4F4F;
+    color: #4F4F4F;
 }
-.selected{
+
+.selected {
     position: relative;
     left: 145px;
     top: -25px;
@@ -230,14 +239,15 @@ a:link {
 
 }
 
-.selectbox{
+.selectbox {
     position: absolute;
     left: -55px;
     top: 450px;
     display: flex;
     width: 400px;
 }
-.selectbox .options-container{
+
+.selectbox .options-container {
     background-color: #f5f5f5;
     color: darkolivegreen;
     max-height: 0;
@@ -249,68 +259,78 @@ a:link {
     left: 270px;
     top: -90px;
     text-align: center;
-    
+
 }
-.selectbox .options, .selected{
+
+.selectbox .options,
+.selected {
     padding: 10px;
     cursor: pointer;
 }
-.selectbox .options:hover{
+
+.selectbox .options:hover {
     background-color: #a6aeb3;
 }
-.selectbox label{
+
+.selectbox label {
     cursor: pointer;
 }
-.selectbox .options .radio{
+
+.selectbox .options .radio {
     display: none;
 }
-.selectbox .options-container.active{
+
+.selectbox .options-container.active {
     max-height: 80px;
     opacity: 1;
     overflow-y: scroll;
 }
-#lis{
+
+#lis {
     position: absolute;
     list-style: none;
     display: inline;
 }
-#downarrow{
+
+#downarrow {
     position: absolute;
     left: 179.3px;
     top: 16px;
     width: 13px
 }
 
-#uparrow{
+#uparrow {
     position: absolute;
     left: 179.3px;
     top: 6px;
     width: 13.6px;
 }
 
-#span1{
+#span1 {
     margin-right: 10px
 }
 
-#span1 img{
+#span1 img {
     position: relative;
     top: 2px;
 }
-#country{
-   position: absolute;
-   left: 0px;
-   top: -20px;
-   width: 120px;
-   font-size: 16px;
-   color: grey;
-    
-    
-}
-#country:hover{
-    cursor:pointer;
+
+#country {
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    width: 120px;
+    font-size: 16px;
+    color: grey;
+
+
 }
 
-.selected1{
+#country:hover {
+    cursor: pointer;
+}
+
+.selected1 {
     position: relative;
     left: 380px;
     top: -60px;
@@ -321,14 +341,15 @@ a:link {
 
 }
 
-.selectbox1{
+.selectbox1 {
     position: absolute;
     left: -55px;
     top: 450px;
     display: flex;
     width: 400px;
 }
-.selectbox1 .options-container1{
+
+.selectbox1 .options-container1 {
     background-color: #f5f5f5;
     color: darkolivegreen;
     max-height: 0;
@@ -340,65 +361,73 @@ a:link {
     left: 506px;
     top: -90px;
     text-align: center;
-    
+
 }
-.selectbox1 .options1, .selected1{
+
+.selectbox1 .options1,
+.selected1 {
     padding: 10px;
     cursor: pointer;
 }
-.selectbox1 .options1:hover{
+
+.selectbox1 .options1:hover {
     background-color: #a6aeb3;
 }
-.selectbox1 label{
+
+.selectbox1 label {
     cursor: pointer;
 }
-.selectbox1 .options1 .radio1{
+
+.selectbox1 .options1 .radio1 {
     display: none;
 }
-.selectbox1 .options-container1.active{
+
+.selectbox1 .options-container1.active {
     max-height: 80px;
     opacity: 1;
     overflow-y: scroll;
 }
-#lis2{
+
+#lis2 {
     position: absolute;
     list-style: none;
     display: inline;
 }
-#downarrow1{
+
+#downarrow1 {
     position: absolute;
     left: 179.6px;
     top: 16px;
     width: 13px
 }
 
-#uparrow1{
+#uparrow1 {
     position: absolute;
     left: 179.3px;
     top: 6px;
     width: 13.6px;
 }
 
-#span1{
+#span1 {
     margin-right: 10px
 }
 
-#span1 img{
+#span1 img {
     position: relative;
     top: 2px;
 }
-#country1{
-   position: absolute;
-   left: 0px;
-   top: -20px;
-   width: 120px;
-   font-size: 16px;
-   color: grey;
-    
-    
-}
-#country1:hover{
-    cursor:pointer;
-}
+
+#country1 {
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    width: 120px;
+    font-size: 16px;
+    color: grey;
 
 
+}
+
+#country1:hover {
+    cursor: pointer;
+}
