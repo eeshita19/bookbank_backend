@@ -12,6 +12,7 @@
     position: absolute;
     left: 1235.1px;
     top: -40px;
+
 }
 #buttons ul li{
     display: inline;
@@ -41,6 +42,7 @@
     left: -9px;
     top: 23px;
     margin-right: 2px;
+    outline: none;
     
 }
 #button1:hover{
@@ -79,6 +81,7 @@
     border: 1px;
     margin: none;
     padding-left: 0px;
+    outline: none;
     
 }
 #button2:hover{
@@ -86,14 +89,16 @@
 }
 
 #button3{
-    width: 45px;
-    height: 43px;
+    width: 40px;
+    height: 35px;
     position: relative;
-    top: 17px;
+    top: 19px;
+    left:-3px;
     background-color: white;
     border: 1px;
     margin: none;
     padding-left: 0px;
+    outline: none;
     
 }
 #button3:hover{
@@ -101,7 +106,7 @@
 }
 
 #logout{
-    width: 45px;
+    width: 50px;
     height:45px;
 }
 
@@ -134,11 +139,10 @@
 #listdiv ul{
     list-style: none;
 }
-#listdiv ul li{
-    margin-bottom: 15px;
+#listdiv ul li{ 
     width: 305px;
     height: 25px;
-    padding: 5px;
+    padding: 10px 5px;
    
 }
 #listdiv ul li:last-child{
@@ -152,10 +156,12 @@
     font-family: sans-serif;
     font-size: 15px;
     display: block;
+    
+    
      
 }
 #listdiv ul li:hover{
-    background: linear-gradient(to left ,#FF0A71,#FFB906);
+    background: rgba(241, 239, 239, 0.2);
 }
 
 
@@ -176,22 +182,19 @@
 #gift{
     position: relative;
     right: 9px;
-        margin-left: 90px;
+    margin-left: 90px;
 
 }
 
 #notes{
     position: relative;
-    left: -2px;
-    margin-left: 80px;
-    top: 4px
-
-}
+    right: 9px;
+    margin-left: 90px;
+    }
 #codeplug{
-    text-align: center;
-    margin-top: 10px;
-    position: absolute;
-    right: 3px
+    position: relative;
+    right: 9px;
+    margin-left: 90px;
 }
 #line{
     position: absolute;

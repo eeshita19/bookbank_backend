@@ -9,10 +9,13 @@ const main = express()
 main.use('/api/v1', app)
 main.use(bodyParser.json())
 
+main.use(express.static(path.join(__dirname, "../public")))
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
 main.set('view engine', 'ejs')
+
 
 //login-register routes
 main.get('/login', (req, res) => {

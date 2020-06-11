@@ -86,6 +86,16 @@ body{
   
 }
 
+a:any-link{
+    color: black;
+    text-decoration: none;
+}
+
+#current{
+    text-decoration: none;
+  color: rgba(255, 255, 255, 0.986);
+}
+
 
 .button5 {
   background-color: #FFFFFF;
@@ -133,14 +143,6 @@ body{
     text-align: left;
 
 }
-.textbox1{
-  background-color: #F9F9F9; 
-  height:35px; 
-  width: 500px;
-  border: none;
-  margin-bottom: 15px;
-  margin-left: 20px;
-}
 
 
 .textbox2{
@@ -150,7 +152,9 @@ body{
   margin-bottom: 15px;
   border: none;
   margin-left: 20px;
+  box-shadow: 1px 1px 4px 1px #ccc;
 }
+
 
 .save{
   font-family: Segoe UI, sans-serif; 
@@ -163,6 +167,8 @@ body{
   cursor: pointer; 
   color: white;
   border: none;
+  box-shadow: 1px 1px 4px 1px #ccc;
+  
 }
 #containsform{
     position: absolute;
@@ -206,7 +212,7 @@ body{
     right: 23.9px;
     color:#989898;
     font-size: 18px;
-    border: 1px solid
+    border: 0px solid;
 
 }
 #donthave:hover{
@@ -303,6 +309,7 @@ body{
     width: 484px;
     height: 15px;
     white-space: nowrap;
+    box-shadow: 1px 1px 4px 1px #ccc;
 
 }
 
@@ -396,6 +403,7 @@ body{
     width: 484px;
     height: 15px;
     white-space: nowrap;
+    box-shadow: 1px 1px 4px 1px #ccc;
 
 
 }

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=yes">
     <link rel="stylesheet" type="text/css" href="/css/submission_styling.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+   
     <%- include ("../partials/header") %>
 
     <div id="container">
@@ -35,7 +35,7 @@
                 &nbsp&nbsp
                 <button class="button5"
                     style="margin-left: -7px; background-image: linear-gradient(-90deg,#FF0D6F,#FFB20A); color: white;">
-                    <div class="column21 left21">Submission</div>
+                    <div class="column21 left21" id="current">Submission</div>
                     <div class="column21 right21">
                         <div></div>
                     </div>
@@ -49,12 +49,12 @@
                     <label>Upload ID</label>&nbsp&nbsp&nbsp
                     &nbsp&nbsp
                     <input type="file" id="file2" class="textbox1" required><br><br><br>
-                    <input type="checkbox" name="" required>
+                    <input type="checkbox" name="" required style="box-shadow: 1px 1px 4px 1px #ccc;">
                     &nbsp&nbsp&nbsp
-                    I understand and agree all <a href="" style="color: orange"> terms and conditions.</a>
+                    I understand and agree all <a href="" style="color: orange "> terms and conditions.</a>
                     <br>
                     <!-- <a href="/response" id="submit">Submit</a> -->
-                    <button type="submit" id="submit"> Submit </button>
+                    <button type="submit" id="submit" style="box-shadow: 1px 1px 4px 1px #ccc;"> Submit </button>
                 </form>
             </div>
         </div>
