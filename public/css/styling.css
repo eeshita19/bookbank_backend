@@ -1,13 +1,14 @@
-html{
+html {
     height: 100%;
     background-color: #F5F5F5;
     overflow: hidden;
 }
-body{
+
+body {
     font-family: sans-serif;
 }
 
-#container{
+#container {
     height: 540px;
     width: 1100px;
     background-color: #ffff;
@@ -16,28 +17,30 @@ body{
     box-shadow: 1px 1px 20px 4px #acacbd;
     position: relative;
 }
+
 /*Here manipulated the blue polygon which has a id polygon*/
-#polygon{
+#polygon {
     position: absolute;
     width: 569px;
-/*    z-index: 2;*/
+    /*    z-index: 2;*/
     right: -90px;
     top: -214px;
     height: 662px
 }
+
 /*here manipulated the green amoeba shape picture which has the id path*/
-#path{
+#path {
     position: absolute;
-/*    z-index: 2;*/
+    /*    z-index: 2;*/
     width: 489px;
     height: 504px;
     bottom: -129px;
     left: -80px;
-    
+
 }
 
 /*here manipulated the intersection of polygon picture which has the id intersectionpolygon*/
-#intersectionpolygon{
+#intersectionpolygon {
     position: absolute;
     right: -53px;
     top: -50px;
@@ -46,7 +49,7 @@ body{
 }
 
 /*here manipulated the intersection of green picture which has the id intersectionpath*/
-#intersectionpath{
+#intersectionpath {
     position: absolute;
     top: 400px;
     left: -7px;
@@ -55,7 +58,7 @@ body{
 }
 
 /*Here designed the picture which has gradient color*/
-#gradient{
+#gradient {
     height: 540px;
     width: 350px;
     margin: 100px auto;
@@ -67,30 +70,31 @@ body{
     color: white;
     text-align: center;
     overflow: hidden;
-    
-    
+
+
 }
+
 /*Designed the heading inside the gradient div*/
-#gradient h1{
+#gradient h1 {
     font-weight: bold;
     margin-top: 170px;
-    
+
 }
 
 /*Designed the paragraph inside the gradient div*/
-#gradient p{
+#gradient p {
     margin-top: 70px;
     font-weight: 700;
     font-size: 18px
-    
 }
 
 /*Designed the signup button*/
-input[type=button],#signup{
+input[type=button],
+#signup {
     width: 230px;
     height: 50px;
     border-radius: 25px;
-    margin-top:20px;
+    margin-top: 20px;
     border: 2px solid white;
     background-color: transparent;
     color: white;
@@ -98,39 +102,43 @@ input[type=button],#signup{
     font-size: 20px;
     outline: none;
 }
+
 /*hover ability of that signup button*/
-#signup:hover{
+#signup:hover {
     cursor: pointer;
 }
 
-#signup:active{
+#signup:active {
     outline: none;
 }
 
 
 /*designed the brandlogo*/
-#brandlogo{
+#brandlogo {
     position: absolute;
     width: 150px;
     left: 40px;
     top: 40px;
 }
+
 /*designed the quote which says log in monktree*/
-#loginquote{
+#loginquote {
     color: #FF4704;
     position: absolute;
     left: 200px;
     top: 120px;
     font-weight: 700;
 }
+
 /*this wrap div contains the both the email and the password inputs*/
-#wrap{
+#wrap {
     position: absolute;
     left: 140px;
     top: 250px;
 }
+
 /*designed the email input*/
-#email{
+#email {
     width: 400px;
     height: 30px;
     margin-bottom: 15px;
@@ -141,7 +149,7 @@ input[type=button],#signup{
 }
 
 /*designed the password input*/
-#password{
+#password {
     width: 400px;
     height: 30px;
     margin-bottom: 15px;
@@ -149,39 +157,44 @@ input[type=button],#signup{
     padding-left: 30px;
     border: 1px;
 }
+
 /*this wrap2 contains forgot password paragraph the reset span and the button with value sign in*/
-#wrap2{
+#wrap2 {
     position: absolute;
     left: 240px;
     top: 350px;
 }
+
 /*designed the forget password paragraph*/
-#forget{
+#forget {
     color: gray;
-    
+
 }
+
 /*designed reset link*/
-#reset a{
+#reset a {
     text-decoration: none;
     color: gray;
     font-weight: bold;
 }
+
 /*designed sign in input button*/
-#signin{
+#signin {
     width: 230px;
     height: 50px;
     border-radius: 25px;
-    margin-top:20px;
+    margin-top: 20px;
     border: 2px solid white;
-    background:linear-gradient(to left,#FF0045, #FFCC00);
+    background: linear-gradient(to left, #FF0045, #FFCC00);
     color: white;
     font-weight: 550;
     font-size: 20px;
     margin-left: -13px;
-    outline:none;
-    
+    outline: none;
+
 }
+
 /*gave sign in button a hover ability*/
-#signin:hover{
+#signin:hover {
     cursor: pointer;
 }

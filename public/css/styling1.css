@@ -1,4 +1,4 @@
-#header{
+#header {
     height: 50px;
     width: 1700px;
     background-color: white;
@@ -8,31 +8,36 @@
     box-shadow: 1px 1px 12px 1px grey;
 }
 
-#buttons{
+#buttons {
     position: absolute;
     left: 1235.1px;
     top: -40px;
 
 }
-#buttons ul li{
+
+#buttons ul li {
     display: inline;
     border-right: 1px solid grey;
 }
-#namenot{
+
+#namenot {
     position: absolute;
     top: 45px;
     left: 115px;
     z-index: 2;
-    
+
 }
-#caste{
+
+#caste {
     margin-right: 13px;
     font-weight: bold;
 }
-#list2{
+
+#list2 {
     margin-left: 5px
 }
-#button1{
+
+#button1 {
     width: 45px;
     height: 44px;
     position: relative;
@@ -43,35 +48,37 @@
     top: 23px;
     margin-right: 2px;
     outline: none;
-    
+
 }
-#button1:hover{
+
+#button1:hover {
     cursor: pointer;
 }
 
-#gear{
+#gear {
     width: 55px;
     height: 55px;
 }
 
-#list3{
+#list3 {
     margin-right: 5px
 }
 
-#bell{
+#bell {
     width: 50px;
     height: 45px;
-     
+
 }
 
-#bellnot{
+#bellnot {
     position: absolute;
     left: 225px;
     top: 44px;
     z-index: 2;
-    
+
 }
-#button2{
+
+#button2 {
     width: 45px;
     height: 40px;
     position: relative;
@@ -82,36 +89,38 @@
     margin: none;
     padding-left: 0px;
     outline: none;
-    
+
 }
-#button2:hover{
+
+#button2:hover {
     cursor: pointer;
 }
 
-#button3{
+#button3 {
     width: 40px;
     height: 35px;
     position: relative;
     top: 19px;
-    left:-3px;
+    left: -3px;
     background-color: white;
     border: 1px;
     margin: none;
     padding-left: 0px;
     outline: none;
-    
+
 }
-#button3:hover{
+
+#button3:hover {
     cursor: pointer;
 }
 
-#logout{
+#logout {
     width: 50px;
-    height:45px;
+    height: 45px;
 }
 
 
-#left{
+#left {
     position: relative;
     width: 300px;
     height: 1000px;
@@ -119,109 +128,116 @@
     z-index: 2;
     top: -60px;
     left: -8px;
-    
+
 }
 
-#brandname{
+#brandname {
     width: 160px;
     height: 36px;
     position: absolute;
     left: 60px;
     top: 80px
-    
 }
 
-#listdiv{
+#listdiv {
     position: absolute;
     top: 150px;
     left: -54px
 }
-#listdiv ul{
+
+#listdiv ul {
     list-style: none;
 }
-#listdiv ul li{ 
+
+#listdiv ul li {
     width: 305px;
     height: 25px;
     padding: 10px 5px;
-   
+
 }
-#listdiv ul li:last-child{
-   position: relative;
+
+#listdiv ul li:last-child {
+    position: relative;
     top: -10px
 }
-#listdiv ul li a{
+
+#listdiv ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-family: sans-serif;
     font-size: 15px;
     display: block;
-    
-    
-     
+
+
+
 }
-#listdiv ul li:hover{
+
+#listdiv ul li:hover {
     background: rgba(241, 239, 239, 0.2);
 }
 
 
-#dashboard{
+#dashboard {
     position: relative;
     top: 3px;
     right: 8px;
     margin-left: 90px;
 }
 
-#bag{
+#bag {
     position: relative;
     right: 9px;
     margin-left: 90px;
 
 }
 
-#gift{
+#gift {
     position: relative;
     right: 9px;
     margin-left: 90px;
 
 }
 
-#notes{
-    position: relative;
-    right: 9px;
-    margin-left: 90px;
-    }
-#codeplug{
+#notes {
     position: relative;
     right: 9px;
     margin-left: 90px;
 }
-#line{
+
+#codeplug {
+    position: relative;
+    right: 9px;
+    margin-left: 90px;
+}
+
+#line {
     position: absolute;
     top: 500px;
     width: 298px;
 }
 
-#listdiv2{
+#listdiv2 {
     position: absolute;
     top: 550px;
     left: -70px
-    
 }
-#listdiv2 ul{
+
+#listdiv2 ul {
     list-style: none;
 }
-#listdiv2 ul li{
+
+#listdiv2 ul li {
     margin-bottom: 15px;
     width: 319px;
     height: 25px;
     padding: 5px;
     text-align: center;
-    
-   
+
+
 }
 
-#listdiv2 ul li a{
+#listdiv2 ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -229,6 +245,7 @@
     font-size: 15px;
     display: block;
 }
-#listdiv2 ul li:hover{
-    background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#listdiv2 ul li:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 }

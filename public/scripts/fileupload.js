@@ -34,8 +34,8 @@ upForm.addEventListener('submit', async (e) => {
     const file1 = $('#file1').get(0).files[0]
     const file2 = $('#file2').get(0).files[0]
 
-    const name1 = auth.currentUser.email + file1.name;
-    const name2 = auth.currentUser.email + file2.name;
+    const name1 = "photo-" + auth.currentUser.email;
+    const name2 = "id+" + auth.currentUser.email;
 
     const metadata1 = {
         contentType: file1.type
@@ -45,12 +45,12 @@ upForm.addEventListener('submit', async (e) => {
         contentType: file2.type
     };
 
-    const task1 = await ref.child('photo/' + name1).put(file1, metadata1)
+    await ref.child('photo/' + name1).put(file1, metadata1)
         .catch((error) => {
             alert('Error occured: please contact support')
         })
 
-    const task2 = await ref.child('ID/' + name2).put(file2, metadata2)
+    await ref.child('ID/' + name2).put(file2, metadata2)
         .catch((error) => {
             alert('Error occured: please contact support')
         })

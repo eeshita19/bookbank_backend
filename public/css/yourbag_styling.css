@@ -1,12 +1,13 @@
-html{
+html {
     background-color: #f5f5f5;
     overflow: hidden;
 }
-body{
+
+body {
     font-family: sans-serif;
 }
 
-#container{
+#container {
     position: relative;
     width: 1030px;
     height: 550px;
@@ -16,7 +17,8 @@ body{
     box-shadow: 1px 1px 7px 1px grey;
     border-radius: 10px;
 }
-#yourbag{
+
+#yourbag {
     position: absolute;
     left: 70px;
     top: 10px;
@@ -24,44 +26,48 @@ body{
     color: #5C5C5C;
     font-size: 20px
 }
-#item{
+
+#item {
     position: absolute;
     left: 610px;
     top: 10px;
     font-weight: bold;
     color: #5C5C5C;
     font-size: 20px;
-    
+
 }
-    
-   
 
 
-#bluediv{
-   position: relative;
+
+
+#bluediv {
+    position: relative;
     z-index: 2;
     width: 300px;
     height: 550px;
     background-color: #1A95FF;
-    left:730px;
+    left: 730px;
     border-radius: 0px 10px 10px 0px
-     
 }
-#itemno{
+
+#itemno {
     color: #FF0A71;
 }
-#line2{
+
+#line2 {
     position: absolute;
     width: 550px;
     left: 100px;
     top: 60px;
 }
-#dropdowns{
+
+#dropdowns {
     position: absolute;
     left: 70px;
     top: 100px;
 }
-#dropdowns select{
+
+#dropdowns select {
     width: 600px;
     height: 50px;
     margin-bottom: 20px;
@@ -71,7 +77,8 @@ body{
     padding-left: 20px;
     color: gray;
 }
-#bagsummary{
+
+#bagsummary {
     color: white;
     font-weight: bold;
     position: absolute;
@@ -79,13 +86,15 @@ body{
     left: 30px;
     font-size: 19px;
 }
-#line3{
+
+#line3 {
     position: absolute;
     top: 60px;
     width: 250px;
     left: 25px
 }
-#summparyitem{
+
+#summparyitem {
     position: absolute;
     color: white;
     top: 80px;
@@ -93,26 +102,29 @@ body{
     font-size: 13px;
     font-weight: bold;
 }
-#amount{
+
+#amount {
     position: absolute;
     color: white;
     font-size: 13px;
     font-weight: bold;
     top: 80px;
     left: 230px
-    
 }
-#shipping{
+
+#shipping {
     position: absolute;
     top: 110px;
     left: 30px
 }
-#shipping p{
+
+#shipping p {
     color: white;
     font-size: 13px;
     font-weight: bold;
 }
-#shipping select{
+
+#shipping select {
     width: 200px;
     height: 30px;
     margin-bottom: 30px;
@@ -121,22 +133,25 @@ body{
     padding-left: 5px;
     color: #a09f96;
 }
-#line4{
-     position: absolute;
+
+#line4 {
+    position: absolute;
     top: 330px;
     width: 250px;
     left: 25px
 }
-#totalcost{
-     position: absolute;
+
+#totalcost {
+    position: absolute;
     color: white;
     top: 350px;
     left: 30px;
     font-size: 13px;
     font-weight: bold;
-    
+
 }
-#totalcostprice{
+
+#totalcostprice {
     position: absolute;
     color: white;
     font-size: 13px;
@@ -144,23 +159,26 @@ body{
     top: 350px;
     left: 230px
 }
-#topay{
-     position: absolute;
+
+#topay {
+    position: absolute;
     color: white;
     top: 380px;
     left: 30px;
     font-size: 13px;
     font-weight: bold;
 }
-#payingamount{
-     position: absolute;
+
+#payingamount {
+    position: absolute;
     color: white;
     font-size: 13px;
     font-weight: bold;
     top: 380px;
     left: 250px
 }
-#checkout{
+
+#checkout {
     position: absolute;
     left: 56px;
     top: 430px;
@@ -172,10 +190,11 @@ body{
     color: #1A95FF;
     font-size: 18px;
     font-weight: bold;
-    
-    
+
+
 }
-#checkout:hover{
+
+#checkout:hover {
     cursor: pointer;
-    
+
 }

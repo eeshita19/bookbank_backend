@@ -1,13 +1,12 @@
-
-
 /*desgined a div which contains inputs for each otp box*/
-#otpnumbers{
+#otpnumbers {
     position: relative;
     left: 575px;
     top: 250px;
 }
+
 /*designed all the boxes for otp numbers*/
-.otp{
+.otp {
     width: 350px;
     height: 2.4pc;
     margin-right: 8px;
@@ -19,7 +18,5 @@
     font-weight: 700;
     font-size: 20px;
 
-    
+
 }
-
-

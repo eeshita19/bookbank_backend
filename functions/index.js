@@ -52,6 +52,30 @@ main.get('/response', (req, res) => {
     res.render('submitresponse')
 })
 
+main.get('/admin/login', (req, res) => {
+    res.render('admin/login')
+})
+
+main.get('/admin', (req, res) => {
+    res.render('admin/index')
+})
+
+main.get('/admin/cust', (req, res) => {
+    res.render('admin/customer')
+})
+
+main.get('/admin/userinfo', (req, res) => {
+    res.render('admin/userinfo')
+})
+
+main.get('/admin/userinfo1', (req, res) => {
+    res.render('admin/userinfo1')
+})
+
+main.get('/admin/userinfo2', (req, res) => {
+    res.render('admin/userinfo2')
+})
+
 require('./routes')(app)
 app.get('*', (req, res) => {
     res.redirect('/login')

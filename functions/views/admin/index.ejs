@@ -1,92 +1,88 @@
-<%- include ("../partials/admin_header") %> 
- 
-    
+<%- include ("../partials/admin_header") %>
+
 <div class="col-md-8" id="content">
-<div class="row">
-<div class="container1" id="totalusers">TotalUsers<br /><span id="number">3045</span><br /><span id="percentage">+3.88%</span> <span id="month">from last month</span>
-<img id="uparrow" class="images"  src="/images/admin/Group%2075.png">
-</div>    
-<div class="container1" id="newusers">New Users<br /><span id="number">147</span><br /><span id="percentage2">+3.88%</span> <span id="month">from last month</span>
-<img id="downarrow" class="images" src="/images/admin/Group%2077.png">    
-</div>    
-<div class="container1" id="sales">Sales<br /><span id="number">134</span><br /><span id="percentage">+3.88%</span> <span id="month">from last month</span>
-<img id="rupee" class="images" src="/images/admin/icons8-rupee-96%20(1).png">
-</div>    
-<div class="container1" id="invent">Inventory<br /><span id="number">3.4K</span><br /><span id="percentage">+3.88%</span> <span id="month">from last month</span>
-<img id="warehouse" class="images" src="/images/admin/icons8-warehouse-100.png">    
-</div>    
-    
-</div>    
- <div id="chartsdiv">
- <div id="curve_chart"></div>
-<div id="title"><p id="overview">Overview<br /><span id="rev">Revenue</span></p></div> 
-<div id="buttons" class="btn-group btn-group-sm" role="group">
-<input type="button" value="Monthly" class="btn btn-default" id="monthly">
-<input type="button" value="Weekly" class="btn btn-default" id="weekly">
+    <div class="row">
+        <div class="container1" id="totalusers">TotalUsers<br /><span id="number">3045</span><br /><span
+                id="percentage">+3.88%</span> <span id="month">from last month</span>
+            <img id="uparrow" class="images" src="/images/admin/Group%2075.png">
+        </div>
+        <div class="container1" id="newusers">New Users<br /><span id="number">147</span><br /><span
+                id="percentage2">+3.88%</span> <span id="month">from last month</span>
+            <img id="downarrow" class="images" src="/images/admin/Group%2077.png">
+        </div>
+        <div class="container1" id="sales">Sales<br /><span id="number">134</span><br /><span
+                id="percentage">+3.88%</span> <span id="month">from last month</span>
+            <img id="rupee" class="images" src="/images/admin/icons8-rupee-96%20(1).png">
+        </div>
+        <div class="container1" id="invent">Inventory<br /><span id="number">3.4K</span><br /><span
+                id="percentage">+3.88%</span> <span id="month">from last month</span>
+            <img id="warehouse" class="images" src="/images/admin/icons8-warehouse-100.png">
+        </div>
+    </div>
+    <div id="chartsdiv">
+        <div id="curve_chart"></div>
+        <div id="title">
+            <p id="overview">Overview<br /><span id="rev">Revenue</span></p>
+        </div>
+        <div id="buttons" class="btn-group btn-group-sm" role="group">
+            <input type="button" value="Monthly" class="btn btn-default" id="monthly">
+            <input type="button" value="Weekly" class="btn btn-default" id="weekly">
+        </div>
+        <div id="columnchart_material"></div>
+        <div id="title2">
+            <p id="performance">Performance</p><span id="order">Order Placed</span>
+        </div>
+    </div>
 </div>
-<div id="columnchart_material"></div>
-<div id="title2"><p id="performance">Performance</p><span id="order">Order Placed</span></div>
-     
-     
- </div>   
-    
-    
-    
-</div>
-    
-    
-    
-    
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+    function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Months', '', ],
-          ['May',  1000,   ],
-          ['June',  1170,   ],
-          ['July',  660,    ],
-          ['August',  1030,   ]
+            ['Months', '', ],
+            ['May', 1000, ],
+            ['June', 1170, ],
+            ['July', 660, ],
+            ['August', 1030, ]
         ]);
-
         var options = {
-          curveType: 'function',
-          legend: { position: 'bottom' }
+            curveType: 'function',
+            legend: {
+                position: 'bottom'
+            }
         };
-
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
         chart.draw(data, options);
-      }
-
+    }
 </script>
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['bar']
+    });
+    google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+    function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['', 'Sales', ],
-          ['May', 1000, ],
-          ['June', 1170, ],
-          ['July', 660, ],
-          ['August', 1030, ]
+            ['', 'Sales', ],
+            ['May', 1000, ],
+            ['June', 1170, ],
+            ['July', 660, ],
+            ['August', 1030, ]
         ]);
-
         var options = {
-          chart: {
-            
-          }
+            chart: {
+
+            }
         };
-
         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
         chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>  
-    
-    
+    }
+</script>
+
 <%- include ("../partials/admin_footer") %>
