@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -16,8 +15,6 @@
 <body>
     <div id="container">
         <img src="/images/Intersection%201.png" id="intersectionpolygon">
-
-
         <div id="phoneDiv" style="display:show;">
             <h1 id="verificationprocess">Verification Process</h1>
             <p id="detailstoverify">Enter your mobile number to verify detail
@@ -39,34 +36,27 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- <div id="recaptcha-container"></div> -->
                     <div id="wrap2">
                         <button id="getotp" type="button" onclick="phoneAuth();" name="getotp">GET OTP</button>
                     </div>
                 </form>
         </div>
-
         <div id="otpDiv" style="display:none;">
             <h1 id="verificationprocess">Enter Verification code</h1>
             <p id="detailstoverify"> We've sent it to your phone! <span id="phText"></span></p>
-                <form id="otp-form">
-                    
-                     <div id="otpnumbers">
-                        <ul id="list2">
-                            <li id="phoneno" >
-                                <input type="tel" id='verificationCode' class="otp " maxlength="6">  
-                               
-                               <!--<input type="text"  placeholder="Enter verification code">--> 
-                            </li>
-                        </ul>
-                    </div>
-                
-                    <div id="wrap2">
-                        <button id="getotp" type="button" onclick="codeverify();" name="getotp">Verify code</button>
-                    </div>
-                </form>
+            <form id="otp-form">
+                <div id="otpnumbers">
+                    <ul id="list2">
+                        <li id="phoneno">
+                            <input type="tel" id='verificationCode' class="otp " maxlength="6">
+                        </li>
+                    </ul>
+                </div>
+                <div id="wrap2">
+                    <button id="getotp" type="button" onclick="codeverify();" name="getotp">Verify code</button>
+                </div>
+            </form>
         </div>
-
         <div id="gradient">
             <img src="/images/monktree%20white.png" id="brandlogo">
             <img src="/images/Intersection%202.png" id="intersectionpath">
@@ -79,12 +69,8 @@
         </div>
         <p id="error"></p>
     </div>
-
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
-    <script>
-        // let prevUser = firebase.auth().currentUser.uid;
-    </script>
     <script src="/scripts/config.js"></script>
     <script src="/scripts/otp.js"></script>
 </body>
