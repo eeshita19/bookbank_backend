@@ -20,10 +20,13 @@
             font-size: 16px;
             cursor: pointer;
             width: 50px;
+            opacity: 1;
         }
 
         .radio-toolbar input[type="radio"]:checked+label {
             background-color: rgb(117, 115, 115);
+            color:white;
+            opacity: 1;
 
         }
 
@@ -83,8 +86,8 @@
                                 <li id="country">Select</li>
                             </ul>
                         </div>
-                        <div class="selectbox">
-                            <div class="options-container">
+                        <div class="selectbox" >
+                            <div class="options-container" >
                                 <div class="options">
                                     <label for="india">Maharaja Surajmal Institute of Technology</label>
                                     <input type="radio" class="radio" id="india" name="country">
@@ -149,24 +152,24 @@
                         <input type="date" id="courseEnd" name="" class="textbox2"><br>
                         <label id="">Classroom shift</label>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        <span class="textbox2">
-                            <span class="radio-toolbar">
-                                <input type="radio" id="Morning" name="shift" value="Morning">
+                      
+                            <span class="radio-toolbar textbox2" >
+                                <input type="radio" id="Morning" name="shift" value="Morning" checked>
                                 <label for="Morning">Morning</label>
                                 <input type="radio" id="Evening" name="shift" value="Evening">
                                 <label for="Evening">Evening</label>
                             </span>
-                        </span>
-                        <span class="textbox2">
-                            <span class="radio-toolbar">
-                                <input type="radio" id="Home" name="place" value="Home">
+                      
+                        
+                            <span class="radio-toolbar textbox2">
+                                <input type="radio" id="Home" name="place" value="Home" checked>
                                 <label for="Home">Home</label>
                                 <input type="radio" id="PG" name="place" value="PG">
                                 <label for="PG">PG</label>
                                 <input type="radio" id="Hostel" name="place" value="Hostel">
                                 <label for="Hostel">Hostel</label>
                             </span>
-                        </span>
+                        
                         <br>
                         <br>
                         <label>UID/Enrollment number</label>&nbsp
