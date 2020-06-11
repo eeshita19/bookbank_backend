@@ -32,6 +32,7 @@ body{
     font-size: 13px;
     font-weight: bold;
     box-shadow: 0px 4px 6px  grey;
+    text-align: center;
 }
 .row2{
   padding: 0px;
@@ -217,4 +218,9 @@ body{
   opacity: none;
   color: white;
   border-radius: 3px; 
+}
+
+a:any-link{
+  color: black;
+  text-decoration: none;
 }
