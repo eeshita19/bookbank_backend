@@ -1,21 +1,32 @@
+const admin = require("firebase-admin")
 const functions = require('firebase-functions')
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+var serviceAccount = require("./serviceAccount.json");
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://bookbank-11bc5.firebaseio.com"
+});
 
 const app = express()
 const main = express()
 
 main.use('/api/v1', app)
 main.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 
+// public is already exposed by default 
+// no idea why do this 
 main.use(express.static(path.join(__dirname, "../public")))
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 main.set('view engine', 'ejs')
-
 
 //login-register routes
 main.get('/login', (req, res) => {
@@ -52,6 +63,14 @@ main.get('/response', (req, res) => {
     res.render('submitresponse')
 })
 
+main.get('/congratulations', (req, res) => {
+    res.render('congratulations')
+})
+
+main.get('/activated', (req, res) => {
+    res.render('activated')
+})
+
 main.get('/admin/login', (req, res) => {
     res.render('admin/login')
 })
@@ -64,19 +83,59 @@ main.get('/admin/cust', (req, res) => {
     res.render('admin/customer')
 })
 
-main.get('/admin/userinfo', (req, res) => {
-    res.render('admin/userinfo')
+main.get('/admin/userinfo/:id', async (req, res) => {
+    let uid = req.params.id
+    let valid
+    let username
+    await admin.auth().getUser(uid)
+        .then((data) => {
+            if (data.emailVerified == false) {
+                valid = "NOT VERIFIED"
+            } else {
+                valid = "VERIFIED"
+            }
+            username = data.displayName
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    res.render('admin/userinfo', {
+        state: valid,
+        username: username
+    })
 })
 
-main.get('/admin/userinfo1', (req, res) => {
-    res.render('admin/userinfo1')
+main.get('/admin/userinfo1/:id', async (req, res) => {
+    let uid = req.params.id
+    let username
+
+    await admin.auth().getUser(uid)
+        .then((data) => {
+            username = data.displayName
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    res.render('admin/userinfo1', {
+        username: username
+    })
 })
 
-main.get('/admin/userinfo2', (req, res) => {
-    res.render('admin/userinfo2')
+main.get('/admin/userinfo2/:id', async (req, res) => {
+    let uid = req.params.id
+    let username
+    await admin.auth().getUser(uid)
+        .then((data) => {
+            username = data.displayName
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    res.render('admin/userinfo2', {
+        username: username
+    })
 })
 
-require('./routes')(app)
 app.get('*', (req, res) => {
     res.redirect('/login')
 })
@@ -94,3 +153,24 @@ main.post('*', (req, res) => {
 })
 
 exports.webApi = functions.https.onRequest(main)
+
+exports.addAdminRole = functions.https.onCall((data, context) => {
+    // check request is made by an admin
+    if (context.auth.token.admin !== true) {
+        return {
+            error: 'Only admins can add other admins'
+        }
+    }
+    // get user and add admin custom claim
+    return admin.auth().getUserByEmail(data.email).then(user => {
+        return admin.auth().setCustomUserClaims(user.uid, {
+            admin: true
+        })
+    }).then(() => {
+        return {
+            message: `Success! ${data.email} has been made an admin.`
+        }
+    }).catch(err => {
+        return err
+    })
+})

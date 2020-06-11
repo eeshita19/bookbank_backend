@@ -34,9 +34,6 @@ upForm.addEventListener('submit', async (e) => {
     const file1 = $('#file1').get(0).files[0]
     const file2 = $('#file2').get(0).files[0]
 
-    const name1 = "photo-" + auth.currentUser.email;
-    const name2 = "id+" + auth.currentUser.email;
-
     const metadata1 = {
         contentType: file1.type
     };
@@ -44,6 +41,12 @@ upForm.addEventListener('submit', async (e) => {
     const metadata2 = {
         contentType: file2.type
     };
+
+    let id1 = file1.type.substring(file1.type.lastIndexOf('/') + 1);
+    let id2 = file2.type.substring(file2.type.lastIndexOf('/') + 1);
+
+    const name1 = auth.currentUser.uid + "." + id1;
+    const name2 = auth.currentUser.uid + "." + id2;
 
     await ref.child('photo/' + name1).put(file1, metadata1)
         .catch((error) => {
@@ -57,6 +60,8 @@ upForm.addEventListener('submit', async (e) => {
 
     await db.collection("usersdata").doc(auth.currentUser.uid).set({
         form3: true,
+        photoName: name + "." + id1,
+        idName: name + "." + id2
     }, {
         merge: true,
     }).catch(function (error) {

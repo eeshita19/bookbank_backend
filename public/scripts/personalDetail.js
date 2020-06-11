@@ -46,7 +46,6 @@ function initDetails() {
 
 window.addEventListener('load', function () {
     initDetails();
-
 })
 
 $("#change").click(function () {
@@ -75,6 +74,7 @@ signupForm.addEventListener('submit', async (e) => {
     const residentState = listitem.textContent;
     const residentCity = listitem1.textContent;
     const dob = signupForm['dob'].value;
+    let dateAndTime = new Date().toLocaleString();
 
     await db.collection("usersdata").doc(auth.currentUser.uid).set({
         username: auth.currentUser.displayName,
@@ -88,6 +88,7 @@ signupForm.addEventListener('submit', async (e) => {
         fatherlastname: fatherlastname,
         residentState: residentState,
         residentCity: residentCity,
+        dateSubmitted: dateAndTime,
         form1: true,
         adminVerification: false,
     }, {
