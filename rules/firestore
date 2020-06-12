@@ -1,0 +1,12 @@
+// Allow read/write access on all documents to any user signed in to the application
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    //final
+    match /usersdata/{userId} {
+        allow read, update, delete: if request.auth != null && request.auth.uid = userId;
+        allow create: if request.auth != null;
+    }
+
+  }
+}

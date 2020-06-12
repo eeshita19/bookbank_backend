@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <form id="admin-form">
+                <input type="text" id="admin-email" class="fadeIn second" name="email" placeholder="email">
+                <input type="text" id="password" class="fadeIn third" name="login" placeholder="disabled" disabled>
+                <input type="submit" class="fadeIn fourth" value="Make admin">
+            </form>
+        </div>
+    </div>
+    <script src="/scripts/admin/admin-auth.js" defer></script>
+
+    <%- include ('../partials/admin_footer') %>

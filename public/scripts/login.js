@@ -12,7 +12,6 @@ window.addEventListener('load', function () {
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
     // get user info
     const email = loginForm['email'].value;
     const password = loginForm['password'].value;
@@ -30,7 +29,6 @@ loginForm.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password)
         .then(() => {
             loginForm.reset();
-            console.log(auth.currentUser.email)
             auth.currentUser.getIdTokenResult().then(idTokenResult => {
                 auth.currentUser.admin = idTokenResult.claims.admin;
                 if (auth.currentUser.admin === true)
@@ -38,13 +36,23 @@ loginForm.addEventListener('submit', (e) => {
                 else
                     sendToDashboard();
             })
-            // sendToDashboard();
             // loginForm.querySelector('.error').innerHTML = '';
-        }).catch(err => {
+        }).catch((error) => {
             // loginForm.querySelector('.error').innerHTML = err.message;
-            console.log(err)
+            alert('wrong email or password')
         });
 });
+
+function resetPasswordLink() {
+    const loginForm = document.querySelector('#login-form');
+    const email = loginForm['email'].value;
+
+    auth.sendPasswordResetEmail(email).then(() => {
+        alert('Email send successfully! Please check your inbox.')
+    }).catch((error) => {
+        alert('To get the link to reset password please input your email then click here')
+    })
+}
 
 function sendToDashboard() {
     document.location.href = '/dashboard'

@@ -10,12 +10,10 @@ admin.initializeApp({
     databaseURL: "https://bookbank-11bc5.firebaseio.com"
 });
 
-const app = express()
 const main = express()
 
-main.use('/api/v1', app)
 main.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
+main.use(bodyParser.urlencoded({
     extended: true
 }))
 
@@ -23,9 +21,7 @@ app.use(bodyParser.urlencoded({
 // no idea why do this 
 main.use(express.static(path.join(__dirname, "../public")))
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-
+main.set('views', path.join(__dirname, 'views'))
 main.set('view engine', 'ejs')
 
 //login-register routes
@@ -83,6 +79,10 @@ main.get('/admin/cust', (req, res) => {
     res.render('admin/customer')
 })
 
+main.get('/admin/add', (req, res) => {
+    res.render('admin/createAdmin')
+})
+
 main.get('/admin/userinfo/:id', async (req, res) => {
     let uid = req.params.id
     let valid
@@ -136,22 +136,6 @@ main.get('/admin/userinfo2/:id', async (req, res) => {
     })
 })
 
-app.get('*', (req, res) => {
-    res.redirect('/login')
-})
-
-main.get('*', (req, res) => {
-    res.redirect('/login')
-})
-
-app.post('*', (req, res) => {
-    res.redirect('/login')
-})
-
-main.post('*', (req, res) => {
-    res.redirect('/login')
-})
-
 exports.webApi = functions.https.onRequest(main)
 
 exports.addAdminRole = functions.https.onCall((data, context) => {
@@ -173,4 +157,12 @@ exports.addAdminRole = functions.https.onCall((data, context) => {
     }).catch(err => {
         return err
     })
+})
+
+main.get('*', (req, res) => {
+    res.redirect('/login')
+})
+
+main.post('*', (req, res) => {
+    res.redirect('/login')
 })
