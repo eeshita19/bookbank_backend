@@ -89,12 +89,13 @@ main.get('/admin/userinfo/:id', async (req, res) => {
     let username
     await admin.auth().getUser(uid)
         .then((data) => {
-            if (data.emailVerified == false) {
+            if (data.emailVerified === false) {
                 valid = "NOT VERIFIED"
             } else {
                 valid = "VERIFIED"
             }
             username = data.displayName
+            return valid
         })
         .catch((error) => {
             console.log(error)
@@ -112,6 +113,7 @@ main.get('/admin/userinfo1/:id', async (req, res) => {
     await admin.auth().getUser(uid)
         .then((data) => {
             username = data.displayName
+            return username
         })
         .catch((error) => {
             console.log(error)
@@ -127,6 +129,7 @@ main.get('/admin/userinfo2/:id', async (req, res) => {
     await admin.auth().getUser(uid)
         .then((data) => {
             username = data.displayName
+            return username
         })
         .catch((error) => {
             console.log(error)
