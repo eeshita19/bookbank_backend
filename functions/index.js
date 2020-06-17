@@ -45,9 +45,8 @@ main.get('/dashboard', (req, res) => {
 
 //ide
 main.get('/ide', (req, res) => {
-    res.render('ide/ide.ejs')
+    res.render('ide/ide')
 })
-
 
 //form routes
 main.get('/form/personal', (req, res) => {
@@ -74,6 +73,7 @@ main.get('/activated', (req, res) => {
     res.render('activated')
 })
 
+// admin routes
 main.get('/admin/login', (req, res) => {
     res.render('admin/login')
 })

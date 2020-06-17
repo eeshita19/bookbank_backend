@@ -1,43 +1,43 @@
-var defaultUrl = localStorageGetItem("api-url") || "https://api.judge0.com";
-var apiUrl = defaultUrl;
-var wait = localStorageGetItem("wait") || false;
-var pbUrl = "https://pb.judge0.com";
-var check_timeout = 200;
+const defaultUrl = "https://judge0.p.rapidapi.com"
+let apiUrl = defaultUrl
+let wait = localStorageGetItem("wait") || false;
+const pbUrl = "https://pb.judge0.com";
+const check_timeout = 200;
 
-var blinkStatusLine = ((localStorageGetItem("blink") || "true") === "true");
-var editorMode = localStorageGetItem("editorMode") || "normal";
-var redirectStderrToStdout = ((localStorageGetItem("redirectStderrToStdout") || "false") === "true");
-var editorModeObject = null;
+let blinkStatusLine = ((localStorageGetItem("blink") || "true") === "true");
+let editorMode = localStorageGetItem("editorMode") || "normal";
+let redirectStderrToStdout = ((localStorageGetItem("redirectStderrToStdout") || "false") === "true");
+let editorModeObject = null;
 
-var fontSize = 14;
-var MonacoVim;
-var MonacoEmacs;
-var layout;
-var sourceEditor;
-var stdinEditor;
-var stdoutEditor;
-var stderrEditor;
-var compileOutputEditor;
-var sandboxMessageEditor;
+let fontSize = 14;
+let MonacoVim;
+let MonacoEmacs;
+let layout;
+let sourceEditor;
+let stdinEditor;
+let stdoutEditor;
+let stderrEditor;
+let compileOutputEditor;
+let sandboxMessageEditor;
 
-var isEditorDirty = false;
-var currentLanguageId;
+let isEditorDirty = false;
+let currentLanguageId;
 
-var $selectLanguage;
-var $compilerOptions;
-var $commandLineArguments;
-var $insertTemplateBtn;
-var $runBtn;
-var $navigationMessage;
-var $updates;
-var $statusLine;
+let $selectLanguage;
+let $compilerOptions;
+let $commandLineArguments;
+let $insertTemplateBtn;
+let $runBtn;
+let $navigationMessage;
+let $updates = $("#updates");
+let $statusLine;
 
-var timeStart;
-var timeEnd;
+let timeStart;
+let timeEnd;
 
-var messagesData;
+let messagesData;
 
-var layoutConfig = {
+let layoutConfig = {
     settings: {
         showPopoutIcon: false,
         reorderEnabled: true
@@ -72,38 +72,38 @@ var layoutConfig = {
             }, {
                 type: "stack",
                 content: [{
-                        type: "component",
-                        componentName: "stdout",
-                        title: "STDOUT",
-                        isClosable: false,
-                        componentState: {
-                            readOnly: true
-                        }
-                    }, {
-                        type: "component",
-                        componentName: "stderr",
-                        title: "STDERR",
-                        isClosable: false,
-                        componentState: {
-                            readOnly: true
-                        }
-                    }, {
-                        type: "component",
-                        componentName: "compile output",
-                        title: "COMPILE OUTPUT",
-                        isClosable: false,
-                        componentState: {
-                            readOnly: true
-                        }
-                    }, {
-                        type: "component",
-                        componentName: "sandbox message",
-                        title: "SANDBOX MESSAGE",
-                        isClosable: false,
-                        componentState: {
-                            readOnly: true
-                        }
-                    }]
+                    type: "component",
+                    componentName: "stdout",
+                    title: "STDOUT",
+                    isClosable: false,
+                    componentState: {
+                        readOnly: true
+                    }
+                }, {
+                    type: "component",
+                    componentName: "stderr",
+                    title: "STDERR",
+                    isClosable: false,
+                    componentState: {
+                        readOnly: true
+                    }
+                }, {
+                    type: "component",
+                    componentName: "compile output",
+                    title: "COMPILE OUTPUT",
+                    isClosable: false,
+                    componentState: {
+                        readOnly: true
+                    }
+                }, {
+                    type: "component",
+                    componentName: "sandbox message",
+                    title: "SANDBOX MESSAGE",
+                    isClosable: false,
+                    componentState: {
+                        readOnly: true
+                    }
+                }]
             }]
         }]
     }]
@@ -114,7 +114,7 @@ function encode(str) {
 }
 
 function decode(bytes) {
-    var escaped = escape(atob(bytes || ""));
+    let escaped = escape(atob(bytes || ""));
     try {
         return decodeURIComponent(escaped);
     } catch {
@@ -123,35 +123,34 @@ function decode(bytes) {
 }
 
 function localStorageSetItem(key, value) {
-  try {
-    localStorage.setItem(key, value);
-  } catch (ignorable) {
-  }
+    try {
+        localStorage.setItem(key, value);
+    } catch (ignorable) {}
 }
 
 function localStorageGetItem(key) {
-  try {
-    return localStorage.getItem(key);
-  } catch (ignorable) {
-    return null;
-  }
+    try {
+        return localStorage.getItem(key);
+    } catch (ignorable) {
+        return null;
+    }
 }
 
 function showMessages() {
-    var width = $updates.offset().left - parseFloat($updates.css("padding-left")) -
-                $navigationMessage.parent().offset().left - parseFloat($navigationMessage.parent().css("padding-left")) - 5;
+    let width = $updates.offset().left - parseFloat($updates.css("padding-left")) -
+        $navigationMessage.parent().offset().left - parseFloat($navigationMessage.parent().css("padding-left")) - 5;
 
     if (width < 200 || messagesData === undefined) {
         return;
     }
 
-    var messages = messagesData["messages"];
+    let messages = messagesData["messages"];
 
     $navigationMessage.css("animation-duration", messagesData["duration"]);
     $navigationMessage.parent().width(width - 5);
 
-    var combinedMessage = "";
-    for (var i = 0; i < messages.length; ++i) {
+    let combinedMessage = "";
+    for (let i = 0; i < messages.length; ++i) {
         combinedMessage += `${messages[i]}`;
         if (i != messages.length - 1) {
             combinedMessage += "&nbsp".repeat(Math.min(200, messages[i].length));
@@ -166,7 +165,10 @@ function loadMessages() {
         url: `https://minio.judge0.com/public/ide/messages.json?${Date.now()}`,
         type: "GET",
         headers: {
-            "Accept": "application/json"
+            "x-rapidapi-host": "judge0.p.rapidapi.com",
+            "x-rapidapi-key": "b87c978454mshc0aeef14416bf63p1af4aejsn7b28b996f363",
+            "content-type": "application/json",
+            "accept": "application/json",
         },
         success: function (data, textStatus, jqXHR) {
             messagesData = data;
@@ -194,19 +196,19 @@ function handleResult(data) {
     timeEnd = performance.now();
     console.log("It took " + (timeEnd - timeStart) + " ms to get submission result.");
 
-    var status = data.status;
-    var stdout = decode(data.stdout);
-    var stderr = decode(data.stderr);
-    var compile_output = decode(data.compile_output);
-    var sandbox_message = decode(data.message);
-    var time = (data.time === null ? "-" : data.time + "s");
-    var memory = (data.memory === null ? "-" : data.memory + "KB");
+    let status = data.status;
+    let stdout = decode(data.stdout);
+    let stderr = decode(data.stderr);
+    let compile_output = decode(data.compile_output);
+    let sandbox_message = decode(data.message);
+    let time = (data.time === null ? "-" : data.time + "s");
+    let memory = (data.memory === null ? "-" : data.memory + "KB");
 
     $statusLine.html(`${status.description}, ${time}, ${memory}`);
 
     if (blinkStatusLine) {
         $statusLine.addClass("blink");
-        setTimeout(function() {
+        setTimeout(function () {
             blinkStatusLine = false;
             localStorageSetItem("blink", "false");
             $statusLine.removeClass("blink");
@@ -219,40 +221,39 @@ function handleResult(data) {
     sandboxMessageEditor.setValue(sandbox_message);
 
     if (stdout !== "") {
-        var dot = document.getElementById("stdout-dot");
+        let dot = document.getElementById("stdout-dot");
         if (!dot.parentElement.classList.contains("lm_active")) {
             dot.hidden = false;
         }
     }
     if (stderr !== "") {
-        var dot = document.getElementById("stderr-dot");
+        let dot = document.getElementById("stderr-dot");
         if (!dot.parentElement.classList.contains("lm_active")) {
             dot.hidden = false;
         }
     }
     if (compile_output !== "") {
-        var dot = document.getElementById("compile-output-dot");
+        let dot = document.getElementById("compile-output-dot");
         if (!dot.parentElement.classList.contains("lm_active")) {
             dot.hidden = false;
         }
     }
     if (sandbox_message !== "") {
-        var dot = document.getElementById("sandbox-message-dot");
+        let dot = document.getElementById("sandbox-message-dot");
         if (!dot.parentElement.classList.contains("lm_active")) {
             dot.hidden = false;
         }
     }
-
     $runBtn.removeClass("loading");
 }
 
 function getIdFromURI() {
-  var uri = location.search.substr(1).trim();
-  return uri.split("&")[0];
+    let uri = location.search.substr(1).trim();
+    return uri.split("&")[0];
 }
 
 function save() {
-    var content = JSON.stringify({
+    let content = JSON.stringify({
         source_code: encode(sourceEditor.getValue()),
         language_id: $selectLanguage.val(),
         compiler_options: $compilerOptions.val(),
@@ -264,8 +265,8 @@ function save() {
         sandbox_message: encode(sandboxMessageEditor.getValue()),
         status_line: encode($statusLine.html())
     });
-    var filename = "judge0-ide.json";
-    var data = {
+    let filename = "judge0-ide.json";
+    let data = {
         content: content,
         filename: filename
     };
@@ -275,7 +276,10 @@ function save() {
         type: "POST",
         async: true,
         headers: {
-            "Accept": "application/json"
+            // "x-rapidapi-host": "judge0.p.rapidapi.com",
+            // "x-rapidapi-key": "b87c978454mshc0aeef14416bf63p1af4aejsn7b28b996f363",
+            "content-type": "application/json",
+            "accept": "application/json",
         },
         data: data,
         success: function (data, textStatus, jqXHR) {
@@ -290,7 +294,7 @@ function save() {
 }
 
 function downloadSource() {
-    var value = parseInt($selectLanguage.val());
+    let value = parseInt($selectLanguage.val());
     download(sourceEditor.getValue(), fileNames[value], "text/plain");
 }
 
@@ -301,7 +305,11 @@ function loadSavedSource() {
         $.ajax({
             url: apiUrl + "/submissions/" + snippet_id + "?fields=source_code,language_id,stdin,stdout,stderr,compile_output,message,time,memory,status,compiler_options,command_line_arguments&base64_encoded=true",
             type: "GET",
-            success: function(data, textStatus, jqXHR) {
+            headers: {
+                "x-rapidapi-host": "judge0.p.rapidapi.com",
+                "x-rapidapi-key": "b87c978454mshc0aeef14416bf63p1af4aejsn7b28b996f363",
+            },
+            success: function (data, textStatus, jqXHR) {
                 sourceEditor.setValue(decode(data["source_code"]));
                 $selectLanguage.dropdown("set selected", data["language_id"]);
                 $compilerOptions.val(data["compiler_options"]);
@@ -311,8 +319,8 @@ function loadSavedSource() {
                 stderrEditor.setValue(decode(data["stderr"]));
                 compileOutputEditor.setValue(decode(data["compile_output"]));
                 sandboxMessageEditor.setValue(decode(data["message"]));
-                var time = (data.time === null ? "-" : data.time + "s");
-                var memory = (data.memory === null ? "-" : data.memory + "KB");
+                let time = (data.time === null ? "-" : data.time + "s");
+                let memory = (data.memory === null ? "-" : data.memory + "KB");
                 $statusLine.html(`${data.status.description}, ${time}, ${memory}`);
                 changeEditorLanguage();
             },
@@ -322,6 +330,10 @@ function loadSavedSource() {
         $.ajax({
             url: pbUrl + "/" + snippet_id + ".json",
             type: "GET",
+            headers: {
+                "x-rapidapi-host": "judge0.p.rapidapi.com",
+                "x-rapidapi-key": "b87c978454mshc0aeef14416bf63p1af4aejsn7b28b996f363",
+            },
             success: function (data, textStatus, jqXHR) {
                 sourceEditor.setValue(decode(data["source_code"]));
                 $selectLanguage.dropdown("set selected", data["language_id"]);
@@ -364,17 +376,17 @@ function run() {
     compileOutputEditor.setValue("");
     sandboxMessageEditor.setValue("");
 
-    var sourceValue = encode(sourceEditor.getValue());
-    var stdinValue = encode(stdinEditor.getValue());
-    var languageId = resolveLanguageId($selectLanguage.val());
-    var compilerOptions = $compilerOptions.val();
-    var commandLineArguments = $commandLineArguments.val();
+    let sourceValue = encode(sourceEditor.getValue());
+    let stdinValue = encode(stdinEditor.getValue());
+    let languageId = resolveLanguageId($selectLanguage.val());
+    let compilerOptions = $compilerOptions.val();
+    let commandLineArguments = $commandLineArguments.val();
 
     if (parseInt(languageId) === 44) {
         sourceValue = sourceEditor.getValue();
     }
 
-    var data = {
+    let data = {
         source_code: sourceValue,
         language_id: languageId,
         stdin: stdinValue,
@@ -383,7 +395,7 @@ function run() {
         redirect_stderr_to_stdout: redirectStderrToStdout
     };
 
-    var sendRequest = function(data) {
+    let sendRequest = function (data) {
         timeStart = performance.now();
         $.ajax({
             url: apiUrl + `/submissions?base64_encoded=true&wait=${wait}`,
@@ -391,6 +403,12 @@ function run() {
             async: true,
             contentType: "application/json",
             data: JSON.stringify(data),
+            headers: {
+                "x-rapidapi-host": "judge0.p.rapidapi.com",
+                "x-rapidapi-key": "b87c978454mshc0aeef14416bf63p1af4aejsn7b28b996f363",
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
             success: function (data, textStatus, jqXHR) {
                 console.log(`Your submission token is: ${data.token}`);
                 if (wait == true) {
@@ -403,7 +421,7 @@ function run() {
         });
     }
 
-    var fetchAdditionalFiles = false;
+    let fetchAdditionalFiles = false;
     if (parseInt(languageId) === 82) {
         if (sqliteAdditionalFiles === "") {
             fetchAdditionalFiles = true;
@@ -412,6 +430,10 @@ function run() {
                 type: "GET",
                 async: true,
                 contentType: "text/plain",
+                headers: {
+                    "x-rapidapi-host": "judge0.p.rapidapi.com",
+                    "x-rapidapi-key": "b87c978454mshc0aeef14416bf63p1af4aejsn7b28b996f363",
+                },
                 success: function (responseData, textStatus, jqXHR) {
                     sqliteAdditionalFiles = responseData;
                     data["additional_files"] = sqliteAdditionalFiles;
@@ -419,8 +441,7 @@ function run() {
                 },
                 error: handleRunError
             });
-        }
-        else {
+        } else {
             data["additional_files"] = sqliteAdditionalFiles;
         }
     }
@@ -435,6 +456,10 @@ function fetchSubmission(submission_token) {
         url: apiUrl + "/submissions/" + submission_token + "?base64_encoded=true",
         type: "GET",
         async: true,
+        headers: {
+            "x-rapidapi-host": "judge0.p.rapidapi.com",
+            "x-rapidapi-key": "b87c978454mshc0aeef14416bf63p1af4aejsn7b28b996f363",
+        },
         success: function (data, textStatus, jqXHR) {
             if (data.status.id <= 2) { // In Queue or Processing
                 setTimeout(fetchSubmission.bind(null, submission_token), check_timeout);
@@ -460,8 +485,8 @@ function insertTemplate() {
 }
 
 function loadRandomLanguage() {
-    var values = [];
-    for (var i = 0; i < $selectLanguage[0].options.length; ++i) {
+    let values = [];
+    for (let i = 0; i < $selectLanguage[0].options.length; ++i) {
         values.push($selectLanguage[0].options[i].value);
     }
     $selectLanguage.dropdown("set selected", values[Math.floor(Math.random() * $selectLanguage[0].length)]);
@@ -471,7 +496,7 @@ function loadRandomLanguage() {
 
 function resizeEditor(layoutInfo) {
     if (editorMode != "normal") {
-        var statusLineHeight = $("#editor-status-line").height();
+        let statusLineHeight = $("#editor-status-line").height();
         layoutInfo.height -= statusLineHeight;
         layoutInfo.contentHeight -= statusLineHeight;
     }
@@ -481,8 +506,7 @@ function disposeEditorModeObject() {
     try {
         editorModeObject.dispose();
         editorModeObject = null;
-    } catch(ignorable) {
-    }
+    } catch (ignorable) {}
 }
 
 function changeEditorMode() {
@@ -491,13 +515,13 @@ function changeEditorMode() {
     if (editorMode == "vim") {
         editorModeObject = MonacoVim.initVimMode(sourceEditor, $("#editor-status-line")[0]);
     } else if (editorMode == "emacs") {
-        var statusNode = $("#editor-status-line")[0];
+        let statusNode = $("#editor-status-line")[0];
         editorModeObject = new MonacoEmacs.EmacsExtension(sourceEditor);
-        editorModeObject.onDidMarkChange(function(e) {
-          statusNode.textContent = e ? "Mark Set!" : "Mark Unset";
+        editorModeObject.onDidMarkChange(function (e) {
+            statusNode.textContent = e ? "Mark Set!" : "Mark Unset";
         });
-        editorModeObject.onDidChangeKey(function(str) {
-          statusNode.textContent = str;
+        editorModeObject.onDidChangeKey(function (str) {
+            statusNode.textContent = str;
         });
         editorModeObject.start();
     }
@@ -505,31 +529,43 @@ function changeEditorMode() {
 
 function resolveLanguageId(id) {
     id = parseInt(id);
-    return languageIdTable[id] || id;
+    return id;
 }
 
 function resolveApiUrl(id) {
     id = parseInt(id);
-    return languageApiUrlTable[id] || defaultUrl;
+    return defaultUrl;
 }
 
 function editorsUpdateFontSize(fontSize) {
-    sourceEditor.updateOptions({fontSize: fontSize});
-    stdinEditor.updateOptions({fontSize: fontSize});
-    stdoutEditor.updateOptions({fontSize: fontSize});
-    stderrEditor.updateOptions({fontSize: fontSize});
-    compileOutputEditor.updateOptions({fontSize: fontSize});
-    sandboxMessageEditor.updateOptions({fontSize: fontSize});
+    sourceEditor.updateOptions({
+        fontSize: fontSize
+    });
+    stdinEditor.updateOptions({
+        fontSize: fontSize
+    });
+    stdoutEditor.updateOptions({
+        fontSize: fontSize
+    });
+    stderrEditor.updateOptions({
+        fontSize: fontSize
+    });
+    compileOutputEditor.updateOptions({
+        fontSize: fontSize
+    });
+    sandboxMessageEditor.updateOptions({
+        fontSize: fontSize
+    });
 }
 
 function updateScreenElements() {
-    var display = window.innerWidth <= 1200 ? "none" : "";
-    $(".wide.screen.only").each(function(index) {
+    let display = window.innerWidth <= 1200 ? "none" : "";
+    $(".wide.screen.only").each(function (index) {
         $(this).css("display", display);
     });
 }
 
-$(window).resize(function() {
+$(window).resize(function () {
     layout.updateSize();
     updateScreenElements();
     showMessages();
@@ -567,7 +603,7 @@ $(document).ready(function () {
     $updates = $("#updates");
 
     $(`input[name="editor-mode"][value="${editorMode}"]`).prop("checked", true);
-    $("input[name=\"editor-mode\"]").on("change", function(e) {
+    $("input[name=\"editor-mode\"]").on("change", function (e) {
         editorMode = e.target.value;
         localStorageSetItem("editorMode", editorMode);
 
@@ -578,7 +614,7 @@ $(document).ready(function () {
     });
 
     $("input[name=\"redirect-output\"]").prop("checked", redirectStderrToStdout)
-    $("input[name=\"redirect-output\"]").on("change", function(e) {
+    $("input[name=\"redirect-output\"]").on("change", function (e) {
         redirectStderrToStdout = e.target.checked;
         localStorageSetItem("redirectStderrToStdout", redirectStderrToStdout);
     });
@@ -586,11 +622,11 @@ $(document).ready(function () {
     $statusLine = $("#status-line");
 
     $("body").keydown(function (e) {
-        var keyCode = e.keyCode || e.which;
+        let keyCode = e.keyCode || e.which;
         if (keyCode == 120) { // F9
             e.preventDefault();
             run();
-        }  else if (keyCode == 118) { // F7
+        } else if (keyCode == 118) { // F7
             e.preventDefault();
             wait = !wait;
             localStorageSetItem("wait", wait);
@@ -611,7 +647,10 @@ $(document).ready(function () {
 
     $("select.dropdown").dropdown();
     $(".ui.dropdown").dropdown();
-    $(".ui.dropdown.site-links").dropdown({action: "hide", on: "hover"});
+    $(".ui.dropdown.site-links").dropdown({
+        action: "hide",
+        on: "hover"
+    });
     $(".ui.checkbox").checkbox();
     $(".message .close").on("click", function () {
         $(this).closest(".message").transition("fade");
@@ -673,9 +712,9 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function(tab) {
+            container.on("tab", function (tab) {
                 tab.element.append("<span id=\"stdout-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function(e) {
+                tab.element.on("mousedown", function (e) {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
@@ -693,9 +732,9 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function(tab) {
+            container.on("tab", function (tab) {
                 tab.element.append("<span id=\"stderr-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function(e) {
+                tab.element.on("mousedown", function (e) {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
@@ -713,9 +752,9 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function(tab) {
+            container.on("tab", function (tab) {
                 tab.element.append("<span id=\"compile-output-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function(e) {
+                tab.element.on("mousedown", function (e) {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
@@ -733,9 +772,9 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function(tab) {
+            container.on("tab", function (tab) {
                 tab.element.append("<span id=\"sandbox-message-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function(e) {
+                tab.element.on("mousedown", function (e) {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
@@ -757,7 +796,7 @@ $(document).ready(function () {
 });
 
 // Template for different Sources
-var cSource = "\
+let cSource = "\
 #include <stdio.h>\n\
 \n\
 int main(void) {\n\
@@ -766,7 +805,7 @@ int main(void) {\n\
 }\n\
 ";
 
-var cppSource = "\
+let cppSource = "\
 #include <iostream>\n\
 \n\
 int main() {\n\
@@ -775,7 +814,7 @@ int main() {\n\
 }\n\
 ";
 
-var javaSource = "\
+let javaSource = "\
 public class Main {\n\
     public static void main(String[] args) {\n\
         System.out.println(\"hello, world\");\n\
@@ -783,35 +822,35 @@ public class Main {\n\
 }\n\
 ";
 
-var javaScriptSource = "console.log(\"hello, world\");";
+let javaScriptSource = "console.log(\"hello, world\");";
 
-var kotlinSource = "\
+let kotlinSource = "\
 fun main() {\n\
     println(\"hello, world\")\n\
 }\n\
 ";
 
-var phpSource = "\
+let phpSource = "\
 <?php\n\
 print(\"hello, world\\n\");\n\
 ?>\n\
 ";
 
-var plainTextSource = "hello, world\n";
+let plainTextSource = "hello, world\n";
 
-var pythonSource = "print(\"hello, world\")";
+let pythonSource = "print(\"hello, world\")";
 
-var rSource = "cat(\"hello, world\\n\")";
+let rSource = "cat(\"hello, world\\n\")";
 
-var rubySource = "puts \"hello, world\"";
+let rubySource = "puts \"hello, world\"";
 
-var rustSource = "\
+let rustSource = "\
 fn main() {\n\
     println!(\"hello, world\");\n\
 }\n\
 ";
 
-var sqliteSource = "\
+let sqliteSource = "\
 -- On  IDE your SQL script is run on chinook database (https://www.sqlitetutorial.net/sqlite-sample-database).\n\
 SELECT\n\
     Name, COUNT(*) AS num_albums\n\
@@ -821,59 +860,50 @@ GROUP BY Name\n\
 ORDER BY num_albums DESC\n\
 LIMIT 4;\n\
 ";
-var sqliteAdditionalFiles = "";
+let sqliteAdditionalFiles = "";
 
-var swiftSource = "\
+let swiftSource = "\
 import Foundation\n\
 let name = readLine()\n\
 print(\"hello, \\(name!)\")\n\
 ";
 
-var typescriptSource = "console.log(\"hello, world\");";
+let typescriptSource = "console.log(\"hello, world\");";
 
-var sources = {
-     
-    50: cSource, 
-    54: cppSource,    
-    63: javaScriptSource,   
+let sources = {
+
+    50: cSource,
+    54: cppSource,
+    62: javaSource,
+    63: javaScriptSource,
     68: phpSource,
-    43: plainTextSource,    
+    43: plainTextSource,
     70: pythonSource,
     71: pythonSource,
     72: rubySource,
     73: rustSource,
-    74: typescriptSource,   
-    78: kotlinSource,    
-    80: rSource,    
+    74: typescriptSource,
+    78: kotlinSource,
+    80: rSource,
     82: sqliteSource,
-    83: swiftSource,    
-    1004: javaSource
+    83: swiftSource,
 };
 
-var fileNames = {
-    
-    50: "main.c",       
-    54: "main.cpp",   
-    63: "script.js",    
+let fileNames = {
+
+    50: "main.c",
+    54: "main.cpp",
+    62: "Main.java",
+    63: "script.js",
     68: "script.php",
-    43: "text.txt",    
+    43: "text.txt",
     70: "script.py",
     71: "script.py",
     72: "script.rb",
     73: "main.rs",
-    74: "script.ts",   
-    78: "Main.kt",    
-    80: "script.r",    
+    74: "script.ts",
+    78: "Main.kt",
+    80: "script.r",
     82: "script.sql",
-    83: "Main.swift",     
-    1004: "Main.java"
+    83: "Main.swift",
 };
-
-var languageIdTable = {    
-    1004: 4
-  }
-
-var extraApiUrl = "https://extra.api.judge0.com";
-var languageApiUrlTable = {    
-    1004: extraApiUrl   
-}
