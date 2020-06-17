@@ -63,7 +63,7 @@ signupForm.addEventListener('submit', (e) => {
 
 });
 
-function sendEmailVerification() {
+const sendEmailVerification = () => {
     // [START sendemailverification]
     auth.currentUser.sendEmailVerification()
         .then(() => {
@@ -76,6 +76,6 @@ function sendEmailVerification() {
     // [END sendemailverification]
 }
 
-function sendToPhone() {
+const sendToPhone = () => {
     document.location.href = '/phone'
 };

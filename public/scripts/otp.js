@@ -1,6 +1,6 @@
 let prevUser;
 
-auth.onAuthStateChanged(function (user) {
+auth.onAuthStateChanged(user => {
     if (user)
         prevUser = user;
 
@@ -10,22 +10,22 @@ auth.onAuthStateChanged(function (user) {
     }
 })
 
-window.onload = function () {
+window.onload = () => {
     render();
 };
 
-function render() {
+const render = () => {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
     'size': 'invisible',  
   });
     recaptchaVerifier.render();
 }
 
-function phoneAuth() {
+const phoneAuth = () => {
     //get the number
     let number = '+91' + document.getElementById('inputphoneno').value;
-    //phone number authentication function of firebase
-    prevUser.linkWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
+    //phone number authentication from firebase
+    prevUser.linkWithPhoneNumber(number, window.recaptchaVerifier).then(confirmationResult => {
         //s is in lowercase
         window.confirmationResult = confirmationResult;
         coderesult = confirmationResult;
@@ -37,15 +37,15 @@ function phoneAuth() {
         let phoNum = "+91" + number[3] + number[4] + "*****" + number[10] + number[11] + number[12];
         $('#phText').html(phoNum);
 
-    }).catch(function (error) {
+    }).catch(error => {
         // console.log(error.message);
         alert('Please try again');
     });
 }
 
-function codeverify() {
+const codeverify = () => {
     var code = document.getElementById('verificationCode').value;
-    coderesult.confirm(code).then(function (result) {
+    coderesult.confirm(code).then(result => {
         let currentUser = result.user;
 
         alert("Successfully registered");
@@ -53,12 +53,12 @@ function codeverify() {
         auth.signOut();
         sendToLogin();
 
-    }).catch(function (error) {
+    }).catch(error => {
         // console.log(error.message);
         alert("Wrong OTP, please try again");
     });
 }
 
-function sendToLogin() {
+const sendToLogin = () => {
     document.location.href = '/login'
 };

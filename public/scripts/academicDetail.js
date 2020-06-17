@@ -1,17 +1,17 @@
-function initAcad() {
+const initAcad = () => {
     auth.onAuthStateChanged(user => {
         if (user) {
             let docRef = db.collection("usersdata").doc(auth.currentUser.uid);
             docRef
                 .get()
-                .then(function (doc) {
+                .then(doc => {
                     if (doc.exists) {
                         if (doc.data().form2 == true) {
                             sendResponse();
                         }
                     }
                 })
-                .catch(function (error) {
+                .catch(error => {
                     console.log(error);
                 })
 
@@ -20,7 +20,7 @@ function initAcad() {
     });
 }
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     initAcad();
 
 })
@@ -53,7 +53,7 @@ acadForm.addEventListener('submit', async (e) => {
         form2: true,
     }, {
         merge: true,
-    }).catch(function (error) {
+    }).catch(error => {
         console.error("Error writing document: ", error);
         alert('failed to save form, please contact support');
     });
@@ -62,7 +62,7 @@ acadForm.addEventListener('submit', async (e) => {
     sendResponse();
 });
 
-function sendResponse() {
+const sendResponse = () => {
     document.location.href = '/response'
 
 }

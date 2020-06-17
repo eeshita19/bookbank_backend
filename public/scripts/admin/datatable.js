@@ -1,10 +1,10 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     getDataAndAppend();
 })
 
 let documents = {};
 
-async function getMarker() {
+const getMarker = async () => {
     const snapshot = await db.collection('usersdata').get()
     snapshot.forEach(doc => {
         documents[doc.id] = doc.data();
@@ -12,7 +12,7 @@ async function getMarker() {
     return documents;
 }
 
-async function getDataAndAppend() {
+const getDataAndAppend = async () => {
 
     await getMarker();
 
@@ -24,7 +24,7 @@ async function getDataAndAppend() {
         dataSet[i] = [documents[Object.keys(documents)[i]]["firstname"], documents[Object.keys(documents)[i]]["dateSubmitted"], documents[Object.keys(documents)[i]]["year"], documents[Object.keys(documents)[i]]["course"], documents[Object.keys(documents)[i]]["university"], documents[Object.keys(documents)[i]]["residentCity"], documents[Object.keys(documents)[i]]["referred"], Object.keys(documents)[i]]
     }
 
-    $(document).ready(function () {
+    $(document).ready(() => {
         let table = $('#users-table').DataTable({
             data: dataSet,
             'bSort ': false,
@@ -77,7 +77,7 @@ async function getDataAndAppend() {
             ]
         });
 
-        $('#users-table tbody').on('click', 'tr', function () {
+        $('#users-table tbody').on('click', 'tr', () => {
             let data = table.row(this).data();
 
             document.location.href = '/admin/userinfo/' + data[7];

@@ -1,4 +1,4 @@
-function initDetails() {
+const initDetails = () => {
     auth.onAuthStateChanged(user => {
         if (user) {
             let email = user.email;
@@ -8,7 +8,7 @@ function initDetails() {
 
             $('#email').val(email);
 
-            function checkEmail() {
+            const checkEmail = () => {
                 if (!emailVerified) {
                     $('#status').html("NOT VERIFIED");
                     $('#status').css("background-color", "red");
@@ -28,14 +28,14 @@ function initDetails() {
             let docRef = db.collection("usersdata").doc(auth.currentUser.uid);
             docRef
                 .get()
-                .then(function (doc) {
+                .then(doc => {
                     if (doc.exists) {
                         if (doc.data().form1 == true) {
                             sendResponse();
                         }
                     }
                 })
-                .catch(function (error) {
+                .catch(error => {
                     console.log(error);
                 })
 
@@ -44,20 +44,20 @@ function initDetails() {
     });
 }
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     initDetails();
 })
 
-$("#change").click(function () {
+$("#change").click(() => {
     // const refresh = initDetails();
     initDetails();
-    $("#status").click(function () {
+    $("#status").click(() => {
         $("#status").css("background-color", "#eea553");
         $("#status").text("VERIFING...");
     })
 });
 
-function sendToPhone() {
+const sendToPhone = () => {
     document.location.href = '/phone'
 };
 
@@ -93,7 +93,7 @@ signupForm.addEventListener('submit', async (e) => {
         adminVerification: false,
     }, {
         merge: true,
-    }).catch(function (error) {
+    }).catch(error => {
         console.error("Error writing document: ", error);
         alert('failed to save form, please contact support');
     });
@@ -102,7 +102,7 @@ signupForm.addEventListener('submit', async (e) => {
     sendResponse();
 });
 
-function sendResponse() {
+const sendResponse = () => {
     document.location.href = '/response'
 
 }

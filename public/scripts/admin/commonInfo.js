@@ -1,15 +1,15 @@
 let url = window.location.href;
 let id = url.substring(url.lastIndexOf('/') + 1);
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     initReq();
 })
 
-async function initReq() {
+const initReq = async () => {
     let docRef = await db.collection("usersdata").doc(id);
     docRef
         .get()
-        .then(function (doc) {
+        .then(doc => {
             if (doc.data().reconsider === true && doc.data().adminVerification === true) {
                 onAccept();
             } else if (doc.data().adminVerification === false && doc.data().reconsider === true) {
@@ -19,19 +19,19 @@ async function initReq() {
             }
 
         })
-        .catch(function (error) {
+        .catch(error => {
             console.log(error);
         })
 }
 
 
-async function acceptReview() {
+const acceptReview = async () => {
     await db.collection("usersdata").doc(id).set({
         adminVerification: true,
         reconsider: true
     }, {
         merge: true,
-    }).catch(function (error) {
+    }).catch(error => {
         // console.error("Error writing document: ", error);
         alert('failed to save form, please contact support');
     });
@@ -40,13 +40,13 @@ async function acceptReview() {
 
 }
 
-async function rejectReview() {
+const rejectReview = async () => {
     await db.collection("usersdata").doc(id).set({
         adminVerification: false,
         reconsider: true
     }, {
         merge: true,
-    }).catch(function (error) {
+    }).catch(error => {
         // console.error("Error writing document: ", error);
         alert('failed to save form, please contact support');
     });
@@ -55,13 +55,13 @@ async function rejectReview() {
 }
 
 
-async function reconsiderReview() {
+const reconsiderReview = async () => {
     await db.collection("usersdata").doc(id).set({
         adminVerification: false,
         reconsider: false
     }, {
         merge: true,
-    }).catch(function (error) {
+    }).catch(error => {
         // console.error("Error writing document: ", error);
         alert('failed to save form, please contact support');
     });
@@ -69,7 +69,7 @@ async function reconsiderReview() {
     onReconsider();
 }
 
-function onAccept() {
+const onAccept = () => {
     $('#accept').hide();
     $('#reject').hide();
     $('#accepted').show();
@@ -77,7 +77,7 @@ function onAccept() {
 }
 
 
-function onReject() {
+const onReject = () => {
     $('#accept').hide();
     $('#reject').hide();
     $('#rejected').show();
@@ -85,7 +85,7 @@ function onReject() {
 }
 
 
-function onReconsider() {
+const onReconsider = () => {
     $('#reconsider').hide();
     $('#accept').show();
     $('#reject').show();
@@ -94,14 +94,14 @@ function onReconsider() {
 }
 
 
-function goToUserInfo() {
+const goToUserInfo = () => {
     document.location.href = '/admin/userinfo/' + id;
 }
 
-function goToUserInfo1() {
+const goToUserInfo1 = () => {
     document.location.href = '/admin/userinfo1/' + id;
 }
 
-function goToUserInfo2() {
+const goToUserInfo2 = () => {
     document.location.href = '/admin/userinfo2/' + id;
 }

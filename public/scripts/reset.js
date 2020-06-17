@@ -1,8 +1,8 @@
 // reset password
 let emailAddress = "user@example.com";
 
-auth.sendPasswordResetEmail(emailAddress).then(function() {
+auth.sendPasswordResetEmail(emailAddress).then(() => {
   // Email sent.
-}).catch(function(error) {
+}).catch(error => {
   // An error happened.
 });

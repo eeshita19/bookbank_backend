@@ -1,12 +1,12 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     getMarker();
 })
 
 let documents = {};
 
-async function getMarker() {
+const getMarker = async () => {
     await db.collection('usersdata').doc(id).get()
-        .then(function (doc) {
+        .then(doc => {
             documents[doc.id] = doc.data();
         })
         .catch((error) => {

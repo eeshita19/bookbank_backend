@@ -85,6 +85,7 @@ main.get('/admin', async (req, res) => {
     .get()
     .then(doc => {
         count = doc.data().count
+        return count
     })
     .catch(err => {
         return err

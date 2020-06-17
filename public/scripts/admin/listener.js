@@ -1,5 +1,5 @@
 // listen check admin
-function initApp() {
+const initApp = () => {
     auth.onAuthStateChanged(user => {
         if (user) {
             let username = user.displayName;
@@ -24,6 +24,6 @@ window.onload = () => {
     initApp();
 };
 
-function sendToLogin() {
+const sendToLogin = () => {
     document.location.href = '/login'
 }

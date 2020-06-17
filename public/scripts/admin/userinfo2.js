@@ -1,19 +1,19 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     getMarker();
     initObjection();
     getUrls();
 })
 
-async function initObjection() {
+const initObjection = async () => {
     let docRef = await db.collection("usersdata").doc(id);
     docRef
         .get()
-        .then(function (doc) {
+        .then(doc => {
             if (doc.data().objection !== "" || doc.data().objection !== null) {
                 $("#objection").val(doc.data().objection); // jQuery
             }
         })
-        .catch(function (error) {
+        .catch(error => {
             // console.log(error);
             alert(`can't fetch objection`)
         })
@@ -21,9 +21,9 @@ async function initObjection() {
 
 let documents = {};
 
-async function getMarker() {
+const getMarker = async () => {
     await db.collection('usersdata').doc(id).get()
-        .then(function (doc) {
+        .then(doc => {
             documents[doc.id] = doc.data();
         })
         .catch((error) => {
@@ -41,13 +41,13 @@ async function getMarker() {
 
 }
 
-async function saveObjection() {
+const saveObjection = async () => {
     let text = $('#objection').val();
     await db.collection("usersdata").doc(id).set({
         objection: text,
     }, {
         merge: true
-    }).catch(function (error) {
+    }).catch(error => {
         // console.error("Error writing document: ", error);
         alert('failed to save form, please contact support');
     });
@@ -55,7 +55,7 @@ async function saveObjection() {
     alert('submitted');
 }
 
-async function getUrls() {
+const getUrls = async () => {
     let photoName;
     let idName;
     await db.collection('usersdata').doc(id).get()

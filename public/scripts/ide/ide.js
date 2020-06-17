@@ -208,7 +208,7 @@ function handleResult(data) {
 
     if (blinkStatusLine) {
         $statusLine.addClass("blink");
-        setTimeout(function () {
+        setTimeout(() => {
             blinkStatusLine = false;
             localStorageSetItem("blink", "false");
             $statusLine.removeClass("blink");
@@ -395,7 +395,7 @@ function run() {
         redirect_stderr_to_stdout: redirectStderrToStdout
     };
 
-    let sendRequest = function (data) {
+    let sendRequest = data => {
         timeStart = performance.now();
         $.ajax({
             url: apiUrl + `/submissions?base64_encoded=true&wait=${wait}`,
@@ -517,7 +517,7 @@ function changeEditorMode() {
     } else if (editorMode == "emacs") {
         let statusNode = $("#editor-status-line")[0];
         editorModeObject = new MonacoEmacs.EmacsExtension(sourceEditor);
-        editorModeObject.onDidMarkChange(function (e) {
+        editorModeObject.onDidMarkChange(e => {
             statusNode.textContent = e ? "Mark Set!" : "Mark Unset";
         });
         editorModeObject.onDidChangeKey(function (str) {
@@ -565,17 +565,17 @@ function updateScreenElements() {
     });
 }
 
-$(window).resize(function () {
+$(window).resize(() => {
     layout.updateSize();
     updateScreenElements();
     showMessages();
 });
 
-$(document).ready(function () {
+$(document).ready(() => {
     updateScreenElements();
 
     $selectLanguage = $("#select-language");
-    $selectLanguage.change(function (e) {
+    $selectLanguage.change(e => {
         if (!isEditorDirty) {
             insertTemplate();
         } else {
@@ -588,14 +588,14 @@ $(document).ready(function () {
     $commandLineArguments.attr("size", $commandLineArguments.attr("placeholder").length);
 
     $insertTemplateBtn = $("#insert-template-btn");
-    $insertTemplateBtn.click(function (e) {
+    $insertTemplateBtn.click(e => {
         if (isEditorDirty && confirm("Are you sure? Your current changes will be lost.")) {
             insertTemplate();
         }
     });
 
     $runBtn = $("#run-btn");
-    $runBtn.click(function (e) {
+    $runBtn.click(e => {
         run();
     });
 
@@ -603,7 +603,7 @@ $(document).ready(function () {
     $updates = $("#updates");
 
     $(`input[name="editor-mode"][value="${editorMode}"]`).prop("checked", true);
-    $("input[name=\"editor-mode\"]").on("change", function (e) {
+    $("input[name=\"editor-mode\"]").on("change", e => {
         editorMode = e.target.value;
         localStorageSetItem("editorMode", editorMode);
 
@@ -614,14 +614,14 @@ $(document).ready(function () {
     });
 
     $("input[name=\"redirect-output\"]").prop("checked", redirectStderrToStdout)
-    $("input[name=\"redirect-output\"]").on("change", function (e) {
+    $("input[name=\"redirect-output\"]").on("change", e => {
         redirectStderrToStdout = e.target.checked;
         localStorageSetItem("redirectStderrToStdout", redirectStderrToStdout);
     });
 
     $statusLine = $("#status-line");
 
-    $("body").keydown(function (e) {
+    $("body").keydown(e => {
         let keyCode = e.keyCode || e.which;
         if (keyCode == 120) { // F9
             e.preventDefault();
@@ -652,7 +652,7 @@ $(document).ready(function () {
         on: "hover"
     });
     $(".ui.checkbox").checkbox();
-    $(".message .close").on("click", function () {
+    $(".message .close").on("click", () => {
         $(this).closest(".message").transition("fade");
     });
 
@@ -664,7 +664,7 @@ $(document).ready(function () {
         MonacoVim = MVim;
         MonacoEmacs = MEmacs;
 
-        layout.registerComponent("source", function (container, state) {
+        layout.registerComponent("source", (container, state) => {
             sourceEditor = monaco.editor.create(container.getElement()[0], {
                 automaticLayout: true,
                 theme: "vs-dark",
@@ -679,7 +679,7 @@ $(document).ready(function () {
 
             changeEditorMode();
 
-            sourceEditor.getModel().onDidChangeContent(function (e) {
+            sourceEditor.getModel().onDidChangeContent(e => {
                 currentLanguageId = parseInt($selectLanguage.val());
                 isEditorDirty = sourceEditor.getValue() != sources[currentLanguageId];
             });
@@ -687,7 +687,7 @@ $(document).ready(function () {
             sourceEditor.onDidLayoutChange(resizeEditor);
         });
 
-        layout.registerComponent("stdin", function (container, state) {
+        layout.registerComponent("stdin", (container, state) => {
             stdinEditor = monaco.editor.create(container.getElement()[0], {
                 automaticLayout: true,
                 theme: "vs-dark",
@@ -700,7 +700,7 @@ $(document).ready(function () {
             });
         });
 
-        layout.registerComponent("stdout", function (container, state) {
+        layout.registerComponent("stdout", (container, state) => {
             stdoutEditor = monaco.editor.create(container.getElement()[0], {
                 automaticLayout: true,
                 theme: "vs-dark",
@@ -712,15 +712,15 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function (tab) {
+            container.on("tab", tab => {
                 tab.element.append("<span id=\"stdout-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function (e) {
+                tab.element.on("mousedown", e => {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
         });
 
-        layout.registerComponent("stderr", function (container, state) {
+        layout.registerComponent("stderr", (container, state) => {
             stderrEditor = monaco.editor.create(container.getElement()[0], {
                 automaticLayout: true,
                 theme: "vs-dark",
@@ -732,15 +732,15 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function (tab) {
+            container.on("tab", tab => {
                 tab.element.append("<span id=\"stderr-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function (e) {
+                tab.element.on("mousedown", e => {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
         });
 
-        layout.registerComponent("compile output", function (container, state) {
+        layout.registerComponent("compile output", (container, state) => {
             compileOutputEditor = monaco.editor.create(container.getElement()[0], {
                 automaticLayout: true,
                 theme: "vs-dark",
@@ -752,15 +752,15 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function (tab) {
+            container.on("tab", tab => {
                 tab.element.append("<span id=\"compile-output-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function (e) {
+                tab.element.on("mousedown", e => {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
         });
 
-        layout.registerComponent("sandbox message", function (container, state) {
+        layout.registerComponent("sandbox message", (container, state) => {
             sandboxMessageEditor = monaco.editor.create(container.getElement()[0], {
                 automaticLayout: true,
                 theme: "vs-dark",
@@ -772,15 +772,15 @@ $(document).ready(function () {
                 }
             });
 
-            container.on("tab", function (tab) {
+            container.on("tab", tab => {
                 tab.element.append("<span id=\"sandbox-message-dot\" class=\"dot\" hidden></span>");
-                tab.element.on("mousedown", function (e) {
+                tab.element.on("mousedown", e => {
                     e.target.closest(".lm_tab").children[3].hidden = true;
                 });
             });
         });
 
-        layout.on("initialised", function () {
+        layout.on("initialised", () => {
             $(".monaco-editor")[0].appendChild($("#editor-status-line")[0]);
             if (getIdFromURI()) {
                 loadSavedSource();

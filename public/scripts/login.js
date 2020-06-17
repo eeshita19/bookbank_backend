@@ -1,10 +1,10 @@
 // check user
-function initLogin() {
+const initLogin = () => {
     if (auth.currentUser === null || auth.currentUser !== null)
         auth.signOut();
 }
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     initLogin();
 })
 
@@ -43,7 +43,7 @@ loginForm.addEventListener('submit', (e) => {
         });
 });
 
-function resetPasswordLink() {
+const resetPasswordLink = () => {
     const loginForm = document.querySelector('#login-form');
     const email = loginForm['email'].value;
 
@@ -54,10 +54,10 @@ function resetPasswordLink() {
     })
 }
 
-function sendToDashboard() {
+const sendToDashboard = () => {
     document.location.href = '/dashboard'
 };
 
-function sendToAdminDash() {
+const sendToAdminDash = () => {
     document.location.href = '/admin'
 };

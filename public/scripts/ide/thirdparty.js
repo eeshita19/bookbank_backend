@@ -6,7 +6,7 @@ function download(data, strFileName, strMimeType) {
         x = data,
         D = document,
         a = D.createElement("a"),
-        z = function (a) {
+        z = a => {
             return String(a);
         },
 
@@ -67,11 +67,11 @@ function download(data, strFileName, strMimeType) {
             a.setAttribute("download", fn);
             a.innerHTML = "downloading...";
             D.body.appendChild(a);
-            setTimeout(function () {
+            setTimeout(() => {
                 a.click();
                 D.body.removeChild(a);
                 if (winMode === true) {
-                    setTimeout(function () {
+                    setTimeout(() => {
                         self.URL.revokeObjectURL(a.href);
                     }, 250);
                 }
@@ -87,7 +87,7 @@ function download(data, strFileName, strMimeType) {
         }
 
         f.src = url;
-        setTimeout(function () {
+        setTimeout(() => {
             D.body.removeChild(f);
         }, 333);
 
@@ -111,7 +111,7 @@ function download(data, strFileName, strMimeType) {
 
         // Blob but not URL:
         fr = new FileReader();
-        fr.onload = function (e) {
+        fr.onload = e => {
             saver(this.result);
         };
         fr.readAsDataURL(blob);
