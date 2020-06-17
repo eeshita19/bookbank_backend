@@ -1,23 +1,26 @@
-html{
+html {
     position: relative;
     background-color: #f5f5f5;
     overflow: hidden;
 }
-#header{
+
+#header {
     width: 100%;
     height: 50px;
     background-color: white;
     box-shadow: 0px 0px 5px 5px #cdcaca;
 }
-#brand{
+
+#brand {
     width: 300px;
     height: 794px;
     position: absolute;
     background-color: #324370;
     top: -41px;
-    
+
 }
-#content{
+
+#content {
     position: relative;
     width: 1236px;
     height: 702px;
@@ -25,7 +28,8 @@ html{
     left: 300px;
     top: 6px
 }
-.col-md-offset-2{
+
+.col-md-offset-2 {
     position: absolute;
     top: 6px;
     left: 80px;
@@ -35,187 +39,219 @@ html{
     background-color: #f5f5f5;
     border: 1px solid #f5f5f5;
     padding-left: 35px
-    
 }
-#searchicon{
+
+#searchicon {
     position: absolute;
     left: 336px;
     top: 11px;
     width: 35px
-    
 }
-.notificationwrap{
+
+.notificationwrap {
     width: 300px;
     height: 50px;
     position: relative;
-/*    background-color: aqua;*/
+    /*    background-color: aqua;*/
     left: 1200px;
     top: 4px
-/*    z-index: 2;*/
+        /*    z-index: 2;*/
 }
-#admin{
+
+#admin {
     position: absolute;
     top: 12px;
     left: 60px
 }
-.img-responsive{
+
+.img-responsive {
     position: absolute;
     top: -1px;
     width: 50px;
 }
-#gear{
+
+#gear {
     left: 125px;
     width: 60px;
     top: -6px;
     cursor: pointer;
 
-    
+
 }
 
-#notify{
+#notify {
     left: 190px;
     cursor: pointer;
 
 }
-#logout{
-   left: 250px;
-   cursor: pointer;
+
+#logout {
+    left: 250px;
+    cursor: pointer;
 
 }
-.line{
+
+.line {
     position: absolute;
     transform: rotate(90deg);
     width: 30px;
-    background-color: black;;
-    
+    background-color: black;
+    ;
+
 }
-#line1{
+
+#line1 {
     left: 228px;
 }
-#line2{
+
+#line2 {
     left: 170px
 }
-#line3{
+
+#line3 {
     left: 110px
 }
-#monktree{
+
+#monktree {
     position: absolute;
     width: 150px;
     left: 75px;
 }
-.listitems{
+
+.listitems {
     position: absolute;
     top: 200px;
     left: -20px;
     margin-bottom: 5px;
 }
-#dash{
+
+#dash {
     color: white;
     text-decoration: none;
     width: 320px;
 
 }
-#dash:hover{
-    background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#dash:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 
 }
-#dashicon{
+
+#dashicon {
     margin-right: 10px
 }
 
-#customer{
+#customer {
     color: white;
     text-decoration: none;
     width: 325px;
     margin-left: -5px
 }
-#customer:hover{
-    background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#customer:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 
 }
-#customericon{
+
+#customericon {
     margin-right: 7px;
 }
 
-#finance{
+#finance {
     color: white;
     text-decoration: none;
     width: 340px;
     margin-left: -20px
-    
 }
-#finance:hover{
-        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#finance:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 
 }
-#financeicon{
+
+#financeicon {
     margin-right: 10px
 }
-#inventory{
+
+#inventory {
     color: white;
     text-decoration: none;
     width: 335px;
     margin-left: -14px
 }
-#inventory:hover{
-       background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#inventory:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 
 }
-#inventoryicon{
+
+#inventoryicon {
     margin-right: 10px
 }
-#invoice{
+
+#invoice {
     color: white;
     text-decoration: none;
     width: 345px;
     margin-left: -23px
 }
-#invoice:hover{
-        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#invoice:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 
 }
-#invoiceicon{
+
+#invoiceicon {
     margin-right: 10px
 }
-#manage{
+
+#manage {
     color: white;
     text-decoration: none;
     width: 320px;
     margin-left: 4px
 }
-#manage:hover{
-        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#manage:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 
 }
-#manageicon{
+
+#manageicon {
     margin-right: 10px
 }
-#support{
+
+#support {
     color: white;
     text-decoration: none;
     width: 342px;
     margin-left: -22px
 }
-#support:hover{
-        background: linear-gradient(to left ,#FF0A71,#FFB906);
+
+#support:hover {
+    background: linear-gradient(to left, #FF0A71, #FFB906);
 
 }
-#supporticon{
+
+#supporticon {
     margin-right: 10px
 }
-#endline{
+
+#endline {
     position: relative;
     top: 70px
 }
-.row{
+
+.row {
     position: relative;
     left: 60px;
     width: auto;
     height: 200px;
-    
-    
+
+
 }
-.container1{
+
+.container1 {
     width: 220px;
     height: 120px;
     background-color: white;
@@ -225,63 +261,72 @@ html{
     font-size: 12px;
     color: gray;
 
-    
-    
+
+
 }
-#totalusers{
+
+#totalusers {
     position: relative;
     top: 50px;
     left: 30px;
-    
+
 }
-#newusers{
+
+#newusers {
     position: relative;
     left: 300px;
     top: -68.9px;
 }
-#sales{
+
+#sales {
     position: relative;
     left: 570px;
     top: -188px
-    
 }
-#invent{
+
+#invent {
     position: relative;
     left: 850px;
     top: -307px
 }
-#number{
+
+#number {
     font-size: 30px;
     position: relative;
     top: -5px;
     color: #aaa6a6;
 }
-#percentage{
+
+#percentage {
     color: #00D386;
     position: relative;
     top: -10px
 }
-#month{
+
+#month {
     position: relative;
     top: -10px
 }
-#percentage2{
+
+#percentage2 {
     color: red;
     position: relative;
     top: -10px
 }
-.images{
+
+.images {
     width: 30px;
     position: relative;
     top: -70px;
     left: 20px
 }
 
-#chartsdiv{
+#chartsdiv {
     position: relative;
     color: white;
 }
-#curve_chart{
+
+#curve_chart {
     width: 550px;
     height: 430px;
     position: relative;
@@ -293,7 +338,8 @@ html{
     background-color: white;
     padding-top: 30px;
 }
-#title{
+
+#title {
     position: absolute;
     width: 200px;
     height: 50px;
@@ -303,33 +349,39 @@ html{
     top: 33px;
     left: 80px;
     padding: 10px;
-    
+
 }
-#overview{
+
+#overview {
     font-size: 13px;
     color: #a19b9b;
 }
-#rev{
+
+#rev {
     font-size: 20px;
     font-weight: bold;
 }
-#buttons{
+
+#buttons {
     position: absolute;
     left: 400px;
     top: 50px;
-   
+
 }
-#monthly{
-  width: 100px;
-  background-color: #1A95FF;
-  color: white;
-  border-radius: 5px
+
+#monthly {
+    width: 100px;
+    background-color: #1A95FF;
+    color: white;
+    border-radius: 5px
 }
-#weekly{
+
+#weekly {
     width: 100px;
     border-radius: 5px;
 }
-#columnchart_material{
+
+#columnchart_material {
     width: 370px;
     height: 430px;
     position: relative;
@@ -339,11 +391,12 @@ html{
     box-shadow: 1px 1px 7px 5px #d6d5d5;
     overflow: hidden;
     background-color: white;
-    padding: 20px; 
+    padding: 20px;
     padding-top: 80px;
     padding-left: 30px;
 }
-#title2{
+
+#title2 {
     position: absolute;
     width: 300px;
     height: 50px;
@@ -352,35 +405,41 @@ html{
     font-size: 12px;
     color: #a19b9b;
 }
-#order{
-   font-size: 20px;
+
+#order {
+    font-size: 20px;
     font-weight: bold;
     position: relative;
     top: -10px;
 }
+
 /*customer page styling*/
-#circle{
+#circle {
     left: 147px;
     top: -108px;
     width: 45px;
 
 }
-#eye{
+
+#eye {
     left: 70px;
 }
-#content2{
+
+#content2 {
     position: relative;
     left: 75px;
     top: 20px;
     width: 1040px;
     height: 430px
 }
-#content2 h3{
+
+#content2 h3 {
     color: #b7adad;
     font-weight: bold;
     font-size: 23px
 }
-#tablecontent{
+
+#tablecontent {
     position: relative;
     width: 960px;
     height: 290px;
@@ -389,7 +448,8 @@ html{
     box-shadow: 0px 0px 8px 0px #a0a0a0;
 
 }
-#filter{
+
+#filter {
     position: relative;
     width: 70px;
     height: 22px;
@@ -402,37 +462,42 @@ html{
     left: 850px;
     top: -30px;
 }
-#arrows{
+
+#arrows {
     position: relative;
     left: 30px
 }
-#round{
+
+#round {
     position: relative;
     left: 70px;
-    
+
 }
-#verticalline{
+
+#verticalline {
     position: relative;
     left: 47px;
     bottom: 2px
 }
 
-#greencircle{
+#greencircle {
     margin-right: 5px
 }
-.pagination{
+
+.pagination {
     position: relative;
     top: -40px;
     left: 730px;
 }
 
-.pagination li a{
+.pagination li a {
     margin-right: 5px;
-    
+
 }
+
 /*userinfo styling*/
 
-#userinfocontent{
+#userinfocontent {
     position: absolute;
     left: 370px;
     top: 100px;
@@ -441,20 +506,23 @@ html{
     text-align: center;
     color: #172B4D;
 
-    
+
 }
-#userdetailcontent{
+
+#userdetailcontent {
     position: absolute;
     left: 850px;
     top: 100px;
     height: 550px;
     width: 600px;
 }
-#allcontent{
+
+#allcontent {
     position: relative;
     top: 200px;
 }
-#accept{
+
+#accept {
     position: relative;
     left: -10px;
     width: 100px;
@@ -462,7 +530,8 @@ html{
     background-color: #1A95FF;
     color: white;
 }
-#reject{
+
+#reject {
     width: 100px;
     height: 30px;
     position: relative;
@@ -471,98 +540,114 @@ html{
     border: 1px solid #1A95FF;
     background-color: white;
 }
-.hrlines{
+
+.hrlines {
     position: relative;
     left: -20px;
     width: 340px;
     border: 1.5px solid #e0e0e0;
 }
-#year{
+
+#year {
     font-size: 15px;
     position: absolute;
     color: #172B4D;
 }
-#admissionyear{
+
+#admissionyear {
     font-size: 10px
 }
-#third{
+
+#third {
     position: absolute;
     left: 230px;
     font-size: 15px;
-        color: #172B4D;
+    color: #172B4D;
 
 }
-#currentsemester{
+
+#currentsemester {
     font-size: 10px;
 
 }
-#morning{
+
+#morning {
     font-size: 15px;
     color: #172B4D;
 
 }
-#shift{
+
+#shift {
     font-size: 10px
 }
-#branchname{
+
+#branchname {
     font-size: 15px;
     color: #172B4D;
 
 }
-#collegename{
+
+#collegename {
     font-size: 12px
 }
-#userimage{
+
+#userimage {
     position: absolute;
     left: 90px;
     top: -160px;
     width: 130px;
-    
+
 }
-#mycarousel{
+
+#mycarousel {
     position: absolute;
     width: 600px;
     height: 100px;
     top: 580px;
     left: 0px;
 }
-#mycarousel ol li{
+
+#mycarousel ol li {
     position: relative;
     width: 15px;
     height: 15px;
     background-color: #8898AA;
     top: -60px
 }
-#mycarousel ol li.active{
+
+#mycarousel ol li.active {
     background-color: #1A95FF;
     position: relative;
     top: -61px
-
 }
-.carousel-inner{
+
+.carousel-inner {
     position: absolute;
-/*    background-color: aqua;*/
+    /*    background-color: aqua;*/
     top: -580px;
     border-radius: 10px;
     height: 550px
 }
-#personal{
+
+#personal {
     position: relative;
     left: 20px;
     top: 17px;
-    color:#172B4D;
+    color: #172B4D;
     font-weight: bold;
     font-size: 13px;
 }
-#submission{
+
+#submission {
     position: relative;
     left: 0px;
     top: 0px;
-    color:#172B4D;
+    color: #172B4D;
     font-weight: bold;
     font-size: 13px;
 }
-#previous{
+
+#previous {
     position: relative;
     left: 420px;
     width: 65px;
@@ -573,7 +658,8 @@ html{
     padding: 1px;
     border: 1px solid #1A95FF;
 }
-#next{
+
+#next {
     position: relative;
     left: 520px;
     width: 60px;
@@ -583,7 +669,8 @@ html{
     color: white;
     padding: 1px;
 }
-#next1{
+
+#next1 {
     position: relative;
     left: 430px;
     width: 60px;
@@ -593,25 +680,29 @@ html{
     color: white;
     padding: 1px;
 }
-#straight{
+
+#straight {
     position: relative;
     left: 0px;
     width: 600px;
     border: 1.2px solid #e0e0e0;
     top: -20px
 }
-#straight1{
+
+#straight1 {
     position: relative;
     left: 0px;
     width: 600px;
     border: 1.2px solid #e0e0e0;
     top: -30px
 }
-#notverified{
+
+#notverified {
     position: relative;
     top: 3px;
     color: red;
 }
+
 #upload {
     opacity: 0;
 }
@@ -622,12 +713,14 @@ html{
     left: 1rem;
     transform: translateY(-50%);
 }
-#objection{
+
+#objection {
     background-color: #F7FAFC;
-    height:70;
+    height: 70;
     width: 400;
 }
-#straight2{
+
+#straight2 {
     position: relative;
     left: -20px;
     width: 600px;
@@ -635,13 +728,15 @@ html{
     top: -30px;
 
 }
-#eyeforeye{
+
+#eyeforeye {
     position: absolute;
     top: 23px;
     width: 30px;
     left: 500px
 }
-#rejectiondiv{
+
+#rejectiondiv {
     position: absolute;
     left: 690px;
     top: 300px;
@@ -649,16 +744,18 @@ html{
     height: 200px;
     text-align: center;
 }
-#yesreject{
+
+#yesreject {
     position: relative;
     left: -10px;
     width: 100px;
     height: 30px;
-    background: linear-gradient( to left,#FF0055,#FFA000);
+    background: linear-gradient(to left, #FF0055, #FFA000);
     color: white;
     font-size: 12px;
 }
-#cancel{
+
+#cancel {
     width: 100px;
     height: 30px;
     position: relative;
@@ -669,16 +766,19 @@ html{
     font-size: 12px;
 
 }
-#rejectiondiv h5{
+
+#rejectiondiv h5 {
     color: #172B4D;
- 
+
 }
-#rejectiondiv p{
- color: #172B4D;
- margin-bottom: 30px;
- margin-top: 20px
+
+#rejectiondiv p {
+    color: #172B4D;
+    margin-bottom: 30px;
+    margin-top: 20px
 }
-#userlink{
+
+#userlink {
     text-decoration: none;
     color: #837b7b;
 }

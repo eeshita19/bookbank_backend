@@ -17,12 +17,12 @@ let db;
 try {
     db = firebase.firestore()
 } catch (err) {
-    // console.log('tis ok')
+    console.log('tis ok')
 }
 
 let storage;
 try {
     storage = firebase.storage();
 } catch (err) {
-    // console.log('tis ok')
+    console.log('tis ok')
 }

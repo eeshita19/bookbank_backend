@@ -3,13 +3,14 @@ const functions = require('firebase-functions')
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-var serviceAccount = require("./serviceAccount.json");
+const serviceAccount = require("./serviceAccount.json")
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://bookbank-11bc5.firebaseio.com"
 });
 
+const db = admin.firestore()
 const main = express()
 
 main.use(bodyParser.json())
@@ -71,8 +72,20 @@ main.get('/admin/login', (req, res) => {
     res.render('admin/login')
 })
 
-main.get('/admin', (req, res) => {
-    res.render('admin/index')
+main.get('/admin', async (req, res) => {
+    let count
+    await db.collection('users')
+    .doc('userCount')
+    .get()
+    .then(doc => {
+        count = doc.data().count
+    })
+    .catch(err => {
+        return err
+    })
+    res.render('admin/index', {
+        userCount: count
+    })
 })
 
 main.get('/admin/cust', (req, res) => {
@@ -88,7 +101,7 @@ main.get('/admin/userinfo/:id', async (req, res) => {
     let valid
     let username
     await admin.auth().getUser(uid)
-        .then((data) => {
+        .then(data => {
             if (data.emailVerified === false) {
                 valid = "NOT VERIFIED"
             } else {
@@ -97,8 +110,8 @@ main.get('/admin/userinfo/:id', async (req, res) => {
             username = data.displayName
             return valid
         })
-        .catch((error) => {
-            console.log(error)
+        .catch(err => {
+            return err
         })
     res.render('admin/userinfo', {
         state: valid,
@@ -111,12 +124,12 @@ main.get('/admin/userinfo1/:id', async (req, res) => {
     let username
 
     await admin.auth().getUser(uid)
-        .then((data) => {
+        .then(data => {
             username = data.displayName
             return username
         })
-        .catch((error) => {
-            console.log(error)
+        .catch(err => {
+            return err
         })
     res.render('admin/userinfo1', {
         username: username
@@ -131,8 +144,8 @@ main.get('/admin/userinfo2/:id', async (req, res) => {
             username = data.displayName
             return username
         })
-        .catch((error) => {
-            console.log(error)
+        .catch(err => {
+            return err
         })
     res.render('admin/userinfo2', {
         username: username
@@ -154,9 +167,19 @@ exports.addAdminRole = functions.https.onCall((data, context) => {
             admin: true
         })
     }).then(() => {
+        // save in firestore for ease of access
+        db.collection("admins").doc(auth.currentUser.uid)
+            .set({
+                isAdmin: true,
+                isHead: false
+            }).catch(err => {
+                return err
+            })
+
         return {
             message: `Success! ${data.email} has been made an admin.`
         }
+
     }).catch(err => {
         return err
     })

@@ -80,10 +80,8 @@ async function getDataAndAppend() {
         $('#users-table tbody').on('click', 'tr', function () {
             let data = table.row(this).data();
 
-            // alert('you click on' + data[7])
-            document.location.href = '/admin/userinfo/'+ data[7];
+            document.location.href = '/admin/userinfo/' + data[7];
 
-            // window.location = $(this).closest('tr').find('td:eq(0) a').attr('href');
         });
     });
 }

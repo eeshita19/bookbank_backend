@@ -26,24 +26,39 @@ signupForm.addEventListener('submit', (e) => {
 
     // sign up the user & add firestore data
     auth.createUserWithEmailAndPassword(email, password)
-        .then(() => {
+        .then(async () => {
             signupForm.reset();
 
-            auth.currentUser.updateProfile({
+            await auth.currentUser.updateProfile({
                 displayName: username
-            }).catch(function(error) {
-                console.error(error)
-            })
+            }).catch(error => {
+                // console.error(error)
+                alert('failed to save, please contact support');
+            });
+
+            await db.collection("users").doc("userCount").update({
+                count: firebase.firestore.FieldValue.increment(1)
+            }).catch(error => {
+                // console.error("Error writing document: ", error);
+                alert('failed to save, please contact support');
+            });
+
+            await db.collection("users").doc(auth.currentUser.uid).set({
+                createdAt: firebase.firestore.Timestamp.fromDate(new Date())
+            }).catch(error => {
+                // console.error("Error writing document: ", error);
+                alert('failed to save, please contact support');
+            });
 
             sendEmailVerification();
-            alert('Email Verification sent!');
+            // alert('Email Verification sent!');
 
             delay(3000);
             sendToPhone();
 
-        }).catch(function (error) {
+        }).catch(error => {
             // console.error(error)
-            alert("Try to signup again with proper details");
+            alert("Signup failed, either email doesn't exist or account associated with this e-mail exists already");
         });
 
 });
@@ -51,13 +66,13 @@ signupForm.addEventListener('submit', (e) => {
 function sendEmailVerification() {
     // [START sendemailverification]
     auth.currentUser.sendEmailVerification()
-    .then(function () {
-        alert('Email Verification sent!');
-    })
-    .catch(function (error) {
-        // console.error(error);
-        alert("Error: unable to send verification. Please contact support");
-    })
+        .then(() => {
+            alert('Email Verification sent!');
+        })
+        .catch(error => {
+            // console.error(error);
+            alert("Error: unable to send verification. Please contact support");
+        })
     // [END sendemailverification]
 }
 
