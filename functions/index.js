@@ -42,6 +42,12 @@ main.get('/dashboard', (req, res) => {
     res.render('dashboard')
 })
 
+//ide
+main.get('/ide', (req, res) => {
+    res.render('ide/ide.ejs')
+})
+
+
 //form routes
 main.get('/form/personal', (req, res) => {
     res.render('form/personal_detail')
