@@ -59,6 +59,6 @@ const codeverify = () => {
     });
 }
 
-const sendToLogin = () => {
+let sendToLogin = () => {
     document.location.href = '/login'
 };

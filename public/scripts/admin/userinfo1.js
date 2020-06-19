@@ -1,5 +1,8 @@
 window.addEventListener('load', () => {
-    getMarker();
+    if (id == "undefined") {
+        alert('User doesnt exists')
+    } else
+        getMarker();
 })
 
 let documents = {};
@@ -24,5 +27,4 @@ const getMarker = async () => {
     $('#residence').text(documents[Object.keys(documents)[0]]["residentCity"] + ", " + documents[Object.keys(documents)[0]]["residentState"])
     $('#branchname').text(documents[Object.keys(documents)[0]]["course"])
     $('#collegename').text(documents[Object.keys(documents)[0]]["university"])
-
 }

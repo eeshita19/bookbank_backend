@@ -7,8 +7,9 @@ const initApp = () => {
             // let photoURL = user.photoURL;
 
             if (!emailVerified) {
-                auth.logout();
+                auth.signOut();
                 alert("Email not verified. Access denied");
+                document.location.href = '/login'
             } else
                 $('#notactive').html("Active");
 

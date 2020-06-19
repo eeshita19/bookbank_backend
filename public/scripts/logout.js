@@ -7,6 +7,6 @@ logout.addEventListener('click', (e) => {
     sendToLogin();
 });
 
-const sendToLogin = () => {
+let sendToLogin = () => {
     document.location.href = '/login'
 };

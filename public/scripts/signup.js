@@ -43,6 +43,13 @@ signupForm.addEventListener('submit', (e) => {
                 alert('failed to save, please contact support');
             });
 
+            await db.collection("users").doc("newUserCount").update({
+                count: firebase.firestore.FieldValue.increment(1)
+            }).catch(error => {
+                // console.error("Error writing document: ", error);
+                alert('failed to save, please contact support');
+            });
+
             await db.collection("users").doc(auth.currentUser.uid).set({
                 createdAt: firebase.firestore.Timestamp.fromDate(new Date())
             }).catch(error => {

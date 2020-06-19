@@ -25,140 +25,18 @@ main.use(express.static(path.join(__dirname, "../public")))
 main.set('views', path.join(__dirname, 'views'))
 main.set('view engine', 'ejs')
 
-//login-register routes
-main.get('/login', (req, res) => {
-    res.render('login/signin')
+require('./routes/index')(main)
+require('./routes/admin')(main)
+
+main.get('*', (req, res) => {
+    res.redirect('/login')
 })
 
-main.get('/register', (req, res) => {
-    res.render('login/signup')
+main.post('*', (req, res) => {
+    res.redirect('/login')
 })
 
-//otp
-main.get('/phone', (req, res) => {
-    res.render('login/phone_verification')
-})
-
-main.get('/dashboard', (req, res) => {
-    res.render('dashboard')
-})
-
-//ide
-main.get('/ide', (req, res) => {
-    res.render('ide/ide')
-})
-
-//form routes
-main.get('/form/personal', (req, res) => {
-    res.render('form/personal_detail')
-})
-
-main.get('/form/academic', (req, res) => {
-    res.render('form/academic_detail')
-})
-
-main.get('/form/file', (req, res) => {
-    res.render('form/file_upload')
-})
-
-main.get('/response', (req, res) => {
-    res.render('submitresponse')
-})
-
-main.get('/congratulations', (req, res) => {
-    res.render('congratulations')
-})
-
-main.get('/activated', (req, res) => {
-    res.render('activated')
-})
-
-// admin routes
-main.get('/admin/login', (req, res) => {
-    res.render('admin/login')
-})
-
-main.get('/admin', async (req, res) => {
-    let count
-    await db.collection('users')
-    .doc('userCount')
-    .get()
-    .then(doc => {
-        count = doc.data().count
-        return count
-    })
-    .catch(err => {
-        return err
-    })
-    res.render('admin/index', {
-        userCount: count
-    })
-})
-
-main.get('/admin/cust', (req, res) => {
-    res.render('admin/customer')
-})
-
-main.get('/admin/add', (req, res) => {
-    res.render('admin/createAdmin')
-})
-
-main.get('/admin/userinfo/:id', async (req, res) => {
-    let uid = req.params.id
-    let valid
-    let username
-    await admin.auth().getUser(uid)
-        .then(data => {
-            if (data.emailVerified === false) {
-                valid = "NOT VERIFIED"
-            } else {
-                valid = "VERIFIED"
-            }
-            username = data.displayName
-            return valid
-        })
-        .catch(err => {
-            return err
-        })
-    res.render('admin/userinfo', {
-        state: valid,
-        username: username
-    })
-})
-
-main.get('/admin/userinfo1/:id', async (req, res) => {
-    let uid = req.params.id
-    let username
-
-    await admin.auth().getUser(uid)
-        .then(data => {
-            username = data.displayName
-            return username
-        })
-        .catch(err => {
-            return err
-        })
-    res.render('admin/userinfo1', {
-        username: username
-    })
-})
-
-main.get('/admin/userinfo2/:id', async (req, res) => {
-    let uid = req.params.id
-    let username
-    await admin.auth().getUser(uid)
-        .then((data) => {
-            username = data.displayName
-            return username
-        })
-        .catch(err => {
-            return err
-        })
-    res.render('admin/userinfo2', {
-        username: username
-    })
-})
-
+// cloud functions
 exports.webApi = functions.https.onRequest(main)
 
 exports.addAdminRole = functions.https.onCall((data, context) => {
@@ -170,32 +48,49 @@ exports.addAdminRole = functions.https.onCall((data, context) => {
     }
     // get user and add admin custom claim
     return admin.auth().getUserByEmail(data.email).then(user => {
-        return admin.auth().setCustomUserClaims(user.uid, {
-            admin: true
-        })
-    }).then(() => {
         // save in firestore for ease of access
-        db.collection("admins").doc(auth.currentUser.uid)
+        db.collection("admins").doc(user.uid)
             .set({
                 isAdmin: true,
                 isHead: false
             }).catch(err => {
                 return err
             })
-
+        return admin.auth().setCustomUserClaims(user.uid, {
+            admin: true
+        })
+    }).then(() => {
         return {
             message: `Success! ${data.email} has been made an admin.`
         }
-
     }).catch(err => {
         return err
     })
 })
 
-main.get('*', (req, res) => {
-    res.redirect('/login')
-})
-
-main.post('*', (req, res) => {
-    res.redirect('/login')
+exports.deleteAdmin = functions.https.onCall((data, context) => {
+    // check request is made by an admin
+    if (context.auth.token.admin !== true) {
+        return {
+            error: 'Only main admin can delete other admins'
+        }
+    }
+    // get user and add admin custom claim
+    return admin.auth().getUserByEmail(data.email).then(user => {
+        db.collection("admins").doc(user.uid)
+            .set({
+                isAdmin: false,
+            }).catch(err => {
+                return err
+            })
+        return admin.auth().setCustomUserClaims(user.uid, {
+            admin: false
+        })
+    }).then(() => {
+        return {
+            message: `Success! ${data.email} has been demoted from Admin to User.`
+        }
+    }).catch(err => {
+        return err
+    })
 })

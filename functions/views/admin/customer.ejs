@@ -2,38 +2,23 @@
 
 <div class='col-md-8' id='content'>
     <div class='row'>
-        <div class='container1' id='totalusers'>TotalUsers<br /><span id='number'>3045</span><br /><span
-                id='percentage'>+3.88%</span> <span id='month'>from last month</span>
-            <img id='uparrow' class='images' src='/images/admin/Group%2075.png'>
+        <div class='container1' id='totalusers'>All users<br /><span id='number'><%= allUsers %></span><br /><span id='percentage'
+                style='color: blue'>default</span> <span id='month'></span>
         </div>
-        <div class='container1' id='newusers' style='background-color: #1A95FF;color: white'>New Users<br /><span
-                id='number' style='color: white'>147</span><br /><span id='percentage2'
-                style='color: white'>+3.88%</span> <span id='month'>from last month</span>
-            <img id='downarrow' class='images' src='/images/admin/Group%2077white.png'>
+        <div class='container1' id='newusers'>New Users<br /><span id='number'><%= newUsers %></span><br /><span id='percentage2'
+                style='color: darkorange'>default</span> <span id='month'></span>
         </div>
-        <div class='container1' id='sales'>Sales<br /><span id='number'>134</span><br /><span id='percentage'
-                style='color: red'>7 Entries</span> <span id='month'>from last month</span>
-            <img id='rupee' class='images' src='/images/admin/icons8-rupee-96%20(1).png'>
-            <img id='circle' class='images' src='/images/admin/icons8-synchronize-150.png'>
+        <div class='container1' id='sales'>Accepted Users<br /><span id='number'><%= acceptedUsers %></span><br /><span id='percentage'
+                style='color: green'> default</span> <span id='month'></span>
         </div>
-        <div class='container1' id='invent'>Inventory<br /><span id='number'>3.4K</span><br /><span
-                id='percentage'></span> <span id='month'>Accept/Reject</span>
-            <img id='eye' class='images' src='/images/admin/icons8-eye-100.png'>
+        <div class='container1' id='invent'>Rejected Users<br /><span id='number'><%= rejectedUsers %></span><br /><span id='percentage'
+                style='color: red'> default </span> <span id='month'></span>
         </div>
 
     </div>
     <div class='container1' id='content2'>
         <table class='table table-striped table-condensed' id='users-table'>
             <thead>
-                <tr>
-                    <th>Users</th>
-                    <th>Date Applied</th>
-                    <th>Year</th>
-                    <th>Course</th>
-                    <th>Institute</th>
-                    <th>City</th>
-                    <th>Referred</th>
-                </tr>
             </thead>
         </table>
     </div>

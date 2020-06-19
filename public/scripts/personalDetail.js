@@ -90,7 +90,7 @@ signupForm.addEventListener('submit', async (e) => {
         residentCity: residentCity,
         dateSubmitted: dateAndTime,
         form1: true,
-        adminVerification: false,
+        adminVerification: false
     }, {
         merge: true,
     }).catch(error => {

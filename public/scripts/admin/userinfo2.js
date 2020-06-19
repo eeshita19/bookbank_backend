@@ -1,7 +1,11 @@
 window.addEventListener('load', () => {
-    getMarker();
-    initObjection();
-    getUrls();
+    if (id == "undefined") {
+        alert('User doesnt exists')
+    } else {
+        getMarker();
+        initObjection();
+        getUrls();
+    }
 })
 
 const initObjection = async () => {
